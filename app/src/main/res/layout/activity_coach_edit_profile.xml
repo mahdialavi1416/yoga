@@ -24,6 +24,37 @@
                 android:background="@color/colorPrimary"
                 android:layout_height="wrap_content">
 
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless">
+
+
+                    <ImageView
+                    android:layout_width="40dp"
+                    android:padding="10dp"
+                    android:id="@+id/imgEditCoachDetails"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/ic_edit"
+                    android:layout_height="40dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="?attr/selectableItemBackgroundBorderless">
+
+                    <ImageView
+                    android:layout_width="45dp"
+                    android:id="@+id/imgBack"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back"
+                    android:layout_height="45dp" />
+
+                </RelativeLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:orientation="vertical"
@@ -47,26 +78,15 @@
                         android:textColor="@color/black"
                         android:layout_height="wrap_content" />
 
-                    <LinearLayout
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:orientation="horizontal"
+                        android:text="سطح طلایی"
+                        android:id="@+id/txtCoachLevel"
+                        android:textSize="16sp"
                         android:layout_marginTop="15dp"
-                        android:paddingTop="5dp"
-                        android:id="@+id/lytEditCoachDetails"
-                        android:paddingBottom="5dp"
-                        android:background="@drawable/coach_edit_profile_back"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:text="ویرایش اطلاعات"
-                            android:paddingRight="10dp"
-                            android:paddingLeft="10dp"
-                            android:textSize="12sp"
-                            android:textStyle="bold"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
+                        android:textStyle="bold"
+                        android:textColor="@color/green"
+                        android:layout_height="wrap_content" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -136,94 +156,94 @@
             </android.support.design.widget.CoordinatorLayout>
 
             <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-
-            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:layout_height="match_parent">
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:id="@+id/imgLockEducation"
-                    android:src="@drawable/ic_lock"
-                    android:layout_margin="10dp"
-                    android:visibility="gone"
-                    android:layout_gravity="right"
-                    android:layout_height="20dp" />
-
-                <LinearLayout
+                <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:id="@+id/lytEducation"
-                    android:padding="20dp"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:src="@drawable/ic_education"
-                        android:layout_height="30dp" />
+                        android:layout_width="20dp"
+                        android:id="@+id/imgLockEducation"
+                        android:src="@drawable/ic_lock"
+                        android:layout_margin="10dp"
+                        android:visibility="gone"
+                        android:layout_gravity="right"
+                        android:layout_height="20dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:text="سوابق تحصیلی"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
                         android:gravity="center"
-                        android:textSize="12sp"
-                        android:layout_marginTop="15dp"
-                        android:textColor="@color/black"
-                        android:layout_height="wrap_content" />
+                        android:id="@+id/lytEducation"
+                        android:padding="20dp"
+                        android:layout_height="match_parent">
 
-                </LinearLayout>
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:src="@drawable/ic_education"
+                            android:layout_height="30dp" />
 
-            </android.support.v7.widget.CardView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="سوابق تحصیلی"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:layout_height="wrap_content" />
 
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:layout_height="match_parent">
+                    </LinearLayout>
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:id="@+id/imgLockResume"
-                    android:src="@drawable/ic_lock"
-                    android:layout_margin="10dp"
-                    android:visibility="gone"
-                    android:layout_gravity="right"
-                    android:layout_height="20dp" />
+                </android.support.v7.widget.CardView>
 
-                <LinearLayout
+                <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
-                    android:id="@+id/lytResume"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="20dp"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:src="@drawable/ic_resume"
-                        android:layout_height="30dp" />
+                        android:layout_width="20dp"
+                        android:id="@+id/imgLockResume"
+                        android:src="@drawable/ic_lock"
+                        android:layout_margin="10dp"
+                        android:visibility="gone"
+                        android:layout_gravity="right"
+                        android:layout_height="20dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:text="رزومه کاری"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/lytResume"
+                        android:orientation="vertical"
                         android:gravity="center"
-                        android:textSize="12sp"
-                        android:layout_marginTop="15dp"
-                        android:textColor="@color/black"
-                        android:layout_height="wrap_content" />
+                        android:padding="20dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:src="@drawable/ic_resume"
+                            android:layout_height="30dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="رزومه کاری"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:layout_height="wrap_content" />
 
 
-                </LinearLayout>
+                    </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+                </android.support.v7.widget.CardView>
 
-        </LinearLayout>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -340,4 +360,29 @@
 
     </RelativeLayout>
 
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_marginTop="15dp"-->
+        <!--android:layout_marginBottom="15dp"-->
+        <!--android:paddingTop="5dp"-->
+        <!--android:id="@+id/lytEditCoachDetails"-->
+        <!--android:paddingBottom="5dp"-->
+        <!--android:background="@drawable/coach_edit_profile_back"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:text="ویرایش اطلاعات"-->
+            <!--android:paddingRight="10dp"-->
+            <!--android:paddingLeft="10dp"-->
+            <!--android:textSize="12sp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_height="wrap_content" />-->
+
+    <!--</LinearLayout>-->
+
 </RelativeLayout>
+

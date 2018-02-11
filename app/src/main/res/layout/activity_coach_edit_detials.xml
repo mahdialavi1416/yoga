@@ -34,6 +34,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:paddingBottom="30dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -73,10 +74,10 @@
                         android:paddingBottom="8dp"
                         android:paddingTop="8dp">
 
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="0dp"
-                            android:layout_weight="0.2"
-                            android:layout_height="wrap_content"></LinearLayout>
+                            android:layout_weight="0.1"
+                            android:layout_height="wrap_content"></RelativeLayout>
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -136,10 +137,10 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="0dp"
-                            android:layout_weight="0.2"
-                            android:layout_height="match_parent"></LinearLayout>
+                            android:layout_weight="0.1"
+                            android:layout_height="match_parent"></RelativeLayout>
 
                     </LinearLayout>
 
@@ -248,10 +249,9 @@
 
                             <EditText
                                 android:layout_width="match_parent"
-                                android:id="@+id/edtMobile"
+                                android:id="@+id/edtNatCode"
                                 android:textCursorDrawable="@drawable/cursor_color"
-                                android:hint="شماره همراه"
-
+                                android:hint="کد ملی"
                                 android:textColor="@color/black"
                                 android:background="@drawable/edit_text_back_login"
                                 android:padding="5dp"
@@ -275,6 +275,136 @@
                         android:layout_width="match_parent"
                         android:orientation="horizontal"
                         android:layout_marginTop="10dp"
+                        android:id="@+id/lytMobile"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"></LinearLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.2"
+                            android:theme="@style/TextLabel"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:id="@+id/edtMobile"
+                                android:textCursorDrawable="@drawable/cursor_color"
+                                android:hint="شماره همراه"
+                                android:textColor="@color/black"
+                                android:background="@drawable/edit_text_back_login"
+                                android:padding="5dp"
+                                android:textColorHint="@color/colorPrimary"
+                                android:maxLines="1"
+                                android:textSize="14sp"
+                                android:gravity="right|center_vertical"
+                                android:layout_height="wrap_content" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"></LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/lytTelegram"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"></LinearLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.2"
+                            android:theme="@style/TextLabel"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:id="@+id/edtTelegram"
+                                android:textCursorDrawable="@drawable/cursor_color"
+                                android:hint="آی دی تلگرام"
+                                android:textColor="@color/black"
+                                android:background="@drawable/edit_text_back_login"
+                                android:padding="5dp"
+                                android:textColorHint="@color/colorPrimary"
+                                android:maxLines="1"
+                                android:textSize="14sp"
+                                android:gravity="right|center_vertical"
+                                android:layout_height="wrap_content" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"></LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:id="@+id/lytInstagram"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"></LinearLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.2"
+                            android:theme="@style/TextLabel"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:id="@+id/edtInstagram"
+                                android:textCursorDrawable="@drawable/cursor_color"
+                                android:hint="آی دی اینستاگرام"
+                                android:textColor="@color/black"
+                                android:background="@drawable/edit_text_back_login"
+                                android:padding="5dp"
+                                android:textColorHint="@color/colorPrimary"
+                                android:maxLines="1"
+                                android:textSize="14sp"
+                                android:gravity="right|center_vertical"
+                                android:layout_height="wrap_content" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"></LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/lytEmail"
                         android:layout_height="wrap_content">
 
                         <LinearLayout
