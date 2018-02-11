@@ -20,9 +20,13 @@
         <activity android:name=".YogaIntroduce.YogaIntroduceActivity" />
         <activity android:name=".Gyms.GymsListActivity" />
         <activity android:name=".Coaches.CoachListActivity" />
-        <activity android:name=".Coaches.CoachProfileActivity" android:theme="@style/CoachProfile" />
+        <activity
+            android:name=".Coaches.CoachDetailsActivity"
+            android:theme="@style/CoachProfile" />
         <activity android:name=".Gyms.GymProfileActivity" />
-        <activity android:name=".Teaches.TeachDetailsActivity"></activity>
+        <activity android:name=".Teaches.TeachDetailsActivity" />
+        <activity android:name=".Coaches.CoachProfileActivity" />
+        <activity android:name=".Coaches.CoachEditDetialsActivity"></activity>
     </application>
 
 </manifest>

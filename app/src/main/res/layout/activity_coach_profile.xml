@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.technologygroup.rayannoor.yoga.Coaches.CoachProfileActivity">
+    tools:context="com.technologygroup.rayannoor.yoga.Coaches.CoachDetailsActivity">
 
     <ScrollView
         android:layout_width="match_parent"

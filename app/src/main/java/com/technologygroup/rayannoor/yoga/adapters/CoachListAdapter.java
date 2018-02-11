@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.technologygroup.rayannoor.yoga.Coaches.CoachListActivity;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachProfileActivity;
+import com.technologygroup.rayannoor.yoga.Coaches.CoachListActivity;
 import com.technologygroup.rayannoor.yoga.R;
 
 /**
