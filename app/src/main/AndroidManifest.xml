@@ -26,7 +26,9 @@
         <activity android:name=".Gyms.GymProfileActivity" />
         <activity android:name=".Teaches.TeachDetailsActivity" />
         <activity android:name=".Coaches.CoachProfileActivity" />
-        <activity android:name=".Coaches.CoachEditDetialsActivity"></activity>
+        <activity android:name=".Coaches.CoachEditDetialsActivity" />
+        <activity android:name=".NavigationDrawerActivity" />
+        <activity android:name=".Coaches.CoachServicesActivity"></activity>
     </application>
 
 </manifest>

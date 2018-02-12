@@ -1,7 +1,9 @@
 package com.technologygroup.rayannoor.yoga.Coaches;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -40,6 +42,14 @@ public class CoachDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coach_profile);
         initView();
+
+        lytGyms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CoachDetailsActivity.this , CoachServicesActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initView() {

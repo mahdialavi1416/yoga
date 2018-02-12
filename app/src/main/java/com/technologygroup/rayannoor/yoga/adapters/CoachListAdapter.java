@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.technologygroup.rayannoor.yoga.Coaches.CoachDetailsActivity;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachProfileActivity;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachListActivity;
 import com.technologygroup.rayannoor.yoga.R;
@@ -46,7 +47,7 @@ public class CoachListAdapter extends RecyclerView.Adapter<CoachListAdapter.myVi
             @Override
             public void onClick(View view) {
                 CoachListActivity activity = (CoachListActivity)context;
-                Intent intent = new Intent(activity , CoachProfileActivity.class);
+                Intent intent = new Intent(activity , CoachDetailsActivity.class);
                 context.startActivity(intent);
             }
         });

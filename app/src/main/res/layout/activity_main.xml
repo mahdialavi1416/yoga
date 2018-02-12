@@ -14,7 +14,7 @@
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:id="@+id/mainAppBar"
-            android:background="@color/actionBarBack"
+            android:background="@color/colorPrimary"
             android:layout_height="wrap_content">
 
 
@@ -64,13 +64,13 @@
                         android:layout_centerInParent="true"
                         android:text="یوگا"
                         android:id="@+id/txtTitle"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="17sp"
                         android:layout_height="wrap_content" />
 
                     <RelativeLayout
-                        android:id="@+id/relative_Menu"
+                        android:id="@+id/lytMenu"
                         android:layout_width="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"

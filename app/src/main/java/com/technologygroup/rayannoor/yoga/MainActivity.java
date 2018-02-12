@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private CoordinatorLayout relativeMsg;
     private TextView txtNewMessageCount;
     private TextView txtTitle;
-    private RelativeLayout relativeMenu;
+    private RelativeLayout lytMenu;
     private LinearLayout lytTeachs;
     private LinearLayout lytYogaIntroduce;
     private LinearLayout lytGyms;
@@ -66,6 +66,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        lytMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, NavigationDrawerActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.bottom_to_top, R.anim.stay);
+            }
+        });
     }
 
     private void initView() {
@@ -74,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         relativeMsg = (CoordinatorLayout) findViewById(R.id.relative_Msg);
         txtNewMessageCount = (TextView) findViewById(R.id.txt_newMessageCount);
         txtTitle = (TextView) findViewById(R.id.txtTitle);
-        relativeMenu = (RelativeLayout) findViewById(R.id.relative_Menu);
+        lytMenu = (RelativeLayout) findViewById(R.id.lytMenu);
         lytTeachs = (LinearLayout) findViewById(R.id.lytTeachs);
         lytYogaIntroduce = (LinearLayout) findViewById(R.id.lytYogaIntroduce);
         lytGyms = (LinearLayout) findViewById(R.id.lytGyms);
