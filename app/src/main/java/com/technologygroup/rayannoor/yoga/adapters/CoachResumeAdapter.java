@@ -5,30 +5,29 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.technologygroup.rayannoor.yoga.R;
 
 /**
- * Created by Mohamad Hasan on 2/12/2018.
+ * Created by Mohamad Hasan on 2/13/2018.
  */
 
-public class CoachGymsAdapter extends RecyclerView.Adapter<CoachGymsAdapter.myViewHolder> {
+public class CoachResumeAdapter extends RecyclerView.Adapter<CoachResumeAdapter.myViewHolder> {
 
     private Context context;
     private LayoutInflater mInflater;
 
 
 
-    public CoachGymsAdapter(Context context) {
+    public CoachResumeAdapter(Context context) {
         this.context = context;
         mInflater = LayoutInflater.from(context);
     }
 
     @Override
     public myViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.item_coach_gym_list, parent, false);
+        View view = mInflater.inflate(R.layout.item_coach_resume_list, parent, false);
         myViewHolder holder = new myViewHolder(view);
         return holder;
     }
@@ -44,22 +43,17 @@ public class CoachGymsAdapter extends RecyclerView.Adapter<CoachGymsAdapter.myVi
     }
 
 
-
-
     class myViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView txtGymRate;
-        private TextView txtGymLikeCount;
-        private TextView txtGymName;
-        private ImageView imgGym;
-
+        private TextView txtResumeTitle;
+        private TextView txtStartDate;
+        private TextView txtEndDate;
 
         myViewHolder(View itemView) {
             super(itemView);
-            txtGymRate = (TextView) itemView.findViewById(R.id.txtGymRate);
-            txtGymLikeCount = (TextView) itemView.findViewById(R.id.txtGymLikeCount);
-            txtGymName = (TextView) itemView.findViewById(R.id.txtGymName);
-            imgGym = (ImageView) itemView.findViewById(R.id.imgGym);
+            txtResumeTitle = (TextView) itemView.findViewById(R.id.txtResumeTitle);
+            txtStartDate = (TextView) itemView.findViewById(R.id.txtStartDate);
+            txtEndDate = (TextView) itemView.findViewById(R.id.txtEndDate);
         }
     }
 }

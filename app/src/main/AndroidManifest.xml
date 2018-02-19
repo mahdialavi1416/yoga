@@ -28,7 +28,8 @@
         <activity android:name=".Coaches.CoachProfileActivity" />
         <activity android:name=".Coaches.CoachEditDetialsActivity" />
         <activity android:name=".NavigationDrawerActivity" />
-        <activity android:name=".Coaches.CoachServicesActivity"></activity>
+        <activity android:name=".Coaches.CoachServicesActivity" />
+        <activity android:name=".imageActivity" android:theme="@style/Theme.Transparent"></activity>
     </application>
 
 </manifest>

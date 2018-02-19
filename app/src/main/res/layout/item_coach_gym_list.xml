@@ -21,6 +21,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:text="3.5"
+                android:id="@+id/txtGymRate"
                 android:layout_marginLeft="15dp"
                 android:layout_height="wrap_content" />
 
@@ -33,6 +34,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:text="25"
+                android:id="@+id/txtGymLikeCount"
                 android:layout_marginLeft="8dp"
                 android:layout_height="wrap_content" />
 
@@ -42,6 +44,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:text="باشگاه کیمیا"
+            android:id="@+id/txtGymName"
             android:layout_marginRight="10dp"
             android:gravity="center_vertical"
             android:layout_centerVertical="true"
@@ -51,6 +54,7 @@
         <ImageView
             android:layout_width="70dp"
             android:src="@drawable/img"
+            android:id="@+id/imgGym"
             android:layout_height="70dp" />
 
 
