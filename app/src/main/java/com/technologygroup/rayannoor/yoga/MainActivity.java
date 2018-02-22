@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.technologygroup.rayannoor.yoga.Coaches.CoachListActivity;
 import com.technologygroup.rayannoor.yoga.Gyms.GymsListActivity;
-import com.technologygroup.rayannoor.yoga.Teaches.teachsListActivity;
+import com.technologygroup.rayannoor.yoga.Teaches.teachsActivity;
 import com.technologygroup.rayannoor.yoga.YogaIntroduce.YogaIntroduceActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         lytTeachs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, teachsListActivity.class);
+                Intent intent = new Intent(MainActivity.this, teachsActivity.class);
                 startActivity(intent);
             }
         });
