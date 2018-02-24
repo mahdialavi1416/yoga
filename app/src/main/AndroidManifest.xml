@@ -29,17 +29,16 @@
         <activity android:name=".Teaches.CoachTeachsActivity" />
         <activity android:name=".Teaches.teachsListActivity" />
         <activity android:name=".SplashActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".IntroPage.introActivity"/>
+        <activity android:name=".IntroPage.introActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".Coaches.CoachPlanActivity"></activity>
     </application>
 
 </manifest>

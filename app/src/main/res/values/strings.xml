@@ -3,4 +3,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="plansDescribe">
+
+        مربی گرامی، هادی قهرمانی\n پروفایل تمام مربیان در وضعیت عادی به صورت پیشفرض می باشد. شما میتوانید با خرید هر یک از بسته های زیر، ضمن تعامل هر چه بیشتر با کاربران، از امکانات موجود در آنها استفاده کرده و پروفایل خود را کامل و جذاب تر کنید.
+
+    </string>
 </resources>

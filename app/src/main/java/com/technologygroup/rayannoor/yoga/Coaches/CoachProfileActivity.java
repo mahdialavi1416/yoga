@@ -44,6 +44,14 @@ public class CoachProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        lytCoachProfileUpgrade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CoachProfileActivity.this , CoachPlanActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initView() {

@@ -2,6 +2,7 @@ package com.technologygroup.rayannoor.yoga.Coaches;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
@@ -36,6 +37,7 @@ public class CoachDetailsActivity extends AppCompatActivity {
     private LinearLayout lytGyms;
     private ImageView imgLockCertificates;
     private LinearLayout lytCertificates;
+    private FloatingActionButton floatAction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +75,7 @@ public class CoachDetailsActivity extends AppCompatActivity {
         lytGyms = (LinearLayout) findViewById(R.id.lytGyms);
         imgLockCertificates = (ImageView) findViewById(R.id.imgLockCertificates);
         lytCertificates = (LinearLayout) findViewById(R.id.lytCertificates);
+        floatAction = (FloatingActionButton) findViewById(R.id.floatAction);
     }
 }
 
