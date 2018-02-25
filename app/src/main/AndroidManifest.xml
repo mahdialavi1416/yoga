@@ -38,7 +38,8 @@
         <activity android:name=".IntroPage.introActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".Coaches.CoachPlanActivity"></activity>
+        <activity android:name=".Coaches.CoachPlanActivity" />
+        <activity android:name=".CommentsActivity"></activity>
     </application>
 
 </manifest>

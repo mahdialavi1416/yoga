@@ -8,8 +8,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.technologygroup.rayannoor.yoga.CommentsActivity;
 import com.technologygroup.rayannoor.yoga.R;
 import com.technologygroup.rayannoor.yoga.RoundedImageView;
 
@@ -30,6 +30,10 @@ public class CoachProfileActivity extends AppCompatActivity {
     private ImageView imgLockCertificates;
     private LinearLayout lytCertificates;
     private RelativeLayout lytCoachProfileUpgrade;
+    private TextView txtCoachLevel;
+    private ImageView imgLockTeachs;
+    private LinearLayout lytTeachs;
+    private LinearLayout lytComments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,7 @@ public class CoachProfileActivity extends AppCompatActivity {
         imgEditCoachDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CoachProfileActivity.this , CoachEditDetialsActivity.class);
+                Intent intent = new Intent(CoachProfileActivity.this, CoachEditDetialsActivity.class);
                 startActivity(intent);
             }
         });
@@ -48,7 +52,16 @@ public class CoachProfileActivity extends AppCompatActivity {
         lytCoachProfileUpgrade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CoachProfileActivity.this , CoachPlanActivity.class);
+                Intent intent = new Intent(CoachProfileActivity.this, CoachPlanActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        lytComments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CoachProfileActivity.this, CommentsActivity.class);
                 startActivity(intent);
             }
         });
@@ -70,5 +83,9 @@ public class CoachProfileActivity extends AppCompatActivity {
         imgLockCertificates = (ImageView) findViewById(R.id.imgLockCertificates);
         lytCertificates = (LinearLayout) findViewById(R.id.lytCertificates);
         lytCoachProfileUpgrade = (RelativeLayout) findViewById(R.id.lytCoachProfileUpgrade);
+        txtCoachLevel = (TextView) findViewById(R.id.txtCoachLevel);
+        imgLockTeachs = (ImageView) findViewById(R.id.imgLockTeachs);
+        lytTeachs = (LinearLayout) findViewById(R.id.lytTeachs);
+        lytComments = (LinearLayout) findViewById(R.id.lytComments);
     }
 }

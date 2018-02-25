@@ -11,6 +11,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.like.LikeButton;
+import com.technologygroup.rayannoor.yoga.CommentsActivity;
 import com.technologygroup.rayannoor.yoga.R;
 import com.technologygroup.rayannoor.yoga.RoundedImageView;
 
@@ -49,6 +50,14 @@ public class CoachDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CoachDetailsActivity.this , CoachServicesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        floatAction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CoachDetailsActivity.this , CommentsActivity.class);
                 startActivity(intent);
             }
         });
