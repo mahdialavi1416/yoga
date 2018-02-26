@@ -39,7 +39,7 @@ public class CoachEducationAdapter extends RecyclerView.Adapter<CoachEducationAd
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 10;
     }
 
 

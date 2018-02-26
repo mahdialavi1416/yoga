@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.technologygroup.rayannoor.yoga.R;
 import com.technologygroup.rayannoor.yoga.Teaches.TeachDetailsActivity;
 import com.technologygroup.rayannoor.yoga.Teaches.teachsActivity;
+import com.technologygroup.rayannoor.yoga.Teaches.teachsListActivity;
 
 /**
  * Created by Mohamad Hasan on 2/7/2018.
@@ -40,7 +41,7 @@ public class TeachListAdapter extends RecyclerView.Adapter<TeachListAdapter.myVi
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                teachsActivity activity = (teachsActivity)context;
+                teachsListActivity activity = (teachsListActivity)context;
                 Intent intent = new Intent(activity , TeachDetailsActivity.class);
                 context.startActivity(intent);
             }
@@ -55,14 +56,10 @@ public class TeachListAdapter extends RecyclerView.Adapter<TeachListAdapter.myVi
 
     class myViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView txtGymName;
-        private ImageView imgGym;
-
 
         myViewHolder(View itemView) {
             super(itemView);
-            txtGymName = (TextView) itemView.findViewById(R.id.txtGymName);
-            imgGym = (ImageView) itemView.findViewById(R.id.imgGym);
+
         }
     }
 }
