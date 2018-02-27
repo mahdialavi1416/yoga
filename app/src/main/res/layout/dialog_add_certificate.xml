@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="280dp"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="اضافه کردن مدارک"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:background="@color/actionBarBack"
+                android:id="@+id/edtTitle"
+                android:textColorHint="@color/lightBlack"
+                android:textColor="@color/lightBlack"
+                android:hint="عنوان مدرک"
+                android:layout_marginTop="15dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:textSize="13sp"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:background="@color/actionBarBack"
+                android:id="@+id/edtBody"
+                android:textColorHint="@color/lightBlack"
+                android:textColor="@color/lightBlack"
+                android:hint="توضیحات"
+                android:layout_marginTop="10dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:textSize="13sp"
+                android:layout_height="100dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:gravity="right"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+
+                <EditText
+                    android:id="@+id/edt_termFinishDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="انتخاب کنید"
+                    android:textColor="@color/lightBlack"
+                    android:textColorHint="@color/lightBlack"
+                    android:layout_marginRight="7dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="زمان تحویل : "
+                    android:textColor="@color/lightBlack"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="هیچ عکسی انتخاب نشده "
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:visibility="gone"
+                    android:textColor="@color/lightBlack"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:visibility="visible"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/img2"
+                    android:layout_height="70dp" />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:src="@drawable/ic_add_circle"
+                    android:layout_height="35dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:paddingBottom="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_back_exit"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="لغو"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/btnPassSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_back_login"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="تایید"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
