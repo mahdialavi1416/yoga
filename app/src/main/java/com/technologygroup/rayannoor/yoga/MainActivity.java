@@ -28,12 +28,20 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout lytYogaIntroduce;
     private LinearLayout lytGyms;
     private LinearLayout lytCoaches;
+    private int stateNumber;
+    private int cityNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+
+        try {
+            stateNumber = getIntent().getIntExtra("stateNumber", 1);
+            cityNumber = getIntent().getIntExtra("cityNumber", 1);
+        }catch (Exception ex){ex.printStackTrace();}
+
 
         lytCoaches.setOnClickListener(new View.OnClickListener() {
             @Override

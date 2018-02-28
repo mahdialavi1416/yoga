@@ -18,12 +18,13 @@
 
 
     <TextView
+        android:id="@+id/use_province_help"
         android:layout_width="wrap_content"
-        android:text="برای استفاده هرچه بهتر از محتوای برنامه، لطفا شهر و استان محل زندگی خود را وارد کنید"
+        android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:textSize="12sp"
+        android:text="برای استفاده هرچه بهتر از محتوای برنامه، لطفا شهر و استان محل زندگی خود را وارد کنید"
         android:textColor="@color/black"
-        android:layout_height="wrap_content" />
+        android:textSize="12sp" />
 
     <Spinner
         android:id="@+id/StateSpinner"
@@ -32,7 +33,7 @@
         android:textAlignment="gravity"
         android:gravity="right|center_vertical"
         android:paddingBottom="10dp"
-        android:paddingTop="10dp"></Spinner>
+        android:paddingTop="10dp">انتخاب کنید</Spinner>
 
     <Spinner
         android:id="@+id/CitySpinner"
@@ -42,7 +43,7 @@
         android:gravity="right|center_vertical"
         android:paddingBottom="10dp"
         android:layout_marginTop="15dp"
-        android:paddingTop="10dp"></Spinner>
+        android:paddingTop="10dp">...</Spinner>
 
     <LinearLayout
         android:layout_width="match_parent"
