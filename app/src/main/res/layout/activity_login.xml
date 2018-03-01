@@ -19,11 +19,40 @@
         android:layout_marginTop="15dp"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <Spinner
+                android:id="@+id/LoginSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="gravity"
+                android:gravity="right|center_vertical"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"></Spinner>
+
+            <TextView
+                android:id="@+id/txtReportYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="نوع کاربری :"
+                android:textColor="@color/lightBlack" />
+
+        </LinearLayout>
+
         <EditText
             android:layout_width="match_parent"
             android:id="@+id/edtUserName"
             android:textCursorDrawable="@drawable/cursor_color"
             android:hint="نام کاربری"
+            android:layout_marginTop="10dp"
             android:textColorHint="@color/colorPrimary"
             android:textColor="@color/black"
             android:background="@drawable/edit_text_back_login"
