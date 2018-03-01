@@ -65,6 +65,40 @@ public class CoachProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        lytEducation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CoachProfileActivity.this , CoachServicesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        lytGyms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CoachProfileActivity.this , CoachServicesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        lytResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CoachProfileActivity.this , CoachServicesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        lytCertificates.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CoachProfileActivity.this , CoachServicesActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initView() {
