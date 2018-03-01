@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.technologygroup.rayannoor.yoga.R;
@@ -48,12 +49,16 @@ public class CoachResumeAdapter extends RecyclerView.Adapter<CoachResumeAdapter.
         private TextView txtResumeTitle;
         private TextView txtStartDate;
         private TextView txtEndDate;
+        private ImageView imgDelete;
+        private ImageView imgEdit;
 
         myViewHolder(View itemView) {
             super(itemView);
             txtResumeTitle = (TextView) itemView.findViewById(R.id.txtResumeTitle);
             txtStartDate = (TextView) itemView.findViewById(R.id.txtStartDate);
             txtEndDate = (TextView) itemView.findViewById(R.id.txtEndDate);
+            imgDelete =  itemView.findViewById(R.id.imgDelete);
+            imgEdit =  itemView.findViewById(R.id.imgEdit);
         }
     }
 }

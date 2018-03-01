@@ -48,12 +48,16 @@ public class CoachEducationAdapter extends RecyclerView.Adapter<CoachEducationAd
 
         private TextView txtEducationTitle;
         private ImageView imgEducation;
+        private ImageView imgDelete;
+        private ImageView imgEdit;
 
 
         myViewHolder(View itemView) {
             super(itemView);
             txtEducationTitle = (TextView) itemView.findViewById(R.id.txtEducationTitle);
             imgEducation = (ImageView) itemView.findViewById(R.id.imgEducation);
+            imgDelete =  itemView.findViewById(R.id.imgDelete);
+            imgEdit =  itemView.findViewById(R.id.imgEdit);
         }
     }
 }
