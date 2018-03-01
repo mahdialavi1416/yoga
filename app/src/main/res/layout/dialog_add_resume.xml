@@ -8,7 +8,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:text="اضافه کردن مدارک"
+        android:text="اضافه کردن رزومه"
         android:gravity="center"
         android:paddingBottom="15dp"
         android:paddingTop="15dp"
@@ -35,7 +35,7 @@
                 android:id="@+id/edtTitle"
                 android:textColorHint="@color/lightBlack"
                 android:textColor="@color/lightBlack"
-                android:hint="عنوان مدرک"
+                android:hint="عنوان "
                 android:layout_marginTop="15dp"
                 android:textCursorDrawable="@color/colorPrimary"
                 android:layout_marginRight="10dp"
@@ -43,21 +43,6 @@
                 android:padding="10dp"
                 android:textSize="13sp"
                 android:layout_height="wrap_content" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:background="@color/actionBarBack"
-                android:id="@+id/edtBody"
-                android:textColorHint="@color/lightBlack"
-                android:textColor="@color/lightBlack"
-                android:hint="توضیحات"
-                android:layout_marginTop="10dp"
-                android:textCursorDrawable="@color/colorPrimary"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:padding="10dp"
-                android:textSize="13sp"
-                android:layout_height="100dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -69,7 +54,7 @@
 
 
                 <EditText
-                    android:id="@+id/edtDate"
+                    android:id="@+id/edtStartDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="true"
@@ -83,7 +68,7 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:text="زمان تحویل : "
+                    android:text="تاریخ شروع : "
                     android:textColor="@color/lightBlack"
                     android:layout_height="wrap_content" />
 
@@ -91,38 +76,31 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:gravity="right|center_vertical"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
+                android:gravity="right"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_height="wrap_content">
 
+
+                <EditText
+                    android:id="@+id/edtEndDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="انتخاب کنید"
+                    android:textColor="@color/lightBlack"
+                    android:textColorHint="@color/lightBlack"
+                    android:layout_marginRight="7dp"
+                    android:textSize="14sp" />
+
                 <TextView
-                    android:layout_width="match_parent"
-                    android:text="هیچ عکسی انتخاب نشده "
-                    android:layout_weight="1"
-                    android:id="@+id/txtNoImage"
-                    android:gravity="center"
-                    android:textSize="13sp"
-                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:text="تاریخ پایان : "
                     android:textColor="@color/lightBlack"
                     android:layout_height="wrap_content" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:visibility="gone"
-                    android:id="@+id/imgCertificate"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/img2"
-                    android:layout_height="70dp" />
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:padding="10dp"
-                    android:id="@+id/imgSelectPicture"
-                    android:src="@drawable/ic_add_circle"
-                    android:layout_height="50dp" />
-
 
             </LinearLayout>
 

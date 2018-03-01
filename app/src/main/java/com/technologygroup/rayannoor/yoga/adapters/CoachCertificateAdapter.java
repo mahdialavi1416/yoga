@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.technologygroup.rayannoor.yoga.Coaches.CoachServicesActivity;
 import com.technologygroup.rayannoor.yoga.R;
 import com.technologygroup.rayannoor.yoga.imageActivity;
@@ -40,8 +41,8 @@ public class CoachCertificateAdapter extends RecyclerView.Adapter<CoachCertifica
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CoachServicesActivity activity = (CoachServicesActivity)context;
-                Intent intent = new Intent(activity , imageActivity.class);
+                CoachServicesActivity activity = (CoachServicesActivity) context;
+                Intent intent = new Intent(activity, imageActivity.class);
                 context.startActivity(intent);
             }
         });
@@ -56,11 +57,22 @@ public class CoachCertificateAdapter extends RecyclerView.Adapter<CoachCertifica
 
     class myViewHolder extends RecyclerView.ViewHolder {
 
+        private TextView txtCertificateTitle;
+        private TextView txtCertificateBody;
+        private ImageView imgDelete;
+        private ImageView imgEdit;
+        private ImageView imgCertificate;
+        private TextView txtCertificateDate;
 
 
         myViewHolder(View itemView) {
             super(itemView);
-
+            txtCertificateTitle = (TextView) itemView.findViewById(R.id.txtCertificateTitle);
+            txtCertificateBody = (TextView) itemView.findViewById(R.id.txtCertificateBody);
+            imgDelete = (ImageView) itemView.findViewById(R.id.imgDelete);
+            imgEdit = (ImageView) itemView.findViewById(R.id.imgEdit);
+            imgCertificate = (ImageView) itemView.findViewById(R.id.imgCertificate);
+            txtCertificateDate = (TextView) itemView.findViewById(R.id.txtCertificateDate);
         }
     }
 }
