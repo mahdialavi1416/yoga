@@ -1,17 +1,26 @@
 package com.technologygroup.rayannoor.yoga.Coaches;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.technologygroup.rayannoor.yoga.Classes.App;
+import com.technologygroup.rayannoor.yoga.Classes.ClassLevels;
 import com.technologygroup.rayannoor.yoga.CommentsActivity;
+import com.technologygroup.rayannoor.yoga.Models.CoachModel;
 import com.technologygroup.rayannoor.yoga.R;
 import com.technologygroup.rayannoor.yoga.RoundedImageView;
+import com.technologygroup.rayannoor.yoga.Services.WebService;
 
 public class CoachProfileActivity extends AppCompatActivity {
 
@@ -34,17 +43,37 @@ public class CoachProfileActivity extends AppCompatActivity {
     private ImageView imgLockTeachs;
     private LinearLayout lytTeachs;
     private LinearLayout lytComments;
+    private RatingBar rating;
+
+
+    private CoachModel coachModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coach_edit_profile);
+
         initView();
+
+        WebServiceCoachInfo webServiceCoachInfo = new WebServiceCoachInfo();
+        webServiceCoachInfo.execute();
 
         imgEditCoachDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(CoachProfileActivity.this, CoachEditDetialsActivity.class);
+
+                intent.putExtra("CoachId", coachModel.id);
+                intent.putExtra("CoachFName", coachModel.fName);
+                intent.putExtra("CoachLName", coachModel.lName);
+                intent.putExtra("CoachImg", coachModel.Img);
+                intent.putExtra("CoachNatCode", coachModel.natCode);
+                intent.putExtra("CoachEmail", coachModel.Email);
+                intent.putExtra("CoachMobile", coachModel.Mobile);
+                intent.putExtra("CoachIdTelegram", coachModel.Telegram);
+                intent.putExtra("CoachIdInstagram", coachModel.Instagram);
+
                 startActivity(intent);
             }
         });
@@ -70,7 +99,7 @@ public class CoachProfileActivity extends AppCompatActivity {
         lytEducation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CoachProfileActivity.this , CoachServicesActivity.class);
+                Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
                 startActivity(intent);
             }
         });
@@ -78,7 +107,7 @@ public class CoachProfileActivity extends AppCompatActivity {
         lytGyms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CoachProfileActivity.this , CoachServicesActivity.class);
+                Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
                 startActivity(intent);
             }
         });
@@ -86,7 +115,7 @@ public class CoachProfileActivity extends AppCompatActivity {
         lytResume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CoachProfileActivity.this , CoachServicesActivity.class);
+                Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
                 startActivity(intent);
             }
         });
@@ -95,7 +124,7 @@ public class CoachProfileActivity extends AppCompatActivity {
         lytCertificates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CoachProfileActivity.this , CoachServicesActivity.class);
+                Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
                 startActivity(intent);
             }
         });
@@ -121,5 +150,58 @@ public class CoachProfileActivity extends AppCompatActivity {
         imgLockTeachs = (ImageView) findViewById(R.id.imgLockTeachs);
         lytTeachs = (LinearLayout) findViewById(R.id.lytTeachs);
         lytComments = (LinearLayout) findViewById(R.id.lytComments);
+        rating = (RatingBar) findViewById(R.id.rating);
     }
+
+    private class WebServiceCoachInfo extends AsyncTask<Object, Void, Void> {
+
+        private WebService webService;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            webService = new WebService();
+            coachModel = new CoachModel();
+
+        }
+
+        @Override
+        protected Void doInBackground(Object... params) {
+
+            coachModel = webService.getCoachInfo(App.isInternetOn(), 0);
+
+            return null;
+        }
+
+        @SuppressLint("SetTextI18n")
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+
+
+            if (coachModel != null) {
+
+                if (coachModel.Img != null)
+                    if (!coachModel.Img.equals("") && !coachModel.Img.equals("null"))
+                        Glide.with(CoachProfileActivity.this).load(App.imgAddr + coachModel.Img).asBitmap().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imgCoach);
+                txtCoachName.setText(coachModel.fName + " " + coachModel.lName);
+                ClassLevels classLevels = new ClassLevels();
+                txtCoachLevel.setText(classLevels.getCoachLevelName(coachModel.idCurrentPlan));
+                txtCoachRate.setText(coachModel.Rate + "");
+                txtLikeCount.setText(coachModel.like + "");
+                rating.setRating((float) coachModel.Rate);
+
+            } else {
+                //Toast.makeText(getApplicationContext(), "اتصال با سرور برقرار نشد", Toast.LENGTH_LONG).show();
+
+//                lytMain.setVisibility(View.GONE);
+//                lytDisconnect.setVisibility(View.VISIBLE);
+//                lytEmpty.setVisibility(View.GONE);
+
+            }
+
+        }
+
+    }
+
 }

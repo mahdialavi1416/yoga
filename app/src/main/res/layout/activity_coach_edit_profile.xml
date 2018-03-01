@@ -105,6 +105,7 @@
                             android:layout_height="match_parent">
 
                             <RatingBar
+                                android:id="@+id/rating"
                                 android:layout_width="wrap_content"
                                 style="?android:attr/ratingBarStyleSmall"
                                 android:rating="3.5"

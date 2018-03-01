@@ -1,6 +1,7 @@
 package com.technologygroup.rayannoor.yoga.Coaches;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,6 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.technologygroup.rayannoor.yoga.Classes.App;
 import com.technologygroup.rayannoor.yoga.R;
 import com.technologygroup.rayannoor.yoga.RoundedImageView;
 
@@ -37,11 +41,16 @@ public class CoachEditDetialsActivity extends AppCompatActivity {
     private LinearLayout lytEditInformation;
     private Dialog dialog;
 
+    private int idCoach;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coach_edit_detials);
         initView();
+        setView();
+
+        idCoach = getIntent().getIntExtra("CoachId", -1);
 
         lytChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +79,21 @@ public class CoachEditDetialsActivity extends AppCompatActivity {
         edtEmail = (EditText) findViewById(R.id.edtEmail);
         imgProfile = (RoundedImageView) findViewById(R.id.imgProfile);
         lytEditInformation = (LinearLayout) findViewById(R.id.lytEditInformation);
+    }
+
+    private void setView() {
+
+        if (getIntent().getStringExtra("CoachImg") != null)
+            if (!getIntent().getStringExtra("CoachImg").equals("") && !getIntent().getStringExtra("CoachImg").equals("null"))
+                Glide.with(CoachEditDetialsActivity.this).load(App.imgAddr + getIntent().getStringExtra("CoachImg")).asBitmap().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imgProfile);
+        edtFName.setText(getIntent().getStringExtra("CoachFName"));
+        edtLName.setText(getIntent().getStringExtra("CoachLName"));
+        edtNatCode.setText(getIntent().getStringExtra("CoachNatCode"));
+        edtMobile.setText(getIntent().getStringExtra("CoachMobile"));
+        edtTelegram.setText(getIntent().getStringExtra("CoachIdTelegram"));
+        edtInstagram.setText(getIntent().getStringExtra("CoachIdInstagram"));
+        edtEmail.setText(getIntent().getStringExtra("CoachEmail"));
+
     }
 
     private void showDialog() {
