@@ -3,7 +3,10 @@ package com.technologygroup.rayannoor.yoga.Services;
 import android.util.Log;
 
 import com.technologygroup.rayannoor.yoga.Classes.App;
+import com.technologygroup.rayannoor.yoga.Models.CoachEduModel;
+import com.technologygroup.rayannoor.yoga.Models.CoachHonorModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachModel;
+import com.technologygroup.rayannoor.yoga.Models.CoachResumeModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,6 +21,8 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
@@ -158,5 +163,129 @@ public class WebService {
             return null;
     }
 
+    public List<CoachEduModel> getCoachEdu(boolean isInternetAvailable, int id) {
+
+        if (isInternetAvailable) {
+
+            String response = connectToServer(App.apiAddr + "EducationalRecord/select/" + id, "GET");
+            Log.i("LOG", response + "");
+
+            if (response != null) {
+
+                List<CoachEduModel> list = new ArrayList<>();
+
+                try {
+
+                    JSONArray Arrey = new JSONArray(response);
+                    for (int i = 0; i < Arrey.length(); i++) {
+                        JSONObject Object = Arrey.getJSONObject(i);
+                        CoachEduModel model = new CoachEduModel();
+
+                        model.id = Object.getInt("id");
+                        model.Date = Object.getString("Date");
+                        model.lastUpdate = Object.getString("lastUpdate");
+                        model.idCoach = Object.getInt("idCoach");
+                        model.Name = Object.getString("Name");
+                        model.CoachName = Object.getString("CoachName");
+                        model.Img = Object.getString("Img");
+
+                        list.add(model);
+
+                    }
+                    return list;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+            return null;
+
+        } else
+            return null;
+    }
+
+    public List<CoachHonorModel> getCoachHonor(boolean isInternetAvailable, int id) {
+
+        if (isInternetAvailable) {
+
+            String response = connectToServer(App.apiAddr + "honor/SelectCoachHonorrs/" + id, "GET");
+            Log.i("LOG", response + "");
+
+            if (response != null) {
+
+                List<CoachHonorModel> list = new ArrayList<>();
+
+                try {
+
+                    JSONArray Arrey = new JSONArray(response);
+                    for (int i = 0; i < Arrey.length(); i++) {
+                        JSONObject Object = Arrey.getJSONObject(i);
+                        CoachHonorModel model = new CoachHonorModel();
+
+                        model.id = Object.getInt("id");
+                        model.Date = Object.getString("Date");
+                        model.lastUpdate = Object.getString("lastUpdate");
+                        model.idRow = Object.getInt("idRow");
+                        model.Name = Object.getString("Name");
+                        model.Title = Object.getString("Title");
+                        model.Img = Object.getString("Img");
+                        model.Des = Object.getString("Des");
+                        model.isGym = Object.getBoolean("isGym");
+
+                        list.add(model);
+
+                    }
+                    return list;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+            return null;
+
+        } else
+            return null;
+    }
+
+    public List<CoachResumeModel> getCoachResume(boolean isInternetAvailable, int id) {
+
+        if (isInternetAvailable) {
+
+            String response = connectToServer(App.apiAddr + "resume/select/" + id, "GET");
+            Log.i("LOG", response + "");
+
+            if (response != null) {
+
+                List<CoachResumeModel> list = new ArrayList<>();
+
+                try {
+
+                    JSONArray Arrey = new JSONArray(response);
+                    for (int i = 0; i < Arrey.length(); i++) {
+                        JSONObject Object = Arrey.getJSONObject(i);
+                        CoachResumeModel model = new CoachResumeModel();
+
+                        model.id = Object.getInt("id");
+                        model.endDate = Object.getString("endDate");
+                        model.lastUpdate = Object.getString("lastUpdate");
+                        model.idCoach = Object.getInt("idCoach");
+                        model.Name = Object.getString("Name");
+                        model.startDate = Object.getString("startDate");
+                        model.Title = Object.getString("Title");
+
+                        list.add(model);
+
+                    }
+                    return list;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+            return null;
+
+        } else
+            return null;
+    }
 
 }

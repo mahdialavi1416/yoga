@@ -21,6 +21,8 @@ public class CoachServicesActivity extends AppCompatActivity {
     private ViewPager CoachPager;
     private Typeface typeface;
 
+    private int selectedTabIndex;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,16 +30,22 @@ public class CoachServicesActivity extends AppCompatActivity {
         initView();
         typeface = Typeface.createFromAsset(getAssets(), "font.ttf");
 
+        selectedTabIndex = getIntent().getIntExtra("SelectedTabIndex", 0);
 
         tabLayout.addTab(tabLayout.newTab().setText("سوابق تحصیلی"));
         tabLayout.addTab(tabLayout.newTab().setText("رزومه"));
         tabLayout.addTab(tabLayout.newTab().setText("باشگاه ها"));
         tabLayout.addTab(tabLayout.newTab().setText("مدارک"));
+
         CoachServicesPager adapter = new CoachServicesPager(getSupportFragmentManager());
         CoachPager.setAdapter(adapter);
         CoachPager.setPageTransformer(false, new FadePageTransformer());
         CoachPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
+        CoachPager.setCurrentItem(selectedTabIndex);
+
+//        TabLayout.Tab tab = tabLayout.getTabAt(selectedTabIndex);
+//        tab.select();
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
