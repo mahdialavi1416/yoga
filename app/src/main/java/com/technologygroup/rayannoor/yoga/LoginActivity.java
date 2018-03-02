@@ -4,12 +4,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText edtUserName;
     private EditText edtPass;
     private Button btnLogin;
+    private Spinner LoginSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
