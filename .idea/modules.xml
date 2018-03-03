@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/yoga.iml" filepath="$PROJECT_DIR$/yoga.iml" />
+      <module fileurl="file://D:\Academic\projects\AndroidStudioProject4\yoga\yoga\yoga.iml" filepath="D:\Academic\projects\AndroidStudioProject4\yoga\yoga\yoga.iml" />
       <module fileurl="file://F:\Androi_Studio_Projects\yoga\yoga\.idea\yoga.iml" filepath="F:\Androi_Studio_Projects\yoga\yoga\.idea\yoga.iml" />
     </modules>
   </component>
