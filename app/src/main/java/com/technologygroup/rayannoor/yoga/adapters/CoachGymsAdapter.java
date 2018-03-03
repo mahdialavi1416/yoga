@@ -8,7 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.technologygroup.rayannoor.yoga.Classes.App;
+import com.technologygroup.rayannoor.yoga.Models.CoachGymsModel;
 import com.technologygroup.rayannoor.yoga.R;
+
+import java.util.List;
 
 /**
  * Created by Mohamad Hasan on 2/12/2018.
@@ -18,12 +24,14 @@ public class CoachGymsAdapter extends RecyclerView.Adapter<CoachGymsAdapter.myVi
 
     private Context context;
     private LayoutInflater mInflater;
+    private List<CoachGymsModel> list;
 
 
 
-    public CoachGymsAdapter(Context context) {
+    public CoachGymsAdapter(Context context, List<CoachGymsModel> list) {
         this.context = context;
         mInflater = LayoutInflater.from(context);
+        this.list = list;
     }
 
     @Override
@@ -35,12 +43,13 @@ public class CoachGymsAdapter extends RecyclerView.Adapter<CoachGymsAdapter.myVi
 
     @Override
     public void onBindViewHolder(myViewHolder holder, int position) {
-
+        final CoachGymsModel currentObj = list.get(position);
+        holder.setData(currentObj, position);
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return list.size();
     }
 
 
@@ -53,6 +62,8 @@ public class CoachGymsAdapter extends RecyclerView.Adapter<CoachGymsAdapter.myVi
         private TextView txtGymName;
         private ImageView imgGym;
 
+        private int position;
+        private CoachGymsModel current;
 
         myViewHolder(View itemView) {
             super(itemView);
@@ -61,5 +72,21 @@ public class CoachGymsAdapter extends RecyclerView.Adapter<CoachGymsAdapter.myVi
             txtGymName = (TextView) itemView.findViewById(R.id.txtGymName);
             imgGym = (ImageView) itemView.findViewById(R.id.imgGym);
         }
+
+        private void setData(CoachGymsModel current, int position) {
+
+            if (current.Img != null)
+                if (!current.Img.equals("") && !current.Img.equals("null"))
+                    Glide.with(context).load(App.imgAddr + current.Img).asBitmap().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imgGym);
+
+            txtGymName.setText(current.Name);
+            txtGymLikeCount.setText(current.like + "");
+            txtGymRate.setText(current.Rate + "");
+
+            this.position = position;
+            this.current = current;
+
+        }
+
     }
 }

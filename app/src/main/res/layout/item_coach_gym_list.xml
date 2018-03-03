@@ -23,20 +23,21 @@
                 android:text="3.5"
                 android:id="@+id/txtGymRate"
                 android:layout_marginLeft="15dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="25dp" />
 
             <ImageView
-                android:layout_width="15dp"
+                android:layout_width="25dp"
+                android:padding="3dp"
                 android:layout_marginLeft="40dp"
                 android:src="@drawable/ic_like"
-                android:layout_height="15dp" />
+                android:layout_height="25dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:text="25"
                 android:id="@+id/txtGymLikeCount"
                 android:layout_marginLeft="8dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="25dp" />
 
 
         </LinearLayout>

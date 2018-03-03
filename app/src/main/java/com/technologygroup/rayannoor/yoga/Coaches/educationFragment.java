@@ -172,7 +172,7 @@ public class educationFragment extends Fragment implements
                 PersianCalendar now = new PersianCalendar();
 
                 DatePickerDialog dpd = DatePickerDialog.newInstance(educationFragment.this, now.getPersianYear(), now.getPersianMonth(), now.getPersianDay());
-                dpd.show(activity.getFragmentManager(), MULTIDATEPICKER);
+                dpd.show(activity.getFragmentManager(), DATEPICKER);
                 dpd.setOnCancelListener(new DialogInterface.OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface dialogInterface) {
