@@ -5,6 +5,7 @@ import android.util.Log;
 import com.bumptech.glide.gifdecoder.GifHeaderParser;
 import com.technologygroup.rayannoor.yoga.Classes.App;
 import com.technologygroup.rayannoor.yoga.Models.CoachEduModel;
+import com.technologygroup.rayannoor.yoga.Models.CoachGymsModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachHonorModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachResumeModel;
@@ -250,6 +251,8 @@ public class WebService {
         return -5;
     }
 
+
+
     public CoachModel getCoachInfo(boolean isInternetAvailable, int id) {
 
         if (isInternetAvailable) {
@@ -307,6 +310,8 @@ public class WebService {
         } else
             return null;
     }
+
+
 
     public List<CoachEduModel> getCoachEdu(boolean isInternetAvailable, int id) {
 
@@ -429,6 +434,164 @@ public class WebService {
             }
             return null;
 
+        } else
+            return null;
+    }
+
+    public List<CoachGymsModel> getCoachGyms(boolean isInternetAvailable, int id) {
+
+        if (isInternetAvailable) {
+
+            String response = connectToServer(App.apiAddr + "GymCoaches/selectGyms/" + id, "GET");
+            Log.i("LOG", response + "");
+
+            if (response != null) {
+
+                List<CoachGymsModel> list = new ArrayList<>();
+
+                try {
+
+                    JSONArray Arrey = new JSONArray(response);
+                    for (int i = 0; i < Arrey.length(); i++) {
+                        JSONObject Object = Arrey.getJSONObject(i);
+                        CoachGymsModel model = new CoachGymsModel();
+
+                        model.id = Object.getInt("id");
+                        model.Img = Object.getString("Img");
+                        model.Name = Object.getString("Name");
+                        model.like = Object.getInt("like");
+                        model.Rate = Object.getDouble("Rate");
+
+                        list.add(model);
+
+                    }
+                    return list;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+            return null;
+
+        } else
+            return null;
+    }
+
+
+    public String AddCoachEdu(boolean isInternetAvailable, CoachEduModel model) {
+
+        if (isInternetAvailable) {
+
+            String req = "";
+            String response = connectToServerByJson(App.apiAddr + "EducationalRecord/add", "POST", req);
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
+
+    public String AddCoachResume(boolean isInternetAvailable, CoachResumeModel model) {
+
+        if (isInternetAvailable) {
+
+            String req = "";
+            String response = connectToServerByJson(App.apiAddr + "Resume/add", "POST", req);
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
+
+    public String AddCoachHonor(boolean isInternetAvailable, CoachHonorModel model) {
+
+        if (isInternetAvailable) {
+
+            String req = "";
+            String response = connectToServerByJson(App.apiAddr + "honor/add", "POST", req);
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
+
+
+
+    public String editCoachEdu(boolean isInternetAvailable, CoachEduModel model) {
+
+        if (isInternetAvailable) {
+
+            String req = "";
+            String response = connectToServerByJson(App.apiAddr + "EducationalRecord/update", "POST", req);
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
+
+    public String editCoachResume(boolean isInternetAvailable, CoachResumeModel model) {
+
+        if (isInternetAvailable) {
+
+            String req = "";
+            String response = connectToServerByJson(App.apiAddr + "Resume/update", "POST", req);
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
+
+    public String editCoachHonor(boolean isInternetAvailable, CoachHonorModel model) {
+
+        if (isInternetAvailable) {
+
+            String req = "";
+            String response = connectToServerByJson(App.apiAddr + "honor/update", "POST", req);
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
+
+
+
+    public String deleteCoachEdu(boolean isInternetAvailable, int id) {
+
+        if (isInternetAvailable) {
+
+            String response = connectToServerByJson(App.apiAddr + "EducationalRecord/delete", "POST", id + "");
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
+
+    public String deleteCoachResume(boolean isInternetAvailable, int id) {
+
+        if (isInternetAvailable) {
+
+            String response = connectToServerByJson(App.apiAddr + "Resume/delete", "POST", id + "");
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
+
+    public String deleteCoachHhonor(boolean isInternetAvailable, int id) {
+
+        if (isInternetAvailable) {
+
+            String response = connectToServerByJson(App.apiAddr + "honor/delete", "POST", id + "");
+            Log.i("LOG", response + "");
+
+            return response;
         } else
             return null;
     }
