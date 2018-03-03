@@ -596,4 +596,23 @@ public class WebService {
             return null;
     }
 
+
+
+    public String deleteImgDetails(boolean isInternetAvailable, int id) {
+
+        if (isInternetAvailable) {
+
+            String response = connectToServer(App.apiAddr + "images/delete?id=" + id, "GET");
+            Log.i("LOG", response + "");
+
+            if (response != null) {
+
+                return response;
+
+            }
+            return null;
+        } else
+            return null;
+    }
+
 }

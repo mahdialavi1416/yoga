@@ -13,5 +13,6 @@ public class CoachEduModel {
     public String Name;
     public String CoachName;
     public String Img;
+    public String gettingPlace;
 
 }
