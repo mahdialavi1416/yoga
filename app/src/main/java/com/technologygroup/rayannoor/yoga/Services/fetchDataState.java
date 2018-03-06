@@ -1,4 +1,4 @@
-package com.technologygroup.rayannoor.yoga;
+package com.technologygroup.rayannoor.yoga.Services;
 
 import android.os.AsyncTask;
 import android.view.View;
@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.technologygroup.rayannoor.yoga.IntroPage.IntroFragment;
+import com.technologygroup.rayannoor.yoga.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

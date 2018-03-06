@@ -2,7 +2,6 @@ package com.technologygroup.rayannoor.yoga.IntroPage;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,14 +13,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.technologygroup.rayannoor.yoga.LoginActivity;
 import com.technologygroup.rayannoor.yoga.MainActivity;
 import com.technologygroup.rayannoor.yoga.R;
 import com.technologygroup.rayannoor.yoga.RegisterActivity;
-import com.technologygroup.rayannoor.yoga.fetchDataCity;
-import com.technologygroup.rayannoor.yoga.fetchDataState;
+import com.technologygroup.rayannoor.yoga.Services.fetchDataCity;
+import com.technologygroup.rayannoor.yoga.Services.fetchDataState;
 
 /**
  * Created by mohamadHasan on 20/07/2017.

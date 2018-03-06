@@ -1,13 +1,27 @@
 package com.technologygroup.rayannoor.yoga.Coaches;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.technologygroup.rayannoor.yoga.Classes.App;
+import com.technologygroup.rayannoor.yoga.Classes.ClassLevels;
+import com.technologygroup.rayannoor.yoga.Models.CoachModel;
 import com.technologygroup.rayannoor.yoga.R;
+import com.technologygroup.rayannoor.yoga.Services.WebService;
 import com.technologygroup.rayannoor.yoga.adapters.CoachListAdapter;
 
 public class CoachListActivity extends AppCompatActivity {
@@ -15,6 +29,11 @@ public class CoachListActivity extends AppCompatActivity {
     private TextView txtTitle;
     private RelativeLayout btnBack;
     private RecyclerView RecyclerCoach;
+    private SharedPreferences prefs;
+//    private int idCoach;
+    private CoachModel[] coachModel;
+    private int stateNumber = 1;
+    private int cityNumber = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,21 +41,75 @@ public class CoachListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_coach_list);
         initView();
 
-        setUpRecyclerView();
+        fetchDataCoachesList fetchDataCoachesList = new fetchDataCoachesList();
+        fetchDataCoachesList.execute();
     }
 
     private void setUpRecyclerView(){
-        CoachListAdapter adapter = new CoachListAdapter(CoachListActivity.this);
+        CoachListAdapter adapter = new CoachListAdapter(CoachListActivity.this, coachModel);
         RecyclerCoach.setAdapter(adapter);
-
-        LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(getApplicationContext());
-        mLinearLayoutManagerVertical.setOrientation(LinearLayoutManager.VERTICAL);
-        RecyclerCoach.setLayoutManager(mLinearLayoutManagerVertical);
     }
 
     private void initView() {
         txtTitle = (TextView) findViewById(R.id.txtTitle);
         btnBack = (RelativeLayout) findViewById(R.id.btnBack);
-        RecyclerCoach = (RecyclerView) findViewById(R.id.RecyclerCoach);
+
+        stateNumber = getIntent().getIntExtra("stateNumber", 1);
+        cityNumber = getIntent().getIntExtra("cityNumber", 1);
     }
+
+
+
+
+    @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
+    public class fetchDataCoachesList extends AsyncTask<Object, Void, Void> {
+        private WebService webService;
+
+        @Override
+        protected void onPreExecute() {
+            webService = new WebService();
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(Object... params) {
+            coachModel = webService.getCoaches(App.isInternetOn());
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+
+           if (coachModel != null) {
+
+//               Toast.makeText(getApplicationContext(), coachModel[0].fName+"", Toast.LENGTH_LONG).show();
+
+               RecyclerCoach = findViewById(R.id.RecyclerCoach);
+               LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(getApplicationContext());
+               mLinearLayoutManagerVertical.setOrientation(LinearLayoutManager.VERTICAL);
+               RecyclerCoach.setLayoutManager(mLinearLayoutManagerVertical);
+
+               setUpRecyclerView();
+
+//                if (coachModel.Img != null)
+//                    if (!coachModel.Img.equals("") && !coachModel.Img.equals("null"))
+//                        //Glide.with(CoachProfileActivity.this).load(App.imgAddr + coachModel.Img).asBitmap().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imgCoach);
+////                txtCoachName.setText(coachModel.fName + " " + coachModel.lName);
+////                ClassLevels classLevels = new ClassLevels();
+////                txtCoachLevel.setText(classLevels.getCoachLevelName(coachModel.idCurrentPlan));
+////                txtCoachRate.setText(coachModel.Rate + "");
+////                txtLikeCount.setText(coachModel.like + "");
+////                rating.setRating((float) coachModel.Rate);
+//
+        } else {
+           }
+
+        }
+
+    }
+
 }
+
+
+

@@ -93,7 +93,7 @@ public class gymsFragment extends Fragment {
         @Override
         protected Void doInBackground(Object... params) {
 
-            list = webService.getCoachGyms(App.isInternetOn(), idCoach);
+//            list = webService.getCoachGyms(App.isInternetOn(), idCoach);
 
             return null;
         }

@@ -409,7 +409,7 @@ public class educationFragment extends Fragment implements
         @Override
         protected Void doInBackground(Object... params) {
 
-            resultAdd = webService.AddCoachEdu(App.isInternetOn(), model);
+//            resultAdd = webService.AddCoachEdu(App.isInternetOn(), model);
 
             return null;
         }
@@ -464,7 +464,7 @@ public class educationFragment extends Fragment implements
         @Override
         protected Void doInBackground(Object... params) {
 
-            fileResult = webService.uploadFile(App.isInternetOn(), selectedFilePath, selectedImgName);
+//            fileResult = webService.uploadFile(App.isInternetOn(), selectedFilePath, selectedImgName);
 
             return null;
         }
@@ -506,9 +506,11 @@ public class educationFragment extends Fragment implements
         @Override
         protected Void doInBackground(Object... params) {
 
+            int j = 0;
             if (resultAdd != null)
                 if (Integer.parseInt(resultAdd) > 0)
-                    deleteResult = webService.deleteImgDetails(App.isInternetOn(), Integer.parseInt(resultAdd));
+                    j = 0;
+//                    deleteResult = webService.deleteImgDetails(App.isInternetOn(), Integer.parseInt(resultAdd));
 
             return null;
         }
