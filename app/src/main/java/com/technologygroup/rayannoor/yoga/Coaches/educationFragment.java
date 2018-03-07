@@ -409,7 +409,7 @@ public class educationFragment extends Fragment implements
         @Override
         protected Void doInBackground(Object... params) {
 
-//            resultAdd = webService.AddCoachEdu(App.isInternetOn(), model);
+            //resultAdd = webService.AddCoachEdu(App.isInternetOn(), model);
 
             return null;
         }
@@ -509,7 +509,7 @@ public class educationFragment extends Fragment implements
             int j = 0;
             if (resultAdd != null)
                 if (Integer.parseInt(resultAdd) > 0)
-                    j = 0;
+                    j = 1;
 //                    deleteResult = webService.deleteImgDetails(App.isInternetOn(), Integer.parseInt(resultAdd));
 
             return null;

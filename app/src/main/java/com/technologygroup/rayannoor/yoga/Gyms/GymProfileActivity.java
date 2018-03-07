@@ -11,5 +11,10 @@ public class GymProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gym_profile);
+
+        int id = getIntent().getIntExtra("id", 1);
+        String Img = getIntent().getStringExtra("Img");
+        int like = getIntent().getIntExtra("like",0);
+        double Rate = getIntent().getDoubleExtra("Rate", 0);
     }
 }

@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.technologygroup.rayannoor.yoga.Gyms.GymsListActivity;
+import com.technologygroup.rayannoor.yoga.Models.CoachModel;
 import com.technologygroup.rayannoor.yoga.adapters.GymListAdapter;
 import com.technologygroup.rayannoor.yoga.adapters.commentsAdapter;
 
@@ -45,7 +46,7 @@ public class CommentsActivity extends AppCompatActivity {
     private void setUpRecyclerView(){
         commentsAdapter adapter = new commentsAdapter(CommentsActivity.this);
         Recycler.setAdapter(adapter);
-
+        
         LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(getApplicationContext());
         mLinearLayoutManagerVertical.setOrientation(LinearLayoutManager.VERTICAL);
         Recycler.setLayoutManager(mLinearLayoutManagerVertical);

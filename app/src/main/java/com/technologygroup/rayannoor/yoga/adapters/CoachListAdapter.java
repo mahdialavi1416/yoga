@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.technologygroup.rayannoor.yoga.Coaches.CoachDetailsActivity;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachProfileActivity;
@@ -41,29 +42,52 @@ public class CoachListAdapter extends RecyclerView.Adapter<CoachListAdapter.myVi
     public myViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.item_coach_list, parent, false);
         myViewHolder holder = new myViewHolder(view);
+        holder.txtCoachName.setText("me");
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(myViewHolder holder, int position) {
+    public void onBindViewHolder(final myViewHolder holder, int position) {
+
+        //if (models[position].idState == stateNumber && models[position].idCity == cityNumber)
+        holder.lName = models[position].lName;
+        holder.Email = models[position].Email;
+        holder.fName = models[position].fName;
+        holder.id = models[position].id;
+        holder.idCity = models[position].idCity;
+        holder.Img = models[position].Img;
+        holder.Instagram = models[position].Instagram;
+        holder.Mobile = models[position].Mobile;
+        holder.idCurrentPlan = models[position].idCurrentPlan;
+        holder.lastUpdate = models[position].lastUpdate;
+        holder.like = models[position].like;
+        holder.natCode = models[position].natCode;
+        holder.Telegram = models[position].Telegram;
+        holder.Rate = models[position].Rate;
 
 
-//        holder.txtCoachName.setText("Salaam");
-//        if (position % 2 == 0)
-//            holder.imgCoach.setImageResource(R.mipmap.ic_woman);
-//        if (models != null){
-//        try {
-        if (position < models.length)
-            holder.txtCoachName.setText(models[position].fName + " " + models[position].lName);
-//        }catch (Exception ex){ex.printStackTrace();}
-//        }
-
+                holder.txtCoachName.setText(models[position].fName + " " + models[position].lName);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 CoachListActivity activity = (CoachListActivity)context;
                 Intent intent = new Intent(activity , CoachDetailsActivity.class);
+//                Toast.makeText(view.getContext(), holder.lName+"", Toast.LENGTH_LONG).show();
+                intent.putExtra("fName", holder.fName);
+                intent.putExtra("Email", holder.Email);
+                intent.putExtra("Instagram", holder.Instagram);
+                intent.putExtra("lName", holder.lName);
+                intent.putExtra("Telegram", holder.Telegram);
+                intent.putExtra("Img", holder.Img);
+                intent.putExtra("id", holder.id);
+                intent.putExtra("idCity", holder.idCity);
+                intent.putExtra("idCurrentPlan", holder.idCurrentPlan);
+                intent.putExtra("like", holder.like);
+                intent.putExtra("lastUpdate", holder.lastUpdate);
+                intent.putExtra("Mobile", holder.Mobile);
+                intent.putExtra("natCode", holder.natCode);
+                intent.putExtra("Rate", holder.Rate);
                 context.startActivity(intent);
             }
         });
@@ -79,25 +103,26 @@ public class CoachListAdapter extends RecyclerView.Adapter<CoachListAdapter.myVi
 
         private TextView txtCoachName;
         private ImageView imgCoach;
+        private String Email;
+        private String fName;
+        private String Instagram;
+        private String lName;
+        private String Telegram;
+        private String Img;
+        private int id;
+        private int idCity;
+        private int idCurrentPlan;
+        private int like;
+        private String lastUpdate;
+        private String Mobile;
+        private String natCode;
+        private double Rate;
 
 
         myViewHolder(View itemView) {
             super(itemView);
             txtCoachName = (TextView) itemView.findViewById(R.id.txtCoachName);
             imgCoach = (ImageView) itemView.findViewById(R.id.imgCoach);
-
-
-//            txtCoachName.setText("this is real");
         }
-    }
-
-    public void changeValues(String coachName/*, String coachImg*/, View itemView){
-        TextView txtCoachName;
-        ImageView imgCoach;
-
-        txtCoachName = (TextView) itemView.findViewById(R.id.txtCoachName);
-        imgCoach = (ImageView) itemView.findViewById(R.id.imgCoach);
-
-        txtCoachName.setText(coachName);
     }
 }

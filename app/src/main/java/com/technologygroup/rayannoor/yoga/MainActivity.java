@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, GymsListActivity.class);
+                intent.putExtra("stateNumber", stateNumber);
+                intent.putExtra("cityNumber", cityNumber);
                 startActivity(intent);
             }
         });

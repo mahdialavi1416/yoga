@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.technologygroup.rayannoor.yoga.Classes.App;
 import com.technologygroup.rayannoor.yoga.Models.CoachEduModel;
+import com.technologygroup.rayannoor.yoga.Models.CoachGymsModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachHonorModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachResumeModel;
@@ -326,6 +327,45 @@ public class WebService {
                         model[i].Img           = Object.getString("Img");
                         //list.add(model);
 
+                    }
+                    return model;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+            return null;
+        } else
+            return null;
+    }
+
+    public CoachGymsModel[] getGyms(boolean isInternetAvailable) {
+
+        if (isInternetAvailable) {
+
+            String response = connectToServer(App.apiAddr + "gym/selectlist", "GET");
+            Log.i("LOG", response + "");
+
+            if (response != null) {
+
+                //List<CoachModel> list = new ArrayList<>();
+                CoachGymsModel model[];
+
+                try {
+
+                    JSONArray Array = new JSONArray(response);
+                    model = new CoachGymsModel[Array.length()];
+
+                    for (int i = 0; i < Array.length(); i++) {
+
+                        JSONObject Object = Array.getJSONObject(i);
+                        model[i] = new CoachGymsModel();
+
+                        model[i].id            = Object.getInt("id");
+                        model[i].like          = Object.getInt("like");
+                        model[i].Rate          = Object.getDouble("Rate");
+//                        model[i].Img           = Object.getString("Img");
+                        model[i].Name = "default";
                     }
                     return model;
                 } catch (JSONException e) {
