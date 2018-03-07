@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.technologygroup.rayannoor.yoga.Classes.App;
 import com.technologygroup.rayannoor.yoga.Models.CoachEduModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachGymsModel;
@@ -30,7 +31,7 @@ import java.util.List;
 public class gymsFragment extends Fragment {
 
 
-    private RecyclerView Recycler;
+    private ShimmerRecyclerView Recycler;
     LinearLayout lytMain, lytDisconnect, lytEmpty;
     private SharedPreferences prefs;
     private int idCoach;

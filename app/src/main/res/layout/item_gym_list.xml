@@ -2,78 +2,100 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
+    android:gravity="right|center_vertical"
+    android:background="@drawable/list_border"
     android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:padding="15dp"
-        android:gravity="right|center_vertical"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="right"
+        android:layout_marginRight="10dp"
+        android:paddingTop="5dp"
         android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <TextView
             android:layout_width="match_parent"
+            android:text="باشگاه ورزشی کیمیا تبریز"
+            android:textSize="14sp"
+            android:textColor="@color/lightBlack"
+            android:id="@+id/txtGymName"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:gravity="right|center_vertical"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:text="نام باشگاه"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"
-                android:textSize="16sp"
-                android:layout_alignParentRight="true"
-                android:id="@+id/txtCoachName"
+                android:layout_width="match_parent"
+                android:text="تبریز- زعفرانیه- کوی شبنم- 10 متری 49 غربی- پلاک 11- طبقه سوم- منزل شوقی فر"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_marginRight="5dp"
+                android:id="@+id/txtGymAddress"
                 android:layout_height="wrap_content" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentBottom="true"
-                android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="15dp"
+                android:src="@drawable/ic_address"
+                android:layout_height="15dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:text="3.5"
-                    android:id="@+id/txtGymRate"
-                    android:layout_marginLeft="15dp"
-                    android:layout_height="wrap_content" />
+        </LinearLayout>
 
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_marginLeft="40dp"
-                    android:src="@drawable/ic_like"
-                    android:layout_height="15dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="8dp"
+            android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:text="25"
-                    android:id="@+id/txtGymLikeCount"
-                    android:layout_marginLeft="8dp"
-                    android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_width="15dp"
+                android:id="@+id/imgStar1"
+                android:visibility="visible"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_star"
+                android:layout_height="15dp" />
 
+            <ImageView
+                android:layout_width="15dp"
+                android:id="@+id/imgStar2"
+                android:visibility="visible"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_star"
+                android:layout_height="15dp" />
 
-            </LinearLayout>
+            <ImageView
+                android:layout_width="15dp"
+                android:id="@+id/imgStar3"
+                android:visibility="visible"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_star"
+                android:layout_height="15dp" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
-        <ImageView
-            android:layout_width="45dp"
-            android:id="@+id/imgCoach"
-            android:src="@drawable/ic_gym"
-            android:layout_height="45dp" />
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:background="#dadada"
-        android:layout_marginRight="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_height="0.5dp"/>
+    <ImageView
+        android:layout_width="105dp"
+        android:id="@+id/imgGym"
+        android:scaleType="fitXY"
+        android:src="@drawable/gym"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

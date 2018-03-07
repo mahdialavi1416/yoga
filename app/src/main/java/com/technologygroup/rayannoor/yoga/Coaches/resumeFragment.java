@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 
+import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.technologygroup.rayannoor.yoga.R;
 import com.technologygroup.rayannoor.yoga.adapters.CoachCertificateAdapter;
 import com.technologygroup.rayannoor.yoga.adapters.CoachResumeAdapter;
@@ -21,7 +22,7 @@ import com.technologygroup.rayannoor.yoga.adapters.CoachResumeAdapter;
  */
 public class resumeFragment extends Fragment {
 
-    private RecyclerView Recycler;
+    private ShimmerRecyclerView Recycler;
     private FloatingActionButton floatAction;
     private Dialog dialog;
 

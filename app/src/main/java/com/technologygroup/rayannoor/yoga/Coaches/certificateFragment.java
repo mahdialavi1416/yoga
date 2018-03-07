@@ -14,6 +14,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.technologygroup.rayannoor.yoga.R;
 import com.technologygroup.rayannoor.yoga.adapters.CoachCertificateAdapter;
 import com.technologygroup.rayannoor.yoga.adapters.CoachGymsAdapter;
@@ -23,7 +24,7 @@ import com.technologygroup.rayannoor.yoga.adapters.CoachGymsAdapter;
  */
 public class certificateFragment extends Fragment {
 
-    private RecyclerView Recycler;
+    private ShimmerRecyclerView Recycler;
     private FloatingActionButton floatAction;
     private Dialog dialog;
 

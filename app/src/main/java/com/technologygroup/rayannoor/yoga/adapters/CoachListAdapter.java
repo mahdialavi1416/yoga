@@ -102,7 +102,6 @@ public class CoachListAdapter extends RecyclerView.Adapter<CoachListAdapter.myVi
     class myViewHolder extends RecyclerView.ViewHolder {
 
         private TextView txtCoachName;
-        private ImageView imgCoach;
         private String Email;
         private String fName;
         private String Instagram;
@@ -117,12 +116,19 @@ public class CoachListAdapter extends RecyclerView.Adapter<CoachListAdapter.myVi
         private String Mobile;
         private String natCode;
         private double Rate;
+        private ImageView imgCoach, imgStar1, imgStar2;
 
 
         myViewHolder(View itemView) {
             super(itemView);
             txtCoachName = (TextView) itemView.findViewById(R.id.txtCoachName);
             imgCoach = (ImageView) itemView.findViewById(R.id.imgCoach);
+            imgStar1 = (ImageView) itemView.findViewById(R.id.imgStar1);
+            imgStar2 = (ImageView) itemView.findViewById(R.id.imgStar2);
+
+
+
+//            txtCoachName.setText("this is real");
         }
     }
 }

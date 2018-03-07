@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.technologygroup.rayannoor.yoga.Classes.App;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachListActivity;
 import com.technologygroup.rayannoor.yoga.Models.CoachGymsModel;
@@ -21,7 +22,7 @@ import com.technologygroup.rayannoor.yoga.adapters.GymListAdapter;
 public class GymsListActivity extends AppCompatActivity {
 
     private RelativeLayout btnBack;
-    private RecyclerView RecyclerGyms;
+    private ShimmerRecyclerView RecyclerGyms;
     private CoachGymsModel[] gymModel;
     private int stateNumber = 1;
     private int cityNumber = 1;
@@ -38,14 +39,14 @@ public class GymsListActivity extends AppCompatActivity {
 //        setUpRecyclerView();
     }
 
-    private void setUpRecyclerView(){
+   private void setUpRecyclerView(){
         GymListAdapter adapter = new GymListAdapter(GymsListActivity.this, gymModel);
         RecyclerGyms.setAdapter(adapter);
     }
 
     private void initView() {
         btnBack = (RelativeLayout) findViewById(R.id.btnBack);
-        RecyclerGyms = (RecyclerView) findViewById(R.id.RecyclerGyms);
+        RecyclerGyms = (ShimmerRecyclerView) findViewById(R.id.RecyclerGyms);
 
         stateNumber = getIntent().getIntExtra("stateNumber", 1);
         cityNumber = getIntent().getIntExtra("cityNumber", 1);
@@ -60,6 +61,7 @@ public class GymsListActivity extends AppCompatActivity {
         protected void onPreExecute() {
             webService = new WebService();
             super.onPreExecute();
+            RecyclerGyms.showShimmerAdapter();
         }
 
         @Override
@@ -71,6 +73,8 @@ public class GymsListActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+
+            RecyclerGyms.clearAnimation();
 
             if (gymModel != null) {
 

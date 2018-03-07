@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.technologygroup.rayannoor.yoga.Gyms.GymProfileActivity;
 import com.technologygroup.rayannoor.yoga.Gyms.GymsListActivity;
 import com.technologygroup.rayannoor.yoga.Models.CoachGymsModel;
@@ -51,6 +52,7 @@ public class GymListAdapter extends RecyclerView.Adapter<GymListAdapter.myViewHo
         holder.like = models[position].like;
         holder.Rate = models[position].Rate;
 
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,6 +76,10 @@ public class GymListAdapter extends RecyclerView.Adapter<GymListAdapter.myViewHo
     class myViewHolder extends RecyclerView.ViewHolder {
 
         private TextView txtGymName;
+        private TextView txtGymAddress;
+        private ImageView imgStar1;
+        private ImageView imgStar2;
+        private ImageView imgStar3;
         private ImageView imgGym;
 
         public int id;
@@ -85,8 +91,12 @@ public class GymListAdapter extends RecyclerView.Adapter<GymListAdapter.myViewHo
 
         myViewHolder(View itemView) {
             super(itemView);
+            txtGymName = (TextView) itemView.findViewById(R.id.txtGymName);
+            txtGymAddress = (TextView) itemView.findViewById(R.id.txtGymAddress);
+            imgStar1 = (ImageView) itemView.findViewById(R.id.imgStar1);
+            imgStar2 = (ImageView) itemView.findViewById(R.id.imgStar2);
+            imgStar3 = (ImageView) itemView.findViewById(R.id.imgStar3);
 //            Toast.makeText(itemView.getContext(), "Salaam", Toast.LENGTH_LONG).show();
-            txtGymName = (TextView) itemView.findViewById(R.id.txtCoachName);
             imgGym = (ImageView) itemView.findViewById(R.id.imgGym);
         }
     }

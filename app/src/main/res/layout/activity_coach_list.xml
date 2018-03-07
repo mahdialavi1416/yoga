@@ -61,12 +61,12 @@
         android:id="@+id/lytMain"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.RecyclerView
+        <com.cooltechworks.views.shimmer.ShimmerRecyclerView
             android:layout_width="match_parent"
             android:id="@+id/RecyclerCoach"
             android:layout_height="wrap_content">
 
-        </android.support.v7.widget.RecyclerView>
+        </com.cooltechworks.views.shimmer.ShimmerRecyclerView>
 
     </LinearLayout>
 

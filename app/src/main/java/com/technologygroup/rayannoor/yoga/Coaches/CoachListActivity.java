@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.technologygroup.rayannoor.yoga.Classes.App;
 import com.technologygroup.rayannoor.yoga.Classes.ClassLevels;
 import com.technologygroup.rayannoor.yoga.Models.CoachModel;
@@ -28,7 +29,7 @@ public class CoachListActivity extends AppCompatActivity {
 
     private TextView txtTitle;
     private RelativeLayout btnBack;
-    private RecyclerView RecyclerCoach;
+    private ShimmerRecyclerView RecyclerCoach;
     private SharedPreferences prefs;
 //    private int idCoach;
     private CoachModel[] coachModel;
@@ -53,6 +54,7 @@ public class CoachListActivity extends AppCompatActivity {
     private void initView() {
         txtTitle = (TextView) findViewById(R.id.txtTitle);
         btnBack = (RelativeLayout) findViewById(R.id.btnBack);
+        RecyclerCoach = findViewById(R.id.RecyclerCoach);
 
         stateNumber = getIntent().getIntExtra("stateNumber", 1);
         cityNumber = getIntent().getIntExtra("cityNumber", 1);
@@ -69,6 +71,7 @@ public class CoachListActivity extends AppCompatActivity {
         protected void onPreExecute() {
             webService = new WebService();
             super.onPreExecute();
+            RecyclerCoach.showShimmerAdapter();
         }
 
         @Override
@@ -81,11 +84,13 @@ public class CoachListActivity extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
+            RecyclerCoach.clearAnimation();
+
            if (coachModel != null) {
 
 //               Toast.makeText(getApplicationContext(), coachModel[0].fName+"", Toast.LENGTH_LONG).show();
 
-               RecyclerCoach = findViewById(R.id.RecyclerCoach);
+
                LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(getApplicationContext());
                mLinearLayoutManagerVertical.setOrientation(LinearLayoutManager.VERTICAL);
                RecyclerCoach.setLayoutManager(mLinearLayoutManagerVertical);

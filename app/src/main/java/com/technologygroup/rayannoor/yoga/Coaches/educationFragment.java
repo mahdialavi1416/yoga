@@ -32,6 +32,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.mohamadamin.persianmaterialdatetimepicker.date.DatePickerDialog;
 import com.mohamadamin.persianmaterialdatetimepicker.date.YearPickerView;
 import com.mohamadamin.persianmaterialdatetimepicker.utils.PersianCalendar;
@@ -56,7 +57,7 @@ public class educationFragment extends Fragment implements
 
 
     LinearLayout lytMain, lytDisconnect, lytEmpty;
-    private RecyclerView Recycler;
+    private ShimmerRecyclerView Recycler;
     private FloatingActionButton floatAction;
     private Dialog dialog;
 
@@ -332,7 +333,7 @@ public class educationFragment extends Fragment implements
             super.onPreExecute();
             webService = new WebService();
             list = new ArrayList<>();
-
+            Recycler.showShimmerAdapter();
         }
 
         @Override
@@ -347,6 +348,7 @@ public class educationFragment extends Fragment implements
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
+            Recycler.clearAnimation();
 
             if (list != null) {
 
