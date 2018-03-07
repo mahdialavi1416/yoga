@@ -34,4 +34,5 @@ dependencies {
     compile 'net.cachapa.expandablelayout:expandablelayout:2.9.1'
     compile 'com.mohamadamin:persianmaterialdatetimepicker:1.2.1'
     implementation 'com.github.sharish:ShimmerRecyclerView:v1.2'
+    compile 'br.com.simplepass:loading-button-android:1.12.1'
 }
