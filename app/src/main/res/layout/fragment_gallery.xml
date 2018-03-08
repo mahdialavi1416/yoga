@@ -1,13 +1,23 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.technologygroup.rayannoor.yoga.Gyms.galleryFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.technologygroup.rayannoor.yoga.Gyms.GymServiceActivity">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.cooltechworks.views.shimmer.ShimmerRecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/recycler"
+        android:layout_height="match_parent"></com.cooltechworks.views.shimmer.ShimmerRecyclerView>
 
-</FrameLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="15dp"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/green"
+        android:id="@+id/floactAction"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
