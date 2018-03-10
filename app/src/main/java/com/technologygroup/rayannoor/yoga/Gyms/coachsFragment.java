@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
@@ -29,6 +30,10 @@ public class coachsFragment extends Fragment {
     private ShimmerRecyclerView recycler;
     private FloatingActionButton floactAction;
     private Dialog dialog;
+    private LinearLayout lytMain;
+    private LinearLayout lytDisconnect;
+    private LinearLayout lytEmpty;
+
 
     public coachsFragment() {
         // Required empty public constructor
@@ -40,8 +45,10 @@ public class coachsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_coachs, container, false);
-
-        recycler = (ShimmerRecyclerView) view.findViewById(R.id.recycler);
+        lytMain = (LinearLayout) view.findViewById(R.id.lytMain);
+        lytDisconnect = (LinearLayout) view.findViewById(R.id.lytDisconnect);
+        lytEmpty = (LinearLayout) view.findViewById(R.id.lytEmpty);
+        recycler = (ShimmerRecyclerView) view.findViewById(R.id.Recycler);
         floactAction = (FloatingActionButton) view.findViewById(R.id.floactAction);
 
         setUpRecyclerView();

@@ -8,10 +8,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -47,6 +50,8 @@ import com.technologygroup.rayannoor.yoga.adapters.CoachEducationAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton;
+
 import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
 
 /**
@@ -74,8 +79,8 @@ public class educationFragment extends Fragment implements
     // dialog add content
     EditText edtTitle, edtUniversity, edtDate;
     TextView txtNoImage;
-    ImageView imgCertificate, imgSelectPicture;
-    Button btn_cancel, btnOk;
+    ImageView imgCertificate, imgSelectPicture, imgClose;
+    CircularProgressButton btnOk;
 
 
     //relates to date and time picker
@@ -161,7 +166,7 @@ public class educationFragment extends Fragment implements
         imgCertificate = dialog.findViewById(R.id.imgCertificate);
         imgSelectPicture = dialog.findViewById(R.id.imgSelectPicture);
         btnOk = dialog.findViewById(R.id.btnOk);
-        btn_cancel = dialog.findViewById(R.id.btn_cancel);
+        imgClose = dialog.findViewById(R.id.imgClose);
 
 
         edtDate.setOnClickListener(new View.OnClickListener() {
@@ -185,10 +190,10 @@ public class educationFragment extends Fragment implements
 
         imgSelectPicture.setOnClickListener(imgSelectPicture_click);
 
-        btn_cancel.setOnClickListener(new View.OnClickListener() {
+        imgClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.cancel();
+                dialog.dismiss();
             }
         });
 
@@ -390,22 +395,15 @@ public class educationFragment extends Fragment implements
         protected void onPreExecute() {
             super.onPreExecute();
             webService = new WebService();
+            btnOk.startAnimation();
 
-//            dialog2 = new Dialog(getContext());
-//            dialog2.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//            dialog2.setContentView(R.layout.dialog_waiting);
-//            dialog2.setCancelable(true);
-//            dialog2.setCanceledOnTouchOutside(true);
-//            dialog2.show();
 
             model = new CoachEduModel();
-
             model.idCoach = idCoach;
             model.Name = edtTitle.getText().toString();
             model.gettingPlace = edtUniversity.getText().toString();
             model.Date = edtDate.getText().toString();
             model.Img = selectedImgName;
-
         }
 
         @Override
@@ -420,7 +418,22 @@ public class educationFragment extends Fragment implements
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-//            dialog2.dismiss();
+
+            // بعد از اتمام عملیات کدهای زیر اجرا شوند
+                Bitmap icon = BitmapFactory.decodeResource(getResources(),
+                        R.drawable.ic_ok);
+                btnOk.doneLoadingAnimation(R.color.green, icon); // finish loading
+
+                // بستن دیالوگ حتما با تاخیر انجام شود
+                Handler handler1 = new Handler();
+                handler1.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        dialog.dismiss();
+                    }
+                }, 1000);
+
+
 
             if (resultAdd != null) {
 

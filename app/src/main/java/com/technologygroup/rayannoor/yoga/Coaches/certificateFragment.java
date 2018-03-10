@@ -81,29 +81,6 @@ public class certificateFragment extends Fragment {
         final CircularProgressButton btnOk = dialog.findViewById(R.id.btnOk);
 
 
-
-        btnOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //circular button start animation
-                btnOk.startAnimation();
-
-               // بعد از اتمام عملیات کدهای زیر اجرا شوند
-//                Bitmap icon = BitmapFactory.decodeResource(getResources(),
-//                        R.drawable.ic_ok);
-//                btnOk.doneLoadingAnimation(R.color.green, icon); // finish loading
-//
-//                // بستن دیالوگ حتما با تاخیر انجام شود
-//                Handler handler1 = new Handler();
-//                handler1.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        dialog.dismiss();
-//                    }
-//                }, 1000);
-            }
-        });
-
         dialog.setCancelable(true);
         dialog.setCanceledOnTouchOutside(true);
         dialog.show();
