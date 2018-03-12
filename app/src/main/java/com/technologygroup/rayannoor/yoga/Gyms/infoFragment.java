@@ -19,7 +19,6 @@ import com.technologygroup.rayannoor.yoga.R;
  */
 public class infoFragment extends Fragment {
 
-    ObjectAnimator rotation;
     private ImageView imgInfo;
 
     public infoFragment() {
@@ -33,21 +32,7 @@ public class infoFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_info, container, false);
         imgInfo = view.findViewById(R.id.imgInfo);
-//        final ImageView test = view.findViewById(R.id.test);
-//        Button btn = view.findViewById(R.id.btn);
-//
-//        rotation = ObjectAnimator.ofFloat(test, "rotationY", 0, 360);
-//        rotation.setDuration(3000);
-//        rotation.setRepeatCount(Animation.INFINITE);
-//        rotation.start();
-//
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                rotation.clone();
-//                test.setVisibility(View.GONE);
-//            }
-//        });
+
 
 
 
