@@ -45,8 +45,8 @@
         <activity android:name=".IntroPage.introActivity" android:theme="@style/CoachProfile">
 
         </activity>
-        <activity android:name=".LoginActivity" android:theme="@style/CoachProfile" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity" android:theme="@style/blackStatusBar" />
+        <activity android:name=".RegisterActivity" android:theme="@style/blackStatusBar" />
         <activity android:name=".Coaches.CoachPlanActivity" />
         <activity android:name=".CommentsActivity" />
         <activity android:name=".Gyms.GymServiceActivity"></activity>

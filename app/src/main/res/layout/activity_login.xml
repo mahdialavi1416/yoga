@@ -23,13 +23,13 @@
         
         <ImageView
             android:layout_width="60dp"
-            android:src="@drawable/ic_add"
+            android:src="@drawable/ic_logo_white"
             android:layout_height="60dp" />
         
         <TextView
             android:layout_width="wrap_content"
             android:layout_marginTop="10dp"
-            android:textColor="@color/white"
+            android:textColor="@color/lightBlack"
             android:textStyle="bold"
             style="@style/AudioFileInfoOverlayText2"
             android:textSize="17sp"
@@ -40,15 +40,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="30dp"
-            android:gravity="center_vertical|right"
-            android:orientation="horizontal"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp">
+            android:layout_marginTop="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <Spinner
                 android:id="@+id/LoginSpinner"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:textAlignment="gravity"
                 android:gravity="right|center_vertical"
@@ -58,7 +57,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
                 android:text="نوع کاربری :"
                 android:textColor="@color/lightBlack" />
 
@@ -69,13 +67,13 @@
             android:id="@+id/edtUserName"
             android:textCursorDrawable="@drawable/cursor_color"
             android:hint="نام کاربری"
-            android:layout_marginTop="10dp"
-            android:textColorHint="@color/colorPrimary"
-            android:textColor="@color/black"
-            android:background="@drawable/edit_text_back_login"
-            android:padding="5dp"
-            android:maxLines="1"
-            android:textSize="15sp"
+            android:layout_marginTop="15dp"
+            android:textColorHint="@color/lightBlack"
+            android:textColor="@color/lightBlack"
+            android:background="@drawable/edit_text_transparent"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textSize="14sp"
             android:gravity="right|center_vertical"
             android:layout_height="wrap_content" />
 
@@ -85,27 +83,56 @@
             android:textCursorDrawable="@drawable/cursor_color"
             android:hint="کلمه عبور"
             android:layout_marginTop="10dp"
-            android:textColorHint="@color/colorPrimary"
-            android:textColor="@color/black"
-            android:background="@drawable/edit_text_back_login"
-            android:padding="5dp"
-            android:maxLines="1"
-            android:textSize="15sp"
+            android:textColorHint="@color/lightBlack"
+            android:textColor="@color/lightBlack"
+            android:background="@drawable/edit_text_transparent"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textSize="14sp"
             android:gravity="right|center_vertical"
             android:layout_height="wrap_content" />
 
-        <Button
+        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/profile_border"
-            android:paddingLeft="15dp"
+            android:background="@drawable/button_back_white"
+            android:paddingLeft="25dp"
             android:layout_marginTop="30dp"
-            android:paddingRight="15dp"
+            android:paddingRight="25dp"
             android:text="ورود"
             android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp" />
+            android:textColor="@color/lightBlack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/txtForgetPass"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"
+            android:padding="10dp"
+            android:textColor="@color/lightBlack"
+            android:text="رمز عبورم رو فراموش کردم"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/txtRegister"
+                android:text="حساب کاربری نداری؟ ثبت نام کن"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/lightBlack"
+                android:paddingTop="10dp"
+                android:paddingBottom="15dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

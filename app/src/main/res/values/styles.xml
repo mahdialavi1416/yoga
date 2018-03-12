@@ -60,6 +60,9 @@
         <item name="android:shadowRadius">5</item>
     </style>
 
+    <style name="blackStatusBar" parent="AppTheme">
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/black</item>
+    </style>
 
 
 </resources>

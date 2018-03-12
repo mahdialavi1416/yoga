@@ -15,14 +15,14 @@
 
 
     //login page
-    <color name="color1">#ebdf08</color>
-    <color name="color2">#cfc514</color>
-    <color name="color3">#ceb61a</color>
-    <color name="color4">#cea71a</color>
-    <color name="color5">#be9327</color>
-    <color name="color6">#bd8c32</color>
-    <color name="color7">#c28c41</color>
-    <color name="color8">#c39758</color>
+    <color name="color1">#FFF6F57B</color>
+    <color name="color2">#fffc00</color>
+    <color name="color3">#F3F9A7</color>
+    <color name="color4">#CAC531</color>
+    <color name="color5">#DCE35B</color>
+    <color name="color6">#45B649</color>
+    <color name="color7">#56ab2f</color>
+    <color name="color8">#a8e063</color>
 
 
 </resources>
