@@ -16,4 +16,8 @@
 
     </string>
 
+    <string name="txtLoading">
+        در حال انجام عملیات...
+    </string>
+
 </resources>

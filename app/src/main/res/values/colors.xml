@@ -11,4 +11,18 @@
     <color name="green">#298c1e</color>
     <color name="gray">#d4d4d4</color>
     <color name="imageBack">#3c404040</color>
+
+
+
+    //login page
+    <color name="color1">#ebdf08</color>
+    <color name="color2">#cfc514</color>
+    <color name="color3">#ceb61a</color>
+    <color name="color4">#cea71a</color>
+    <color name="color5">#be9327</color>
+    <color name="color6">#bd8c32</color>
+    <color name="color7">#c28c41</color>
+    <color name="color8">#c39758</color>
+
+
 </resources>

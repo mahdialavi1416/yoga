@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:id="@+id/lytLogin"
     tools:context="com.technologygroup.rayannoor.yoga.LoginActivity">
 
    <LinearLayout
@@ -14,15 +15,32 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_weight="0.5"
+        android:layout_weight="0.4"
         android:orientation="vertical"
-        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="45dp"
         android:layout_height="match_parent">
+        
+        <ImageView
+            android:layout_width="60dp"
+            android:src="@drawable/ic_add"
+            android:layout_height="60dp" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            style="@style/AudioFileInfoOverlayText2"
+            android:textSize="17sp"
+            android:text="یوگاپ، اپلیکیشن جامع یوگای ایران"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:layout_marginTop="30dp"
             android:gravity="center_vertical|right"
             android:orientation="horizontal"
             android:paddingLeft="20dp"

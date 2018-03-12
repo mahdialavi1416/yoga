@@ -35,4 +35,6 @@ dependencies {
     compile 'com.mohamadamin:persianmaterialdatetimepicker:1.2.1'
     implementation 'com.github.sharish:ShimmerRecyclerView:v1.2'
     compile 'br.com.simplepass:loading-button-android:1.12.1'
+    compile 'fr.avianey.com.viewpagerindicator:library:2.4.1.1@aar'
+    compile 'com.rom4ek:arcnavigationview:1.0.3'
 }

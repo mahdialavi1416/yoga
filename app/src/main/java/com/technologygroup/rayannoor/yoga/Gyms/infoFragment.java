@@ -20,6 +20,7 @@ import com.technologygroup.rayannoor.yoga.R;
 public class infoFragment extends Fragment {
 
     ObjectAnimator rotation;
+    private ImageView imgInfo;
 
     public infoFragment() {
         // Required empty public constructor
@@ -31,6 +32,7 @@ public class infoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_info, container, false);
+        imgInfo = view.findViewById(R.id.imgInfo);
 //        final ImageView test = view.findViewById(R.id.test);
 //        Button btn = view.findViewById(R.id.btn);
 //
@@ -46,6 +48,7 @@ public class infoFragment extends Fragment {
 //                test.setVisibility(View.GONE);
 //            }
 //        });
+
 
 
 
