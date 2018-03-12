@@ -88,6 +88,8 @@ public class educationFragment extends Fragment implements
             DATEPICKER = "DatePickerDialog", MULTIDATEPICKER = "MultiDatePickerDialog";
     String date;
 
+    CoachEducationAdapter adapter;
+
 
     public educationFragment() {
         // Required empty public constructor
@@ -143,7 +145,7 @@ public class educationFragment extends Fragment implements
     }
 
     private void setUpRecyclerView(List<CoachEduModel> list) {
-        CoachEducationAdapter adapter = new CoachEducationAdapter(getActivity(), list);
+        adapter = new CoachEducationAdapter(getActivity(), list, idCoach);
         Recycler.setAdapter(adapter);
 
         LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(getContext());
@@ -201,7 +203,7 @@ public class educationFragment extends Fragment implements
             @Override
             public void onClick(View v) {
 
-                if (!edtTitle.getText().toString().equals("") && !edtUniversity.getText().toString().equals("") && !edtDate.getText().toString().equals("")) {
+                if (!edtTitle.getText().toString().equals("") && !edtUniversity.getText().toString().equals("")&& !edtDate.getText().toString().equals("")) {
 
                     if (!selectedImgName.equals("")) {
 
@@ -284,6 +286,8 @@ public class educationFragment extends Fragment implements
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == PICK_FILE_REQUEST) {
                 if (data == null) {
@@ -399,6 +403,7 @@ public class educationFragment extends Fragment implements
 
 
             model = new CoachEduModel();
+            model.id = -1;
             model.idCoach = idCoach;
             model.Name = edtTitle.getText().toString();
             model.gettingPlace = edtUniversity.getText().toString();
@@ -409,7 +414,7 @@ public class educationFragment extends Fragment implements
         @Override
         protected Void doInBackground(Object... params) {
 
-            //resultAdd = webService.AddCoachEdu(App.isInternetOn(), model);
+            resultAdd = webService.AddCoachEdu(App.isInternetOn(), model);
 
             return null;
         }
@@ -419,37 +424,48 @@ public class educationFragment extends Fragment implements
             super.onPostExecute(aVoid);
 
 
-            // بعد از اتمام عملیات کدهای زیر اجرا شوند
-                Bitmap icon = BitmapFactory.decodeResource(getResources(),
-                        R.drawable.ic_ok);
-                btnOk.doneLoadingAnimation(R.color.green, icon); // finish loading
-
-                // بستن دیالوگ حتما با تاخیر انجام شود
-                Handler handler1 = new Handler();
-                handler1.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        dialog.dismiss();
-                    }
-                }, 1000);
-
-
-
             if (resultAdd != null) {
 
                 if (Integer.parseInt(resultAdd) > 0) {
                     CallBackFile callBackFile = new CallBackFile();
                     callBackFile.execute();
+
+                    model.id = Integer.parseInt(resultAdd);
+
+                    // بعد از اتمام عملیات کدهای زیر اجرا شوند
+                    Bitmap icon = BitmapFactory.decodeResource(getResources(),
+                            R.drawable.ic_ok);
+                    btnOk.doneLoadingAnimation(R.color.green, icon); // finish loading
+
+                    // بستن دیالوگ حتما با تاخیر انجام شود
+                    Handler handler1 = new Handler();
+                    handler1.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            dialog.dismiss();
+                        }
+                    }, 1000);
+
+
+                    list.add(model);
+                    setUpRecyclerView(list);
+
                 } else if (Integer.parseInt(resultAdd) == 0) {
-//                    dialog2.dismiss();
+
+                    btnOk.revertAnimation();
                     Toast.makeText(getContext(), "ارسال اطلاعات ناموفق است", Toast.LENGTH_LONG).show();
-                } else if (Integer.parseInt(resultAdd) == -1) {
-//                    dialog2.dismiss();
+
+                } else {
+
+                    btnOk.revertAnimation();
                     Toast.makeText(getContext(), "خطا در برقراری ارتباط", Toast.LENGTH_LONG).show();
+
                 }
             } else {
-//                dialog2.dismiss();
+
+                btnOk.revertAnimation();
                 Toast.makeText(getContext(), "خطا در برقراری ارتباط", Toast.LENGTH_LONG).show();
+
             }
         }
     }
@@ -479,7 +495,7 @@ public class educationFragment extends Fragment implements
         @Override
         protected Void doInBackground(Object... params) {
 
-//            fileResult = webService.uploadFile(App.isInternetOn(), selectedFilePath, selectedImgName);
+            fileResult = webService.uploadFile(App.isInternetOn(), selectedFilePath, selectedImgName);
 
             return null;
         }
@@ -495,12 +511,12 @@ public class educationFragment extends Fragment implements
 
             } else if (fileResult == 0) {
                 Toast.makeText(getContext(), "متاسفانه تصویر آپلود نشد", Toast.LENGTH_SHORT).show();
-                CallBackFileDelete callBackFileDelete = new CallBackFileDelete();
-                callBackFileDelete.execute();
+//                CallBackFileDelete callBackFileDelete = new CallBackFileDelete();
+//                callBackFileDelete.execute();
             } else {
                 Toast.makeText(getContext(), "متاسفانه تصویر آپلود نشد", Toast.LENGTH_SHORT).show();
-                CallBackFileDelete callBackFileDelete = new CallBackFileDelete();
-                callBackFileDelete.execute();
+//                CallBackFileDelete callBackFileDelete = new CallBackFileDelete();
+//                callBackFileDelete.execute();
             }
         }
     }
@@ -538,7 +554,6 @@ public class educationFragment extends Fragment implements
 
         }
     }
-
 
 
     @Override

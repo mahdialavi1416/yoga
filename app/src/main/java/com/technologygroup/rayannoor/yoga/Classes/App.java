@@ -13,7 +13,8 @@ public class App extends Application {
 
     // urls
     public static String apiAddr = "http://yuga.gsharing.ir/api/";
-    public static String imgAddr = "http://yuga.gsharing.ir/content/Images/";
+//    public static String apiAddr = "http://172.16.42.68/api/";
+    public static String imgAddr = "http://yuga.gsharing.ir/content/upload/Images/";
 
 
 

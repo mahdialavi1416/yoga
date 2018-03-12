@@ -88,13 +88,13 @@ public class gymsFragment extends Fragment {
             super.onPreExecute();
             webService = new WebService();
             list = new ArrayList<>();
-
+            Recycler.showShimmerAdapter();
         }
 
         @Override
         protected Void doInBackground(Object... params) {
 
-//            list = webService.getCoachGyms(App.isInternetOn(), idCoach);
+            list = webService.getCoachGyms(App.isInternetOn(), idCoach);
 
             return null;
         }
@@ -103,6 +103,7 @@ public class gymsFragment extends Fragment {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
+            Recycler.clearAnimation();
 
             if (list != null) {
 

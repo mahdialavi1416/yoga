@@ -1,18 +1,30 @@
 package com.technologygroup.rayannoor.yoga.Coaches;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.technologygroup.rayannoor.yoga.Classes.ClassDate;
 import com.technologygroup.rayannoor.yoga.FadePageTransformer;
 import com.technologygroup.rayannoor.yoga.R;
+import com.technologygroup.rayannoor.yoga.Services.FilePath;
+import com.technologygroup.rayannoor.yoga.adapters.CoachEducationAdapter;
 import com.technologygroup.rayannoor.yoga.adapters.CoachServicesPager;
+
+import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
 
 public class CoachServicesActivity extends AppCompatActivity {
 
@@ -20,6 +32,8 @@ public class CoachServicesActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager CoachPager;
     private Typeface typeface;
+
+    CoachEducationAdapter adapter;
 
     private int selectedTabIndex;
 
@@ -91,4 +105,20 @@ public class CoachServicesActivity extends AppCompatActivity {
         }
 
     }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 2) {
+
+            adapter = new CoachEducationAdapter(CoachServicesActivity.this);
+
+            adapter.onActivityResult(requestCode, resultCode, data);
+        }
+
+    }
+
+
 }
