@@ -139,6 +139,14 @@ public class MainActivity extends AppCompatActivity {
                 drawer_layout.closeDrawer(GravityCompat.END);
             }
         });
+
+        relativeMsg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, notificationActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initView() {
