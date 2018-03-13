@@ -46,7 +46,8 @@
             android:id="@+id/txtStartDate"
             android:textSize="11sp"
             android:text="تاریخ شروع : 1396/11/23"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="right"/>
 
         <ImageView
             android:layout_width="15dp"

@@ -1,12 +1,16 @@
 package com.technologygroup.rayannoor.yoga.Coaches;
 
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -70,7 +74,16 @@ public class CoachProfileActivity extends AppCompatActivity {
             webServiceCoachInfo.execute();
         } else {
             Toast.makeText(this, "مربی مورد نظر یافت نشد", Toast.LENGTH_LONG).show();
+            finish();
         }
+
+
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         imgEditCoachDetails.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -174,12 +187,30 @@ public class CoachProfileActivity extends AppCompatActivity {
     private class WebServiceCoachInfo extends AsyncTask<Object, Void, Void> {
 
         private WebService webService;
+        Dialog dialog;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
             webService = new WebService();
             coachModel = new CoachModel();
+
+
+            dialog = new Dialog(CoachProfileActivity.this);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.dialog_wait);
+            ImageView logo = dialog.findViewById(R.id.logo);
+
+            //logo 360 rotate
+            ObjectAnimator rotation = ObjectAnimator.ofFloat(logo, "rotationY", 0, 360);
+            rotation.setDuration(3000);
+            rotation.setRepeatCount(Animation.INFINITE);
+            rotation.start();
+
+            dialog.setCancelable(true);
+            dialog.setCanceledOnTouchOutside(true);
+            dialog.show();
+
 
         }
 
@@ -196,6 +227,7 @@ public class CoachProfileActivity extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
+            dialog.dismiss();
 
             if (coachModel != null) {
 
@@ -210,11 +242,9 @@ public class CoachProfileActivity extends AppCompatActivity {
                 rating.setRating((float) coachModel.Rate);
 
             } else {
-                //Toast.makeText(getApplicationContext(), "اتصال با سرور برقرار نشد", Toast.LENGTH_LONG).show();
 
-//                lytMain.setVisibility(View.GONE);
-//                lytDisconnect.setVisibility(View.VISIBLE);
-//                lytEmpty.setVisibility(View.GONE);
+                Toast.makeText(CoachProfileActivity.this, "مربی مورد نظر یافت نشد", Toast.LENGTH_LONG).show();
+                finish();
 
             }
 

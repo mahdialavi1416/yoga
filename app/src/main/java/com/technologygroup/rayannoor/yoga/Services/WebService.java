@@ -298,6 +298,19 @@ public class WebService {
             return null;
     }
 
+    public String editCoachInfo(boolean isInternetAvailable, CoachModel model) {
+
+        if (isInternetAvailable) {
+
+            String req = "{\"id\":" + model.id + ",\"idCity\":" + -1+ ",\"idCurrentPlan\":" + -1 + ",\"fName\":\"" + model.fName + "\",\"lName\":\"" + model.lName + "\",\"natCode\":" + model.natCode + ",\"like\":" + -1 + ",\"Rate\":" + -1 + ",\"rateCount\":" + -1 + ",\"Mobile\":" + model.Mobile + ",\"Telegram\": \"" + model.Telegram + "\",\"Email\": \"" + model.Email + "\",\"Instagram\": \"" + model.Instagram + "\",\"lastUpdate\":0,\"image\":\"" + model.Img + "\"}";
+            String response = connectToServerByJson(App.apiAddr + "coach/update", "POST", req);
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
+
     public List<CoachEduModel> getCoachEdu(boolean isInternetAvailable, int id) {
 
         if (isInternetAvailable) {
@@ -483,7 +496,14 @@ public class WebService {
 
         if (isInternetAvailable) {
 
-            String req = "";
+            String endDate;
+
+            if (model.endDate.equals(""))
+                endDate = "";
+            else
+                endDate = model.endDate.substring(0, 4);
+
+            String req = "{\"id\":-1,\"idCoach\":" + model.idCoach + ",\"Title\":\"" + model.Title + "\",\"startDate\":" + model.startDate.substring(0,4) + ",\"endDate\":" + endDate + ",\"lastUpdate\":0}";
             String response = connectToServerByJson(App.apiAddr + "Resume/add", "POST", req);
             Log.i("LOG", response + "");
 
@@ -524,7 +544,14 @@ public class WebService {
 
         if (isInternetAvailable) {
 
-            String req = "";
+            String endDate;
+
+            if (model.endDate.equals(""))
+                endDate = "";
+            else
+                endDate = model.endDate.substring(0, 4);
+
+            String req = "{\"id\":" + model.id + ",\"idCoach\":" + model.idCoach + ",\"Title\":\"" + model.Title + "\",\"startDate\":" + model.startDate.substring(0,4) + ",\"endDate\":" + endDate + ",\"lastUpdate\":0}";
             String response = connectToServerByJson(App.apiAddr + "Resume/update", "POST", req);
             Log.i("LOG", response + "");
 

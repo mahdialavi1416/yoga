@@ -42,6 +42,7 @@
                     android:padding="8dp">
 
                     <ImageView
+                        android:id="@+id/imgBack"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/ic_back" />

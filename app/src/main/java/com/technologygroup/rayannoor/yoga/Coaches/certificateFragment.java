@@ -267,7 +267,7 @@ public class certificateFragment extends Fragment implements
 
                     }
                 } else {
-                    Snackbar.make(getView(), "به اینترنت متصل نیستید", Snackbar.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "به اینترنت متصل نیستید", Toast.LENGTH_LONG).show();
                 }
             }
 

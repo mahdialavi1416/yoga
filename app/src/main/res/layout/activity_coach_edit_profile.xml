@@ -32,7 +32,7 @@
 
                     <ImageView
                     android:layout_width="40dp"
-                    android:padding="5dp"
+                    android:padding="10dp"
                     android:id="@+id/imgEditCoachDetails"
                     android:layout_marginTop="3dp"
                     android:src="@drawable/ic_edit"
@@ -49,7 +49,7 @@
                     <ImageView
                     android:layout_width="45dp"
                     android:id="@+id/imgBack"
-                    android:padding="5dp"
+                    android:padding="10dp"
                     android:src="@drawable/ic_back"
                     android:layout_height="45dp" />
 
@@ -70,7 +70,7 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:text="هادی قهرمانی"
+                        android:text="نام مربی"
                         android:id="@+id/txtCoachName"
                         android:textSize="16sp"
                         android:layout_marginTop="15dp"
@@ -80,7 +80,7 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:text="سطح طلایی"
+                        android:text="سطح"
                         android:id="@+id/txtCoachLevel"
                         android:textSize="16sp"
                         android:layout_marginTop="15dp"
@@ -108,14 +108,12 @@
                                 android:id="@+id/rating"
                                 android:layout_width="wrap_content"
                                 style="?android:attr/ratingBarStyleSmall"
-                                android:rating="3.5"
                                 android:numStars="5"
                                 android:theme="@style/RatingBar"
                                 android:layout_height="wrap_content" />
 
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:text="3.5"
                                 android:id="@+id/txtCoachRate"
                                 android:layout_marginLeft="8dp"
                                 android:textColor="#ffffff"
@@ -142,7 +140,6 @@
 
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:text="25"
                                 android:id="@+id/txtLikeCount"
                                 android:layout_marginLeft="8dp"
                                 android:textColor="#ffffff"
