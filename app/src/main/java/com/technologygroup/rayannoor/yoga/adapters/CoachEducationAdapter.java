@@ -97,12 +97,6 @@ public class CoachEducationAdapter extends RecyclerView.Adapter<CoachEducationAd
 
     public CoachEducationAdapter(Context context){
         this.context = context;
-//        dialogEdit = new Dialog(context);
-//        dialogEdit.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        dialogEdit.setContentView(R.layout.dialog_add_education);
-//        dialogEdit.setCancelable(true);
-//        dialogEdit.setCanceledOnTouchOutside(true);
-//        dialogEdit.show();
         txtWindowTitle = dialogEdit.findViewById(R.id.txtWindowTitle);
         edtTitle = dialogEdit.findViewById(R.id.edtTitle);
         edtUniversity = dialogEdit.findViewById(R.id.edtUniversity);

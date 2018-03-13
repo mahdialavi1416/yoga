@@ -21,6 +21,7 @@ import com.technologygroup.rayannoor.yoga.Classes.ClassDate;
 import com.technologygroup.rayannoor.yoga.FadePageTransformer;
 import com.technologygroup.rayannoor.yoga.R;
 import com.technologygroup.rayannoor.yoga.Services.FilePath;
+import com.technologygroup.rayannoor.yoga.adapters.CoachCertificateAdapter;
 import com.technologygroup.rayannoor.yoga.adapters.CoachEducationAdapter;
 import com.technologygroup.rayannoor.yoga.adapters.CoachServicesPager;
 
@@ -33,7 +34,8 @@ public class CoachServicesActivity extends AppCompatActivity {
     private ViewPager CoachPager;
     private Typeface typeface;
 
-    CoachEducationAdapter adapter;
+    CoachEducationAdapter adapterEdu;
+    CoachCertificateAdapter adapterHonor;
 
     private int selectedTabIndex;
 
@@ -113,9 +115,16 @@ public class CoachServicesActivity extends AppCompatActivity {
 
         if (requestCode == 2) {
 
-            adapter = new CoachEducationAdapter(CoachServicesActivity.this);
+            adapterEdu = new CoachEducationAdapter(CoachServicesActivity.this);
 
-            adapter.onActivityResult(requestCode, resultCode, data);
+            adapterEdu.onActivityResult(requestCode, resultCode, data);
+        }
+
+        if (requestCode == 3) {
+
+            adapterHonor = new CoachCertificateAdapter(CoachServicesActivity.this);
+
+            adapterHonor.onActivityResult(requestCode, resultCode, data);
         }
 
     }

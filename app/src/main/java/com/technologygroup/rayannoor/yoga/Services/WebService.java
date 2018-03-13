@@ -496,7 +496,7 @@ public class WebService {
 
         if (isInternetAvailable) {
 
-            String req = "";
+            String req = "{\"Date\":" + model.Date.substring(0,4) + ",\"Des\":\"" + model.Des + "\",\"id\":" + -1 + ",\"idRow\":" + model.idRow + ",\"isGym\":false,\"lastUpdate\":0,\"Title\":\"" + model.Title + "\",\"Image\":\"" + model.Img + "\",\"Name\":\"" + model.Name + "\"}";
             String response = connectToServerByJson(App.apiAddr + "honor/add", "POST", req);
             Log.i("LOG", response + "");
 
@@ -537,7 +537,7 @@ public class WebService {
 
         if (isInternetAvailable) {
 
-            String req = "";
+            String req = "{\"Date\":" + model.Date.substring(0,4) + ",\"Des\":\"" + model.Des + "\",\"id\":" + model.id + ",\"idRow\":" + model.idRow + ",\"isGym\":false,\"lastUpdate\":0,\"Title\":\"" + model.Title + "\",\"Image\":\"" + model.Img + "\",\"Name\":\"" + model.Name + "\"}";
             String response = connectToServerByJson(App.apiAddr + "honor/update", "POST", req);
             Log.i("LOG", response + "");
 

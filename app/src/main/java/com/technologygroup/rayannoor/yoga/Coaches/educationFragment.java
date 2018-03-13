@@ -140,7 +140,6 @@ public class educationFragment extends Fragment implements
             }
         });
 
-        //setUpRecyclerView();
         return view;
     }
 
