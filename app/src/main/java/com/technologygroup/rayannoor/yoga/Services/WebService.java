@@ -479,6 +479,8 @@ public class WebService {
 
 
 
+
+
     public String AddCoachEdu(boolean isInternetAvailable, CoachEduModel model) {
 
         if (isInternetAvailable) {
@@ -610,8 +612,6 @@ public class WebService {
         } else
             return null;
     }
-
-
 
     public String deleteImgDetails(boolean isInternetAvailable, int id) {
 

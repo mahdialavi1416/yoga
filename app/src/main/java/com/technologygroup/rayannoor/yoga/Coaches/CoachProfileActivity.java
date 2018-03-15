@@ -252,5 +252,24 @@ public class CoachProfileActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        //todo: get idCoach from shared preferences
+        prefs = getSharedPreferences("MyPrefs", 0);
+//        idCoach = prefs.getInt("IdCoach", -1);
+        idCoach = 1;
+
+        if (idCoach > 0) {
+
+            WebServiceCoachInfo webServiceCoachInfo = new WebServiceCoachInfo();
+            webServiceCoachInfo.execute();
+        } else {
+            Toast.makeText(this, "مربی مورد نظر یافت نشد", Toast.LENGTH_LONG).show();
+            finish();
+        }
+
+
+    }
 }
