@@ -9,6 +9,7 @@ import com.technologygroup.rayannoor.yoga.Models.CoachGymsModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachHonorModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachResumeModel;
+import com.technologygroup.rayannoor.yoga.Models.CommentModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -476,7 +477,43 @@ public class WebService {
             return null;
     }
 
+    public List<CommentModel> getComments(boolean isInternetAvailable, boolean isGym, int id) {
 
+        if (isInternetAvailable) {
+
+            String response = connectToServer(App.apiAddr + "comment/select?isgym=" + isGym + "&idrow=" + id, "GET");
+            Log.i("LOG", response + "");
+
+            if (response != null) {
+
+                List<CommentModel> list = new ArrayList<>();
+
+                try {
+
+                    JSONArray Arrey = new JSONArray(response);
+                    for (int i = 0; i < Arrey.length(); i++) {
+                        JSONObject Object = Arrey.getJSONObject(i);
+                        CommentModel model = new CommentModel();
+
+                        model.id = Object.getInt("id");
+                        model.name = Object.getString("name");
+                        model.body = Object.getString("body");
+                        model.date = Object.getInt("date");
+
+                        list.add(model);
+
+                    }
+                    return list;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+            return null;
+
+        } else
+            return null;
+    }
 
 
 
@@ -520,6 +557,20 @@ public class WebService {
 
             String req = "{\"Date\":" + model.Date.substring(0,4) + ",\"Des\":\"" + model.Des + "\",\"id\":" + -1 + ",\"idRow\":" + model.idRow + ",\"isGym\":false,\"lastUpdate\":0,\"Title\":\"" + model.Title + "\",\"Image\":\"" + model.Img + "\",\"Name\":\"" + model.Name + "\"}";
             String response = connectToServerByJson(App.apiAddr + "honor/add", "POST", req);
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
+
+    public String AddComment(boolean isInternetAvailable, CommentModel model) {
+
+        if (isInternetAvailable) {
+
+
+            String req = "{\"id\":-1,\"idRow\":" + model.idRow + ",\"idUser\":" + model.idUser + ",\"Body\":\"" + model.body + "\",\"Date\":" + model.date + ",\"isGym\":" + model.isGym + ",\"isActive\":true,\"lastUpdets\":1,\"isRead\":false}";
+            String response = connectToServerByJson(App.apiAddr + "Resume/add", "POST", req);
             Log.i("LOG", response + "");
 
             return response;
