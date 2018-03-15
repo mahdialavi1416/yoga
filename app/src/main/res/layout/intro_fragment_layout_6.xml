@@ -3,92 +3,29 @@
     android:id="@+id/intro_background"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="0.7"
-        android:gravity="bottom"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/imgIntro6"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center"
+        android:src="@drawable/img" />
 
-        <ImageView
-            android:id="@+id/imgIntro6"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_date1" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="سازمان منطقه آزاد ارس"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:id="@+id/txtIntro6"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
-    <LinearLayout
+    <Button
+        android:id="@+id/btnGuset"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btnRegister"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/profile_border"
-                android:paddingLeft="15dp"
-                android:layout_marginRight="5dp"
-                android:paddingRight="15dp"
-                android:text="ثبت نام"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/btnLogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/profile_border"
-                android:paddingLeft="15dp"
-                android:layout_marginLeft="5dp"
-                android:paddingRight="15dp"
-                android:text="ورود"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp" />
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btnGuset"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/profile_border"
-            android:paddingLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:paddingRight="15dp"
-            android:text="ورود میهمان"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="14sp" />
-
-
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:background="@drawable/profile_border"
+        android:paddingLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:paddingRight="25dp"
+        android:text="ورود به عنوان میهمان"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp" />
 
 
 </LinearLayout>

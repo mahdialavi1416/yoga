@@ -16,6 +16,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:scaleType="fitXY"
+            android:src="@drawable/img"
             android:layout_gravity="center" />
 
     </LinearLayout>
@@ -31,7 +32,7 @@
             android:id="@+id/txtIntro2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="جاهای دیدنی ارس رو بشناس"
+            android:text="عنوان 2"
             android:textStyle="bold"
             style="@style/AudioFileInfoOverlayText2"
             android:textColor="@color/white"
@@ -46,7 +47,7 @@
             android:lineSpacingMultiplier="1.2"
             android:layout_marginLeft="15dp"
             android:layout_height="wrap_content"
-            android:text="تمام مکان های دیدنی و گردشگری این منطقه به شما معرفی میشن. جاهایی که حداقل یک بار ارزش دیدن دارن :)"
+            android:text="توضیح2"
             style="@style/AudioFileInfoOverlayText2"
             android:textColor="@color/white"
             android:textSize="16sp"/>

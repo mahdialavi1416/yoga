@@ -28,6 +28,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachListActivity;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachProfileActivity;
+import com.technologygroup.rayannoor.yoga.Gyms.GymDetailsActivity;
 import com.technologygroup.rayannoor.yoga.Gyms.GymsListActivity;
 import com.technologygroup.rayannoor.yoga.Teaches.teachsActivity;
 import com.technologygroup.rayannoor.yoga.YogaIntroduce.YogaIntroduceActivity;
@@ -134,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         lytLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CoachProfileActivity.class);
+                Intent intent = new Intent(MainActivity.this, GymDetailsActivity.class);
                 startActivity(intent);
                 drawer_layout.closeDrawer(GravityCompat.END);
             }

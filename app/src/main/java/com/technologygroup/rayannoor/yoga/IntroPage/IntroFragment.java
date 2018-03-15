@@ -2,6 +2,7 @@ package com.technologygroup.rayannoor.yoga.IntroPage;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -40,6 +41,7 @@ public class IntroFragment extends Fragment {
     private int cityNumber = 1;
     ArrayAdapter<String> spinnerArrayAdapter;
 
+
     public static IntroFragment newInstance(int page) {
         IntroFragment frag = new IntroFragment();
         Bundle b = new Bundle();
@@ -56,7 +58,6 @@ public class IntroFragment extends Fragment {
         if (!getArguments().containsKey(PAGE))
             throw new RuntimeException("Fragment must contain a \"" + PAGE + "\" argument!");
         mPage = getArguments().getInt(PAGE);
-
 
 
     }
@@ -96,25 +97,6 @@ public class IntroFragment extends Fragment {
 
         if (mPage == 5) {
             Button btnGuset = (Button) view.findViewById(R.id.btnGuset);
-            Button btnRegister = (Button) view.findViewById(R.id.btnRegister);
-            Button btnLogin = (Button) view.findViewById(R.id.btnLogin);
-
-            btnLogin.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent i = new Intent(getContext(), LoginActivity.class);
-                    getContext().startActivity(i);
-                }
-            });
-
-            btnRegister.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent i = new Intent(getContext(), RegisterActivity.class);
-                    getContext().startActivity(i);
-                }
-            });
-
             btnGuset.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

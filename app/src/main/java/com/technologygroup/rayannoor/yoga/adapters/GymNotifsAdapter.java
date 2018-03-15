@@ -1,6 +1,7 @@
 package com.technologygroup.rayannoor.yoga.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.technologygroup.rayannoor.yoga.NotifDetailsActivity;
 import com.technologygroup.rayannoor.yoga.R;
+import com.technologygroup.rayannoor.yoga.Teaches.TeachDetailsActivity;
+import com.technologygroup.rayannoor.yoga.Teaches.teachsListActivity;
+import com.technologygroup.rayannoor.yoga.notificationActivity;
 
 /**
  * Created by Mohamad Hasan on 3/12/2018.
@@ -34,6 +39,14 @@ public class GymNotifsAdapter extends RecyclerView.Adapter<GymNotifsAdapter.myVi
 
     @Override
     public void onBindViewHolder(final myViewHolder holder, int position) {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                notificationActivity activity = (notificationActivity)context;
+                Intent intent = new Intent(activity , NotifDetailsActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

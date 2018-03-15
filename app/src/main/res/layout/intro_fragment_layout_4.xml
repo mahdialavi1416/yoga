@@ -16,6 +16,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:scaleType="fitXY"
+            android:src="@drawable/img"
             android:layout_gravity="center" />
 
     </LinearLayout>
@@ -31,7 +32,7 @@
             android:id="@+id/txtIntro4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="خیلی راحت مسیرت رو پیدا کن ! "
+            android:text="عنوان4"
             android:textStyle="bold"
             style="@style/AudioFileInfoOverlayText2"
             android:textColor="@color/white"
@@ -46,7 +47,7 @@
             android:lineSpacingMultiplier="1.2"
             android:layout_marginLeft="15dp"
             android:layout_height="wrap_content"
-            android:text="هر کجا که خواستی بری، نزدیک ترین و آسون ترین مسیر بین خودت و مقصد رو پیدا کن و از رفتن به اونجا لذت ببر"
+            android:text="توضیح4"
             style="@style/AudioFileInfoOverlayText2"
             android:textColor="@color/white"
             android:textSize="16sp"/>

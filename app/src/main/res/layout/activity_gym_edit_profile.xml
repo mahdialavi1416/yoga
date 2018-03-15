@@ -166,7 +166,7 @@
                                 android:layout_width="match_parent"
                                 android:id="@+id/edtFName"
                                 android:textCursorDrawable="@drawable/cursor_color"
-                                android:hint="نام"
+                                android:hint="نام باشگاه"
                                 android:textColorHint="@color/colorPrimary"
                                 android:textColor="@color/black"
                                 android:background="@drawable/edit_text_back_login"
@@ -208,8 +208,7 @@
                                 android:layout_width="match_parent"
                                 android:id="@+id/edtLName"
                                 android:textCursorDrawable="@drawable/cursor_color"
-                                android:hint="نام خانوادگی"
-
+                                android:hint="آدرس"
                                 android:textColor="@color/black"
                                 android:background="@drawable/edit_text_back_login"
                                 android:padding="5dp"

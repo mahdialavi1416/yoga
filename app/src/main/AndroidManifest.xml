@@ -14,13 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Teaches.teachsActivity" />
         <activity android:name=".YogaIntroduce.YogaIntroduceActivity" />
         <activity android:name=".Gyms.GymsListActivity" />
@@ -41,10 +35,16 @@
             android:theme="@style/Theme.Transparent" />
         <activity android:name=".Teaches.CoachTeachsActivity" />
         <activity android:name=".Teaches.teachsListActivity" />
-        <activity android:name=".SplashActivity"></activity>
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".IntroPage.introActivity"
-            android:theme="@style/CoachProfile"></activity>
+            android:theme="@style/CoachProfile" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/blackStatusBar" />
@@ -54,7 +54,12 @@
         <activity android:name=".Coaches.CoachPlanActivity" />
         <activity android:name=".CommentsActivity" />
         <activity android:name=".Gyms.GymServiceActivity" />
-        <activity android:name=".notificationActivity"></activity>
+        <activity android:name=".notificationActivity" />
+        <activity
+            android:name=".Gyms.GymDetailsActivity"
+            android:theme="@style/blackStatusBar" />
+        <activity android:name=".Gyms.GymEditProfileActivity" />
+        <activity android:name=".NotifDetailsActivity"></activity>
     </application>
 
 </manifest>
