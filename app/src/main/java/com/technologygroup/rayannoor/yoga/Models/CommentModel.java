@@ -6,9 +6,15 @@ package com.technologygroup.rayannoor.yoga.Models;
 
 public class CommentModel {
 
+    // getting
     public int id;
     public int date;
     public String name;
     public String body;
+
+    // for adding
+    public int idRow;
+    public int idUser;
+    public boolean isGym;
 
 }

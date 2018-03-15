@@ -118,6 +118,8 @@ public class CoachProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CoachProfileActivity.this, CommentsActivity.class);
+                intent.putExtra("IdCoachOrGym", idCoach);
+                intent.putExtra("IsGym", false);
                 startActivity(intent);
             }
         });
