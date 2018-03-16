@@ -8,6 +8,7 @@ import com.technologygroup.rayannoor.yoga.Coaches.certificateFragment;
 import com.technologygroup.rayannoor.yoga.Coaches.educationFragment;
 import com.technologygroup.rayannoor.yoga.Coaches.gymsFragment;
 import com.technologygroup.rayannoor.yoga.Coaches.resumeFragment;
+import com.technologygroup.rayannoor.yoga.Coaches.teachesFragment;
 
 /**
  * Created by Mohamad Hasan on 2/12/2018.
@@ -52,6 +53,10 @@ public class CoachServicesPager extends FragmentStatePagerAdapter {
                 certificateFragment cer = new certificateFragment();
                 cer.setArguments(bundle);
                 return cer;
+
+            case 4:
+                teachesFragment te = new teachesFragment();
+                return te;
 
             default:
                 return null;

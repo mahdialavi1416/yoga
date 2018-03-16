@@ -9,7 +9,7 @@
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:background="@color/actionBarBack"
+        android:background="@color/colorPrimary"
         android:layout_height="wrap_content">
 
 
@@ -25,7 +25,7 @@
                     android:layout_width="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="لیست باشگاه ها"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="17sp"
                     android:layout_height="wrap_content" />
@@ -43,7 +43,7 @@
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_centerVertical="true"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@drawable/ic_back"
                         android:layout_height="25dp" />
 
                 </RelativeLayout>

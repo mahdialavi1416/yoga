@@ -40,6 +40,7 @@ public class CoachDetailsActivity extends AppCompatActivity {
     private ImageView imgLockEducation;
     private LinearLayout lytEducation;
     private ImageView imgLockResume;
+    private ImageView lytBack;
     private LinearLayout lytResume;
     private ImageView imgLockGyms;
     private LinearLayout lytGyms;
@@ -215,6 +216,7 @@ public class CoachDetailsActivity extends AppCompatActivity {
         txtCoachCity = (TextView) findViewById(R.id.txtCoachCity);
         imgTelegram = (ImageView) findViewById(R.id.imgTelegram);
         imgInstagram = (ImageView) findViewById(R.id.imgInstagram);
+        lytBack = (ImageView) findViewById(R.id.lytBack);
         imgEmail = (ImageView) findViewById(R.id.imgEmail);
         imgCall = (ImageView) findViewById(R.id.imgCall);
         lytCoachRating = (LinearLayout) findViewById(R.id.lytCoachRating);

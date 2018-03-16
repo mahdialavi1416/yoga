@@ -1,7 +1,6 @@
-package com.technologygroup.rayannoor.yoga.Gyms;
+package com.technologygroup.rayannoor.yoga.Coaches;
 
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,33 +9,30 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
+import com.technologygroup.rayannoor.yoga.Models.CoachHonorModel;
 import com.technologygroup.rayannoor.yoga.R;
-import com.technologygroup.rayannoor.yoga.adapters.GymCoachesAdapter;
-import com.technologygroup.rayannoor.yoga.adapters.GymHonourAdapter;
+import com.technologygroup.rayannoor.yoga.adapters.CoachCertificateAdapter;
+import com.technologygroup.rayannoor.yoga.adapters.CoachTeachesAdapter;
 
-import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class coachsFragment extends Fragment {
+public class teachesFragment extends Fragment {
 
-    private ShimmerRecyclerView recycler;
-    private FloatingActionButton floactAction;
-    private Dialog dialog;
+
     private LinearLayout lytMain;
+    private ShimmerRecyclerView Recycler;
     private LinearLayout lytDisconnect;
     private LinearLayout lytEmpty;
+    private LinearLayout lytNotBuy;
+    private FloatingActionButton floatAction;
 
-
-    public coachsFragment() {
+    public teachesFragment() {
         // Required empty public constructor
     }
 
@@ -45,37 +41,35 @@ public class coachsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_coachs, container, false);
+        View view = inflater.inflate(R.layout.fragment_teaches, container, false);
         lytMain = (LinearLayout) view.findViewById(R.id.lytMain);
+        Recycler = (ShimmerRecyclerView) view.findViewById(R.id.Recycler);
         lytDisconnect = (LinearLayout) view.findViewById(R.id.lytDisconnect);
         lytEmpty = (LinearLayout) view.findViewById(R.id.lytEmpty);
-        recycler = (ShimmerRecyclerView) view.findViewById(R.id.Recycler);
-        floactAction = (FloatingActionButton) view.findViewById(R.id.floactAction);
+        lytNotBuy = (LinearLayout) view.findViewById(R.id.lytNotBuy);
+        floatAction = (FloatingActionButton) view.findViewById(R.id.floatAction);
 
         setUpRecyclerView();
 
-
-        floactAction.setOnClickListener(new View.OnClickListener() {
+        floatAction.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity() , AddCoachActivity.class);
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity() , addTeachActivity.class);
                 startActivity(intent);
             }
         });
 
-
         return view;
+
     }
 
-
-    private void setUpRecyclerView() {
-        GymCoachesAdapter adapter = new GymCoachesAdapter(getContext());
-        recycler.setAdapter(adapter);
+    private void setUpRecyclerView(){
+        CoachTeachesAdapter adapter = new CoachTeachesAdapter(getActivity());
+        Recycler.setAdapter(adapter);
 
         LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(getContext());
         mLinearLayoutManagerVertical.setOrientation(LinearLayoutManager.VERTICAL);
-        recycler.setLayoutManager(mLinearLayoutManagerVertical);
+        Recycler.setLayoutManager(mLinearLayoutManagerVertical);
     }
-
 
 }

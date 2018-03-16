@@ -61,7 +61,10 @@
             android:name=".Gyms.GymDetailsActivity"
             android:theme="@style/blackStatusBar" />
         <activity android:name=".Gyms.GymEditProfileActivity" />
-        <activity android:name=".NotifDetailsActivity"></activity>
+        <activity android:name=".NotifDetailsActivity" />
+        <activity android:name=".Gyms.AddCoachActivity" />
+        <activity android:name=".Coaches.addTeachActivity" />
+        <activity android:name=".Teaches.CoachTeachDetailsActivity"></activity>
     </application>
 
 </manifest>
