@@ -285,7 +285,8 @@ public class WebService {
                     model.Mobile = Object.getString("Mobile");
                     model.natCode = Object.getString("natCode");
                     model.Rate = Object.getDouble("Rate");
-
+                    model.City = Object.getString("City");
+                    model.State = Object.getString("State");
 
                     return model;
                 } catch (JSONException e) {
@@ -719,6 +720,9 @@ public class WebService {
                         model[i].Rate          = Object.getDouble("Rate");
                         model[i].Telegram      = Object.getString("Telegram");
                         model[i].Img           = Object.getString("Img");
+                        model[i].City      = Object.getString("City");
+                        model[i].State           = Object.getString("State");
+
                         //list.add(model);
 
                     }

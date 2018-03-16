@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         lytLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, GymDetailsActivity.class);
+                Intent intent = new Intent(MainActivity.this, CoachProfileActivity.class);
                 startActivity(intent);
                 drawer_layout.closeDrawer(GravityCompat.END);
             }

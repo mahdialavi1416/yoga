@@ -245,7 +245,7 @@ public class CoachProfileActivity extends AppCompatActivity {
 
             } else {
 
-                Toast.makeText(CoachProfileActivity.this, "مربی مورد نظر یافت نشد", Toast.LENGTH_LONG).show();
+                Toast.makeText(CoachProfileActivity.this, "ارتباط با سرور برقرار نشد", Toast.LENGTH_LONG).show();
                 finish();
 
             }
