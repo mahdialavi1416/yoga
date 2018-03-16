@@ -75,13 +75,14 @@ public class CoachCertificateAdapter extends RecyclerView.Adapter<CoachCertifica
     private static int idCoach;
     CoachServicesActivity activity;
     private boolean flagImgChanged = false;
+    private boolean calledFromPanel = false;
 
-
-    public CoachCertificateAdapter(Context context, List<CoachHonorModel> list, int idCoach) {
+    public CoachCertificateAdapter(Context context, List<CoachHonorModel> list, int idCoach, boolean calledFromPanel) {
         this.context = context;
         this.list = list;
         this.mInflater = LayoutInflater.from(context);
         this.idCoach = idCoach;
+        this.calledFromPanel = calledFromPanel;
         activity = (CoachServicesActivity) context;
     }
 
@@ -167,6 +168,11 @@ public class CoachCertificateAdapter extends RecyclerView.Adapter<CoachCertifica
         }
 
         private void setData(CoachHonorModel current, int position) {
+
+            if (!calledFromPanel){
+                imgEdit.setVisibility(View.INVISIBLE);
+                imgDelete.setVisibility(View.INVISIBLE);
+            }
 
             if (current.Img != null)
                 if (!current.Img.equals("") && !current.Img.equals("null"))

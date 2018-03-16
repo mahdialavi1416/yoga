@@ -88,7 +88,7 @@ public class certificateFragment extends Fragment implements
     String date;
 
     CoachCertificateAdapter adapter;
-
+    private boolean calledFromPanel = false;
 
 
     public certificateFragment() {
@@ -102,6 +102,8 @@ public class certificateFragment extends Fragment implements
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_certificate, container, false);
 
+        calledFromPanel = getArguments().getBoolean("calledFromPanel", false);
+        idCoach = getArguments().getInt("idCoach", -1);
 
         lytEmpty = view.findViewById(R.id.lytEmpty);
         lytMain = view.findViewById(R.id.lytMain);
@@ -109,12 +111,9 @@ public class certificateFragment extends Fragment implements
         Recycler = view.findViewById(R.id.Recycler);
         floatAction = view.findViewById(R.id.floatAction);
 
-
-        //todo: get idCoach from shared preferences
-        prefs = getContext().getSharedPreferences("MyPrefs", 0);
-//        idCoach = prefs.getInt("IdCoach", -1);
-        idCoach = 1;
-
+        if (!calledFromPanel) {
+            floatAction.setVisibility(View.GONE);
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (getActivity().checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -146,7 +145,7 @@ public class certificateFragment extends Fragment implements
     }
 
     private void setUpRecyclerView(List<CoachHonorModel> list){
-        adapter = new CoachCertificateAdapter(getActivity(), list, idCoach);
+        adapter = new CoachCertificateAdapter(getActivity(), list, idCoach, calledFromPanel);
         Recycler.setAdapter(adapter);
 
         LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(getContext());

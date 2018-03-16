@@ -129,16 +129,9 @@ public class CoachProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
+                intent.putExtra("calledFromPanel", true);
                 intent.putExtra("SelectedTabIndex", 0);
-                startActivity(intent);
-            }
-        });
-
-        lytGyms.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
-                intent.putExtra("SelectedTabIndex", 2);
+                intent.putExtra("idCoach", idCoach);
                 startActivity(intent);
             }
         });
@@ -147,7 +140,20 @@ public class CoachProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
+                intent.putExtra("calledFromPanel", true);
                 intent.putExtra("SelectedTabIndex", 1);
+                intent.putExtra("idCoach", idCoach);
+                startActivity(intent);
+            }
+        });
+
+        lytGyms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
+                intent.putExtra("calledFromPanel", true);
+                intent.putExtra("SelectedTabIndex", 2);
+                intent.putExtra("idCoach", idCoach);
                 startActivity(intent);
             }
         });
@@ -157,7 +163,9 @@ public class CoachProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
+                intent.putExtra("calledFromPanel", true);
                 intent.putExtra("SelectedTabIndex", 3);
+                intent.putExtra("idCoach", idCoach);
                 startActivity(intent);
             }
         });

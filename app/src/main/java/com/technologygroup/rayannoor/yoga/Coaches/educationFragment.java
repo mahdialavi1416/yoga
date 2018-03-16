@@ -90,6 +90,8 @@ public class educationFragment extends Fragment implements
 
     CoachEducationAdapter adapter;
 
+    private boolean calledFromPanel = false;
+
 
     public educationFragment() {
         // Required empty public constructor
@@ -102,17 +104,14 @@ public class educationFragment extends Fragment implements
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_education, container, false);
 
-        lytEmpty = view.findViewById(R.id.lytEmpty);
-        lytMain = view.findViewById(R.id.lytMain);
-        lytDisconnect = view.findViewById(R.id.lytDisconnect);
-        Recycler = view.findViewById(R.id.Recycler);
-        floatAction = view.findViewById(R.id.floatAction);
+        calledFromPanel = getArguments().getBoolean("calledFromPanel", false);
+        idCoach = getArguments().getInt("idCoach", -1);
 
-        //todo: get idCoach from shared preferences
-        prefs = getContext().getSharedPreferences("MyPrefs", 0);
-//        idCoach = prefs.getInt("IdCoach", -1);
-        idCoach = 1;
+        initView(view);
 
+        if (!calledFromPanel) {
+            floatAction.setVisibility(View.GONE);
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (getActivity().checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -143,8 +142,16 @@ public class educationFragment extends Fragment implements
         return view;
     }
 
+    public void initView(View view){
+        lytEmpty = view.findViewById(R.id.lytEmpty);
+        lytMain = view.findViewById(R.id.lytMain);
+        lytDisconnect = view.findViewById(R.id.lytDisconnect);
+        Recycler = view.findViewById(R.id.Recycler);
+        floatAction = view.findViewById(R.id.floatAction);
+    }
+
     private void setUpRecyclerView(List<CoachEduModel> list) {
-        adapter = new CoachEducationAdapter(getActivity(), list, idCoach);
+        adapter = new CoachEducationAdapter(getActivity(), list, idCoach, calledFromPanel);
         Recycler.setAdapter(adapter);
 
         LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(getContext());
@@ -554,14 +561,5 @@ public class educationFragment extends Fragment implements
         }
     }
 
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        //todo: get idCoach from shared preferences
-        prefs = getContext().getSharedPreferences("MyPrefs", 0);
-//        idCoach = prefs.getInt("IdCoach", -1);
-        idCoach = 1;
-    }
 
 }

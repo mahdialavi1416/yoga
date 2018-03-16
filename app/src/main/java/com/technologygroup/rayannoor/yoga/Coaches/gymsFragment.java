@@ -37,6 +37,8 @@ public class gymsFragment extends Fragment {
     private int idCoach;
     List<CoachGymsModel> list;
 
+    private boolean calledFromPanel = false;
+
     public gymsFragment() {
         // Required empty public constructor
     }
@@ -46,15 +48,15 @@ public class gymsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_gyms, container, false);
+
+        calledFromPanel = getArguments().getBoolean("calledFromPanel", false);
+        idCoach = getArguments().getInt("idCoach", -1);
+
+
         Recycler = view.findViewById(R.id.Recycler);
         lytEmpty = view.findViewById(R.id.lytEmpty);
         lytMain = view.findViewById(R.id.lytMain);
         lytDisconnect = view.findViewById(R.id.lytDisconnect);
-
-        //todo: get idCoach from shared preferences
-        prefs = getContext().getSharedPreferences("MyPrefs", 0);
-//        idCoach = prefs.getInt("IdCoach", -1);
-        idCoach = 1;
 
 
         if (idCoach > 0) {
@@ -71,7 +73,7 @@ public class gymsFragment extends Fragment {
     }
 
     private void setUpRecyclerView(List<CoachGymsModel> list){
-        CoachGymsAdapter adapter = new CoachGymsAdapter(getActivity(), list);
+        CoachGymsAdapter adapter = new CoachGymsAdapter(getActivity(), list, calledFromPanel);
         Recycler.setAdapter(adapter);
 
         LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(getContext());

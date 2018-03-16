@@ -1,5 +1,6 @@
 package com.technologygroup.rayannoor.yoga.adapters;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -14,8 +15,18 @@ import com.technologygroup.rayannoor.yoga.Coaches.resumeFragment;
 
 public class CoachServicesPager extends FragmentStatePagerAdapter {
 
-    public CoachServicesPager(FragmentManager fm) {
+    private boolean calledFromPanel;
+    private int idCoach;
+    Bundle bundle;
+
+    public CoachServicesPager(FragmentManager fm, boolean calledFromPanel, int idCoach) {
         super(fm);
+        this.calledFromPanel = calledFromPanel;
+        this.idCoach = idCoach;
+
+        bundle = new Bundle();
+        bundle.putBoolean("calledFromPanel", calledFromPanel);
+        bundle.putInt("idCoach", idCoach);
     }
 
     @Override
@@ -24,18 +35,22 @@ public class CoachServicesPager extends FragmentStatePagerAdapter {
         {
             case 0:
                 educationFragment edu = new educationFragment();
+                edu.setArguments(bundle);
                 return edu;
 
             case 1:
                 resumeFragment res = new resumeFragment();
+                res.setArguments(bundle);
                 return res;
 
             case 2:
                 gymsFragment gym = new gymsFragment();
+                gym.setArguments(bundle);
                 return gym;
 
             case 3:
                 certificateFragment cer = new certificateFragment();
+                cer.setArguments(bundle);
                 return cer;
 
             default:

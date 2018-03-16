@@ -59,26 +59,14 @@ public class CoachDetailsActivity extends AppCompatActivity {
         setViews();
 
 
-        lytGyms.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(CoachDetailsActivity.this, CoachServicesActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        lytCertificates.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(CoachDetailsActivity.this, CoachServicesActivity.class);
-                startActivity(intent);
-            }
-        });
 
         lytEducation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CoachDetailsActivity.this, CoachServicesActivity.class);
+                intent.putExtra("calledFromPanel", false);
+                intent.putExtra("SelectedTabIndex", 0);
+                intent.putExtra("idCoach", coachModel.id);
                 startActivity(intent);
             }
         });
@@ -87,6 +75,31 @@ public class CoachDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CoachDetailsActivity.this, CoachServicesActivity.class);
+                intent.putExtra("calledFromPanel", false);
+                intent.putExtra("SelectedTabIndex", 1);
+                intent.putExtra("idCoach", coachModel.id);
+                startActivity(intent);
+            }
+        });
+
+        lytGyms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CoachDetailsActivity.this, CoachServicesActivity.class);
+                intent.putExtra("calledFromPanel", false);
+                intent.putExtra("SelectedTabIndex", 2);
+                intent.putExtra("idCoach", coachModel.id);
+                startActivity(intent);
+            }
+        });
+
+        lytCertificates.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CoachDetailsActivity.this, CoachServicesActivity.class);
+                intent.putExtra("calledFromPanel", false);
+                intent.putExtra("SelectedTabIndex", 3);
+                intent.putExtra("idCoach", coachModel.id);
                 startActivity(intent);
             }
         });
@@ -96,6 +109,8 @@ public class CoachDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CoachDetailsActivity.this, CommentsActivity.class);
+                intent.putExtra("IdCoachOrGym", coachModel.id);
+                intent.putExtra("IsGym", false);
                 startActivity(intent);
             }
         });
@@ -228,10 +243,10 @@ public class CoachDetailsActivity extends AppCompatActivity {
         coachModel.lName = getIntent().getStringExtra("lName");
         coachModel.Telegram = getIntent().getStringExtra("Telegram");
         coachModel.Img = getIntent().getStringExtra("Img");
-        coachModel.id = getIntent().getIntExtra("id", 1);
-        coachModel.idCity = getIntent().getIntExtra("idCity", 1);
+        coachModel.id = getIntent().getIntExtra("id", -1);
+        coachModel.idCity = getIntent().getIntExtra("idCity", -1);
 //        getIntent().getIntExtra("idState", 1);
-        coachModel.idCurrentPlan = getIntent().getIntExtra("idCurrentPlan", 1);
+        coachModel.idCurrentPlan = getIntent().getIntExtra("idCurrentPlan", -1);
         coachModel.like = getIntent().getIntExtra("like", 0);
         coachModel.lastUpdate = getIntent().getStringExtra("lastUpdate");
         coachModel.Mobile = getIntent().getStringExtra("Mobile");

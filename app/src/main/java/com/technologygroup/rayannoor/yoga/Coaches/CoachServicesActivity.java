@@ -39,6 +39,8 @@ public class CoachServicesActivity extends AppCompatActivity {
     CoachCertificateAdapter adapterHonor;
 
     private int selectedTabIndex;
+    private boolean calledFromPanel = false;
+    private int idCoach;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,14 +49,16 @@ public class CoachServicesActivity extends AppCompatActivity {
         initView();
         typeface = Typeface.createFromAsset(getAssets(), "font.ttf");
 
+        calledFromPanel = getIntent().getBooleanExtra("calledFromPanel", false);
         selectedTabIndex = getIntent().getIntExtra("SelectedTabIndex", 0);
+        idCoach = getIntent().getIntExtra("idCoach", -1);
 
         tabLayout.addTab(tabLayout.newTab().setText("سوابق تحصیلی"));
         tabLayout.addTab(tabLayout.newTab().setText("رزومه"));
         tabLayout.addTab(tabLayout.newTab().setText("باشگاه ها"));
         tabLayout.addTab(tabLayout.newTab().setText("مدارک"));
 
-        CoachServicesPager adapter = new CoachServicesPager(getSupportFragmentManager());
+        CoachServicesPager adapter = new CoachServicesPager(getSupportFragmentManager(), calledFromPanel, idCoach);
         CoachPager.setAdapter(adapter);
         CoachPager.setPageTransformer(false, new FadePageTransformer());
         CoachPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));

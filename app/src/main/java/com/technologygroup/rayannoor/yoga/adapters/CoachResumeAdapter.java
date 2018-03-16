@@ -67,12 +67,14 @@ public class CoachResumeAdapter extends RecyclerView.Adapter<CoachResumeAdapter.
 
     private static int idCoach;
     CoachServicesActivity activity;
+    private boolean calledFromPanel = false;
 
-    public CoachResumeAdapter(Context context, List<CoachResumeModel> list, int idCoach) {
+    public CoachResumeAdapter(Context context, List<CoachResumeModel> list, int idCoach, boolean calledFromPanel) {
         this.context = context;
         this.list = list;
         this.mInflater = LayoutInflater.from(context);
         this.idCoach = idCoach;
+        this.calledFromPanel = calledFromPanel;
         activity = (CoachServicesActivity) context;
     }
 
@@ -119,6 +121,11 @@ public class CoachResumeAdapter extends RecyclerView.Adapter<CoachResumeAdapter.
         }
 
         private void setData(CoachResumeModel current, int position) {
+
+            if (!calledFromPanel){
+                imgEdit.setVisibility(View.INVISIBLE);
+                imgDelete.setVisibility(View.INVISIBLE);
+            }
 
             txtResumeTitle.setText(current.Title);
             txtStartDate.setText("تاریخ شروع: " + current.startDate);

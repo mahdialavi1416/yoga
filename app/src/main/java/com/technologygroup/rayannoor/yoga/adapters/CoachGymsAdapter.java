@@ -26,12 +26,13 @@ public class CoachGymsAdapter extends RecyclerView.Adapter<CoachGymsAdapter.myVi
     private LayoutInflater mInflater;
     private List<CoachGymsModel> list;
 
+    private boolean calledFromPanel = false;
 
-
-    public CoachGymsAdapter(Context context, List<CoachGymsModel> list) {
+    public CoachGymsAdapter(Context context, List<CoachGymsModel> list, boolean calledFromPanel) {
         this.context = context;
         mInflater = LayoutInflater.from(context);
         this.list = list;
+        this.calledFromPanel = calledFromPanel;
     }
 
     @Override

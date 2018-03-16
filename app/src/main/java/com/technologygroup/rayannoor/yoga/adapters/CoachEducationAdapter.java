@@ -85,12 +85,14 @@ public class CoachEducationAdapter extends RecyclerView.Adapter<CoachEducationAd
     private static int idCoach;
     CoachServicesActivity activity;
     private boolean flagImgChanged = false;
+    private boolean calledFromPanel = false;
 
-    public CoachEducationAdapter(Context context, List<CoachEduModel> list, int idCoach) {
+    public CoachEducationAdapter(Context context, List<CoachEduModel> list, int idCoach, boolean calledFromPanel) {
         this.context = context;
         this.list = list;
         this.mInflater = LayoutInflater.from(context);
         this.idCoach = idCoach;
+        this.calledFromPanel = calledFromPanel;
         activity = (CoachServicesActivity) context;
 
     }
@@ -174,6 +176,11 @@ public class CoachEducationAdapter extends RecyclerView.Adapter<CoachEducationAd
         }
 
         private void setData(CoachEduModel current, int position) {
+
+            if (!calledFromPanel){
+                imgEdit.setVisibility(View.INVISIBLE);
+                imgDelete.setVisibility(View.INVISIBLE);
+            }
 
             if (current.Img != null)
                 if (!current.Img.equals("") && !current.Img.equals("null"))

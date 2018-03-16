@@ -75,6 +75,7 @@ public class resumeFragment extends Fragment implements
     String date;
     boolean startDateFlag = false, finishDateFlag = false;
 
+    private boolean calledFromPanel = false;
 
     public resumeFragment() {
         // Required empty public constructor
@@ -87,6 +88,10 @@ public class resumeFragment extends Fragment implements
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_resume, container, false);
 
+        calledFromPanel = getArguments().getBoolean("calledFromPanel", false);
+        idCoach = getArguments().getInt("idCoach", -1);
+
+
         lytEmpty = view.findViewById(R.id.lytEmpty);
         lytMain = view.findViewById(R.id.lytMain);
         lytDisconnect = view.findViewById(R.id.lytDisconnect);
@@ -94,10 +99,9 @@ public class resumeFragment extends Fragment implements
         floatAction = view.findViewById(R.id.floatAction);
 
 
-        //todo: get idCoach from shared preferences
-        prefs = getContext().getSharedPreferences("MyPrefs", 0);
-//        idCoach = prefs.getInt("IdCoach", -1);
-        idCoach = 1;
+        if (!calledFromPanel) {
+            floatAction.setVisibility(View.GONE);
+        }
 
         if (idCoach > 0) {
 
@@ -118,7 +122,7 @@ public class resumeFragment extends Fragment implements
     }
 
     private void setUpRecyclerView(List<CoachResumeModel> list){
-        CoachResumeAdapter adapter = new CoachResumeAdapter(getActivity(), list, idCoach);
+        CoachResumeAdapter adapter = new CoachResumeAdapter(getActivity(), list, idCoach, calledFromPanel);
         Recycler.setAdapter(adapter);
 
         LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(getContext());
@@ -383,15 +387,6 @@ public class resumeFragment extends Fragment implements
 
             }
         }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        //todo: get idCoach from shared preferences
-        prefs = getContext().getSharedPreferences("MyPrefs", 0);
-//        idCoach = prefs.getInt("IdCoach", -1);
-        idCoach = 1;
     }
 
 }
