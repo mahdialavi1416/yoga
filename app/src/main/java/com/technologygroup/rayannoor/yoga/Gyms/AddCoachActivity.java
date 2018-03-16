@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -12,8 +13,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.technologygroup.rayannoor.yoga.R;
 import com.technologygroup.rayannoor.yoga.RoundedImageView;
+import com.technologygroup.rayannoor.yoga.adapters.GymCoachSearchAdapter;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
@@ -27,13 +30,17 @@ public class AddCoachActivity extends AppCompatActivity {
     private TextView txtCoachName;
     private TextView txtCoachAddress;
     private RoundedImageView imgCoach;
-    private CardView lytCoachDetails;
+    private LinearLayout lytMain;
+    private ShimmerRecyclerView Recycler;
+    private LinearLayout lytDisconnect;
+    private LinearLayout lytEmpty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_coach);
         initView();
+        setUpRecyclerView();
 
 
         new Handler().postDelayed(new Runnable() {
@@ -67,6 +74,18 @@ public class AddCoachActivity extends AppCompatActivity {
         txtCoachName = (TextView) findViewById(R.id.txtCoachName);
         txtCoachAddress = (TextView) findViewById(R.id.txtCoachAddress);
         imgCoach = (RoundedImageView) findViewById(R.id.imgCoach);
-        lytCoachDetails = (CardView) findViewById(R.id.lytCoachDetails);
+        lytMain = (LinearLayout) findViewById(R.id.lytMain);
+        Recycler = (ShimmerRecyclerView) findViewById(R.id.Recycler);
+        lytDisconnect = (LinearLayout) findViewById(R.id.lytDisconnect);
+        lytEmpty = (LinearLayout) findViewById(R.id.lytEmpty);
+    }
+
+    private void setUpRecyclerView() {
+        GymCoachSearchAdapter adapter = new GymCoachSearchAdapter(AddCoachActivity.this);
+        Recycler.setAdapter(adapter);
+
+        LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(AddCoachActivity.this);
+        mLinearLayoutManagerVertical.setOrientation(LinearLayoutManager.VERTICAL);
+        Recycler.setLayoutManager(mLinearLayoutManagerVertical);
     }
 }
