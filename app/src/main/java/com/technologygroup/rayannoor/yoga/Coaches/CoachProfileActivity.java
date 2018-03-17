@@ -49,6 +49,7 @@ public class CoachProfileActivity extends AppCompatActivity {
     private ImageView imgLockTeachs;
     private LinearLayout lytTeachs;
     private LinearLayout lytComments;
+    private ImageView imgLockCeomments;
     private RatingBar rating;
 
 
@@ -117,10 +118,14 @@ public class CoachProfileActivity extends AppCompatActivity {
         lytComments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CoachProfileActivity.this, CommentsActivity.class);
-                intent.putExtra("IdCoachOrGym", idCoach);
-                intent.putExtra("IsGym", false);
-                startActivity(intent);
+                if (coachModel.idCurrentPlan > 0) {
+                    Intent intent = new Intent(CoachProfileActivity.this, CommentsActivity.class);
+                    intent.putExtra("IdCoachOrGym", idCoach);
+                    intent.putExtra("IsGym", false);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(CoachProfileActivity.this, "برای دسترسی به این بخش باید پروفایل خود را به طرح یک ستاره ارتقا دهید", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -128,33 +133,45 @@ public class CoachProfileActivity extends AppCompatActivity {
         lytEducation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
-                intent.putExtra("calledFromPanel", true);
-                intent.putExtra("SelectedTabIndex", 0);
-                intent.putExtra("idCoach", idCoach);
-                startActivity(intent);
+                if (coachModel.idCurrentPlan > 0) {
+                    Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
+                    intent.putExtra("calledFromPanel", true);
+                    intent.putExtra("SelectedTabIndex", 0);
+                    intent.putExtra("idCoach", idCoach);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(CoachProfileActivity.this, "برای دسترسی به این بخش باید پروفایل خود را به طرح یک ستاره ارتقا دهید", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
         lytResume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
-                intent.putExtra("calledFromPanel", true);
-                intent.putExtra("SelectedTabIndex", 1);
-                intent.putExtra("idCoach", idCoach);
-                startActivity(intent);
+                if (coachModel.idCurrentPlan > 0) {
+                    Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
+                    intent.putExtra("calledFromPanel", true);
+                    intent.putExtra("SelectedTabIndex", 1);
+                    intent.putExtra("idCoach", idCoach);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(CoachProfileActivity.this, "برای دسترسی به این بخش باید پروفایل خود را به طرح یک ستاره ارتقا دهید", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
         lytGyms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
-                intent.putExtra("calledFromPanel", true);
-                intent.putExtra("SelectedTabIndex", 2);
-                intent.putExtra("idCoach", idCoach);
-                startActivity(intent);
+                if (coachModel.idCurrentPlan > 0) {
+                    Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
+                    intent.putExtra("calledFromPanel", true);
+                    intent.putExtra("SelectedTabIndex", 2);
+                    intent.putExtra("idCoach", idCoach);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(CoachProfileActivity.this, "برای دسترسی به این بخش باید پروفایل خود را به طرح یک ستاره ارتقا دهید", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -162,11 +179,15 @@ public class CoachProfileActivity extends AppCompatActivity {
         lytCertificates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
-                intent.putExtra("calledFromPanel", true);
-                intent.putExtra("SelectedTabIndex", 3);
-                intent.putExtra("idCoach", idCoach);
-                startActivity(intent);
+                if (coachModel.idCurrentPlan > 0) {
+                    Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
+                    intent.putExtra("calledFromPanel", true);
+                    intent.putExtra("SelectedTabIndex", 3);
+                    intent.putExtra("idCoach", idCoach);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(CoachProfileActivity.this, "برای دسترسی به این بخش باید پروفایل خود را به طرح یک ستاره ارتقا دهید", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
@@ -192,6 +213,7 @@ public class CoachProfileActivity extends AppCompatActivity {
         lytTeachs = (LinearLayout) findViewById(R.id.lytTeachs);
         lytComments = (LinearLayout) findViewById(R.id.lytComments);
         rating = (RatingBar) findViewById(R.id.rating);
+        imgLockCeomments = findViewById(R.id.imgLockComments);
     }
 
     private class WebServiceCoachInfo extends AsyncTask<Object, Void, Void> {
@@ -247,9 +269,30 @@ public class CoachProfileActivity extends AppCompatActivity {
                 txtCoachName.setText(coachModel.fName + " " + coachModel.lName);
                 ClassLevels classLevels = new ClassLevels();
                 txtCoachLevel.setText(classLevels.getCoachLevelName(coachModel.idCurrentPlan));
-                txtCoachRate.setText(coachModel.Rate + "");
+                String strRate = String.valueOf(coachModel.Rate);
+                if (strRate.length() > 3)
+                    strRate = strRate.substring(0,3);
+                txtCoachRate.setText(strRate);
                 txtLikeCount.setText(coachModel.like + "");
                 rating.setRating((float) coachModel.Rate);
+
+                if (coachModel.idCurrentPlan == 1){
+
+                    lytEducation.setAlpha(1);
+                    imgLockEducation.setVisibility(View.GONE);
+                    lytResume.setAlpha(1);
+                    imgLockResume.setVisibility(View.GONE);
+                    lytGyms.setAlpha(1);
+                    imgLockGyms.setVisibility(View.GONE);
+                    lytCertificates.setAlpha(1);
+                    imgLockCertificates.setVisibility(View.GONE);
+                    lytComments.setAlpha(1);
+                    imgLockCeomments.setVisibility(View.GONE);
+
+                } else if (coachModel.idCurrentPlan == 2){
+                    lytTeachs.setAlpha(1);
+                    imgLockTeachs.setVisibility(View.GONE);
+                }
 
             } else {
 
@@ -265,11 +308,6 @@ public class CoachProfileActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        //todo: get idCoach from shared preferences
-        prefs = getSharedPreferences("MyPrefs", 0);
-//        idCoach = prefs.getInt("IdCoach", -1);
-        idCoach = 1;
 
         if (idCoach > 0) {
 

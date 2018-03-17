@@ -175,7 +175,6 @@
                             android:id="@+id/imgLockEducation"
                             android:src="@drawable/ic_lock"
                             android:layout_margin="5dp"
-                            android:visibility="gone"
                             android:layout_gravity="right"
                             android:layout_height="20dp" />
 
@@ -185,6 +184,7 @@
                             android:gravity="center"
                             android:id="@+id/lytEducation"
                             android:padding="20dp"
+                            android:alpha="0.3"
                             android:layout_height="match_parent">
 
                             <ImageView
@@ -216,7 +216,6 @@
                             android:id="@+id/imgLockResume"
                             android:src="@drawable/ic_lock"
                             android:layout_margin="5dp"
-                            android:visibility="gone"
                             android:layout_gravity="right"
                             android:layout_height="20dp" />
 
@@ -226,6 +225,7 @@
                             android:orientation="vertical"
                             android:gravity="center"
                             android:padding="20dp"
+                            android:alpha="0.3"
                             android:layout_height="match_parent">
 
                             <ImageView
@@ -265,7 +265,6 @@
                             android:id="@+id/imgLockGyms"
                             android:src="@drawable/ic_lock"
                             android:layout_margin="5dp"
-                            android:visibility="gone"
                             android:layout_gravity="right"
                             android:layout_height="20dp" />
 
@@ -275,6 +274,7 @@
                             android:id="@+id/lytGyms"
                             android:gravity="center"
                             android:padding="20dp"
+                            android:alpha="0.3"
                             android:layout_height="match_parent">
 
                             <ImageView
@@ -306,7 +306,6 @@
                             android:id="@+id/imgLockCertificates"
                             android:src="@drawable/ic_lock"
                             android:layout_margin="5dp"
-                            android:visibility="gone"
                             android:layout_gravity="right"
                             android:layout_height="20dp" />
 
@@ -316,6 +315,7 @@
                             android:id="@+id/lytCertificates"
                             android:gravity="center"
                             android:padding="20dp"
+                            android:alpha="0.3"
                             android:layout_height="match_parent">
 
                             <ImageView
@@ -354,7 +354,6 @@
                             android:id="@+id/imgLockTeachs"
                             android:src="@drawable/ic_lock"
                             android:layout_margin="5dp"
-                            android:visibility="gone"
                             android:layout_gravity="right"
                             android:layout_height="20dp" />
 
@@ -364,6 +363,7 @@
                             android:id="@+id/lytTeachs"
                             android:gravity="center"
                             android:padding="20dp"
+                            android:alpha="0.3"
                             android:layout_height="match_parent">
 
                             <ImageView
@@ -390,6 +390,13 @@
                         android:layout_margin="5dp"
                         android:layout_height="match_parent">
 
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:id="@+id/imgLockComments"
+                            android:src="@drawable/ic_lock"
+                            android:layout_margin="5dp"
+                            android:layout_gravity="right"
+                            android:layout_height="20dp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -397,6 +404,7 @@
                             android:id="@+id/lytComments"
                             android:gravity="center"
                             android:padding="20dp"
+                            android:alpha="0.3"
                             android:layout_height="match_parent">
 
                             <ImageView

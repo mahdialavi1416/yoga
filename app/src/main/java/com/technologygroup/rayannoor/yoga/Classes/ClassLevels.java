@@ -12,16 +12,16 @@ public class ClassLevels {
 
         switch (idLevel) {
             case -1:
-                levelName = "بدون سطح";
+                levelName = "بدون طرح";
                 break;
             case 1:
-                levelName = "سطح یک";
+                levelName = "طرح یک ستاره";
                 break;
             case 2:
-                levelName = "سطح دو";
+                levelName = "طرح دو ستاره";
                 break;
             default:
-                levelName = "بدون سطح";
+                levelName = "بدون طرح";
         }
 
         return levelName;
