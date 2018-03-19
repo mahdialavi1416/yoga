@@ -37,8 +37,8 @@ public class SplashActivity extends AppCompatActivity {
                 // This method will be executed once the timer is over
                 // Start your app main activity
 
-                prefs = getApplicationContext().getSharedPreferences("MYPREFS", 0);
-                boolean isFirstRun = prefs.getBoolean("first", true);
+                prefs = getApplicationContext().getSharedPreferences("MyPrefs", 0);
+                boolean isFirstRun = prefs.getBoolean("isFirstRun", true);
 
                 if (isFirstRun)
                 {

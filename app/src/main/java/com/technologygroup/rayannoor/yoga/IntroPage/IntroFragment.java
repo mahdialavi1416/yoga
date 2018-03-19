@@ -40,7 +40,7 @@ public class IntroFragment extends Fragment {
     private int stateNumber = 1;
     private int cityNumber = 1;
     ArrayAdapter<String> spinnerArrayAdapter;
-
+    private SharedPreferences prefs;
 
     public static IntroFragment newInstance(int page) {
         IntroFragment frag = new IntroFragment();
@@ -157,12 +157,25 @@ public class IntroFragment extends Fragment {
         btnSendStateCity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getContext(), MainActivity.class);
-                i.putExtra("stateNumber", stateNumber);
-                i.putExtra("cityNumber", cityNumber);
 
-                getContext().startActivity(i);
-                getActivity().finish();
+                if (cityNumber > 0 && stateNumber > 0) {
+
+                    prefs = getContext().getSharedPreferences("MyPrefs", 0);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putBoolean("isFirstRun", false);
+                    // -1 means guest
+                    editor.putInt("idUser", -1);
+                    // 1 means normal users
+                    editor.putInt("userType", 1);
+                    editor.apply();
+
+                    Intent i = new Intent(getContext(), MainActivity.class);
+                    i.putExtra("stateNumber", stateNumber);
+                    i.putExtra("cityNumber", cityNumber);
+
+                    getContext().startActivity(i);
+                    getActivity().finish();
+                }
 
             }
         });

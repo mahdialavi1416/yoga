@@ -104,7 +104,6 @@ public class introActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(introActivity.this, LoginActivity.class);
                 startActivity(i);
-                finish();
             }
         });
 
@@ -113,7 +112,6 @@ public class introActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(introActivity.this, RegisterActivity.class);
                 startActivity(i);
-                finish();
             }
         });
 
