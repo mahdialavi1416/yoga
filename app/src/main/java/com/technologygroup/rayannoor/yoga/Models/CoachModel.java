@@ -21,5 +21,6 @@ public class CoachModel {
     public String natCode;
     public double Rate;
     public boolean Gender;
-
+    public String City;
+    public String State;
 }

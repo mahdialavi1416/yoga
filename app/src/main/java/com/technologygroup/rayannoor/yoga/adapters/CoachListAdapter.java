@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.technologygroup.rayannoor.yoga.Classes.App;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachDetailsActivity;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachProfileActivity;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachListActivity;
@@ -50,6 +53,13 @@ public class CoachListAdapter extends RecyclerView.Adapter<CoachListAdapter.myVi
     public void onBindViewHolder(final myViewHolder holder, int position) {
 
         //if (models[position].idState == stateNumber && models[position].idCity == cityNumber)
+
+
+        if (models[position].Img != null)
+            if (!models[position].Img.equals("") && !models[position].Img.equals("null"))
+                Glide.with(context).load(App.imgAddr + models[position].Img).asBitmap().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(holder.imgCoach);
+
+
         holder.lName = models[position].lName;
         holder.Email = models[position].Email;
         holder.fName = models[position].fName;
@@ -65,6 +75,8 @@ public class CoachListAdapter extends RecyclerView.Adapter<CoachListAdapter.myVi
         holder.Telegram = models[position].Telegram;
         holder.Rate = models[position].Rate;
         holder.Gender = models[position].Gender;
+        holder.City = models[position].City;
+        holder.State = models[position].State;
 
 
                 holder.txtCoachName.setText(models[position].fName + " " + models[position].lName);
@@ -91,6 +103,10 @@ public class CoachListAdapter extends RecyclerView.Adapter<CoachListAdapter.myVi
                 intent.putExtra("natCode", holder.natCode);
                 intent.putExtra("Rate", holder.Rate);
                 intent.putExtra("Gender", holder.Gender);
+                intent.putExtra("Rate", holder.Rate);
+                intent.putExtra("Gender", holder.Gender);
+                intent.putExtra("City", holder.City);
+                intent.putExtra("State", holder.State);
                 context.startActivity(intent);
             }
         });
@@ -121,6 +137,8 @@ public class CoachListAdapter extends RecyclerView.Adapter<CoachListAdapter.myVi
         private double Rate;
         private ImageView imgCoach, imgStar1, imgStar2;
         private boolean Gender;
+        private String City;
+        private String State;
 
 
         myViewHolder(View itemView) {

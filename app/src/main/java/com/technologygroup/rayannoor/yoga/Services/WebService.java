@@ -682,6 +682,32 @@ public class WebService {
     }
 
 
+    public String postLike(boolean isInternetAvailable, int idCoachOrGym, int idUser, String type) {
+
+        if (isInternetAvailable) {
+
+            String req = "{\"id\":" + idCoachOrGym + ",\"idUser\":" + idUser + "}";
+            String response = connectToServerByJson(App.apiAddr + type + "/like", "POST", req);
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
+
+    public String postRate(boolean isInternetAvailable, int idCoachOrGym, int idUser, String type, float rate) {
+
+        if (isInternetAvailable) {
+
+            String req = "{\"id\":" + idCoachOrGym + ",\"idUser\":" + idUser + ",\"newRate\":" + rate + "}";
+            String response = connectToServerByJson(App.apiAddr + type + "/Rate", "POST", req);
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
+
 
     public CoachModel[] getCoaches(boolean isInternetAvailable) {
 
@@ -719,6 +745,8 @@ public class WebService {
                         model[i].Rate          = Object.getDouble("Rate");
                         model[i].Telegram      = Object.getString("Telegram");
                         model[i].Img           = Object.getString("Img");
+                        model[i].City           = Object.getString("City");
+                        model[i].State           = Object.getString("State");
                         model[i].Gender        = Object.getBoolean("Gender");
                         //list.add(model);
 
