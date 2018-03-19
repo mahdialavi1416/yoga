@@ -78,7 +78,7 @@ public class GymsListActivity extends AppCompatActivity {
 
             if (gymModel != null) {
 
-               Toast.makeText(getApplicationContext(), gymModel[0].id +"", Toast.LENGTH_LONG).show();
+//               Toast.makeText(getApplicationContext(), gymModel[0].id +"", Toast.LENGTH_LONG).show();
 
                 RecyclerGyms = findViewById(R.id.RecyclerGyms);
                 LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(getApplicationContext());

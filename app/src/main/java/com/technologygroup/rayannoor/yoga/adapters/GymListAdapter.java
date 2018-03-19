@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 
 import com.technologygroup.rayannoor.yoga.Gyms.GymProfileActivity;
@@ -46,7 +46,7 @@ public class GymListAdapter extends RecyclerView.Adapter<GymListAdapter.myViewHo
     @Override
     public void onBindViewHolder(final myViewHolder holder, int position) {
 
-        holder.txtGymName.setText(models[position].id + "");
+        holder.txtGymName.setText(models[position].Name + "");
         holder.id = models[position].id;
         holder.Img = models[position].Img;
         holder.like = models[position].like;

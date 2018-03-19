@@ -10,9 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.technologygroup.rayannoor.yoga.Classes.App;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachDetailsActivity;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachProfileActivity;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachListActivity;
@@ -30,17 +27,17 @@ public class CoachListAdapter extends RecyclerView.Adapter<CoachListAdapter.myVi
     private CoachModel[] models;
 
 
+
 //    public CoachListAdapter(Context context) {
 //        this.context = context;
 //        mInflater = LayoutInflater.from(context);
 //    }
 
-    public CoachListAdapter(Context context, CoachModel[] models) {
+    public CoachListAdapter(Context context, CoachModel[] models){
         this.context = context;
         mInflater = LayoutInflater.from(context);
         this.models = models;
     }
-
     @Override
     public myViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.item_coach_list, parent, false);
@@ -67,22 +64,17 @@ public class CoachListAdapter extends RecyclerView.Adapter<CoachListAdapter.myVi
         holder.natCode = models[position].natCode;
         holder.Telegram = models[position].Telegram;
         holder.Rate = models[position].Rate;
-        holder.City = models[position].City;
-        holder.State = models[position].State;
+        holder.Gender = models[position].Gender;
 
 
-        if (models[position].Img != null)
-            if (!models[position].Img.equals("") && !models[position].Img.equals("null"))
-                Glide.with(context).load(App.imgAddr + models[position].Img).asBitmap().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(holder.imgCoach);
+                holder.txtCoachName.setText(models[position].fName + " " + models[position].lName);
 
-
-        holder.txtCoachName.setText(models[position].fName + " " + models[position].lName);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CoachListActivity activity = (CoachListActivity) context;
-                Intent intent = new Intent(activity, CoachDetailsActivity.class);
+                CoachListActivity activity = (CoachListActivity)context;
+                Intent intent = new Intent(activity , CoachDetailsActivity.class);
 //                Toast.makeText(view.getContext(), holder.lName+"", Toast.LENGTH_LONG).show();
                 intent.putExtra("fName", holder.fName);
                 intent.putExtra("Email", holder.Email);
@@ -98,8 +90,7 @@ public class CoachListAdapter extends RecyclerView.Adapter<CoachListAdapter.myVi
                 intent.putExtra("Mobile", holder.Mobile);
                 intent.putExtra("natCode", holder.natCode);
                 intent.putExtra("Rate", holder.Rate);
-                intent.putExtra("City", holder.City);
-                intent.putExtra("State", holder.State);
+                intent.putExtra("Gender", holder.Gender);
                 context.startActivity(intent);
             }
         });
@@ -127,10 +118,9 @@ public class CoachListAdapter extends RecyclerView.Adapter<CoachListAdapter.myVi
         private String lastUpdate;
         private String Mobile;
         private String natCode;
-        private String City;
-        private String State;
         private double Rate;
         private ImageView imgCoach, imgStar1, imgStar2;
+        private boolean Gender;
 
 
         myViewHolder(View itemView) {
@@ -139,6 +129,7 @@ public class CoachListAdapter extends RecyclerView.Adapter<CoachListAdapter.myVi
             imgCoach = (ImageView) itemView.findViewById(R.id.imgCoach);
             imgStar1 = (ImageView) itemView.findViewById(R.id.imgStar1);
             imgStar2 = (ImageView) itemView.findViewById(R.id.imgStar2);
+
 
 
 //            txtCoachName.setText("this is real");

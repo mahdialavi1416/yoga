@@ -17,7 +17,8 @@
             android:layout_marginRight="10dp"
             android:textColor="@color/lightBlack"
             android:textSize="17sp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:id="@+id/harakat"/>
 
         <ImageView
             android:layout_width="60dp"

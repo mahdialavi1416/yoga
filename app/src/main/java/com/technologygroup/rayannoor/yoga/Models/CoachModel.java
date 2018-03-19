@@ -20,7 +20,6 @@ public class CoachModel {
     public String Mobile;
     public String natCode;
     public double Rate;
-    public String City;
-    public String State;
+    public boolean Gender;
 
 }
