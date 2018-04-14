@@ -3,6 +3,8 @@ package com.technologygroup.rayannoor.yoga;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -11,7 +13,7 @@ import com.technologygroup.rayannoor.yoga.adapters.GymNotifsAdapter;
 
 public class notificationActivity extends AppCompatActivity {
 
-    private RelativeLayout btnBack;
+    private ImageView btnBack;
     private LinearLayout lytMain;
     private ShimmerRecyclerView RecyclerCoach;
     private LinearLayout lytDisconnect;
@@ -25,6 +27,14 @@ public class notificationActivity extends AppCompatActivity {
 
         RecyclerCoach.clearAnimation();
         setUpRecyclerView();
+
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     private void setUpRecyclerView() {
@@ -37,7 +47,7 @@ public class notificationActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        btnBack = (RelativeLayout) findViewById(R.id.btnBack);
+        btnBack = (ImageView) findViewById(R.id.btnBack);
         lytMain = (LinearLayout) findViewById(R.id.lytMain);
         RecyclerCoach = (ShimmerRecyclerView) findViewById(R.id.RecyclerCoach);
         lytDisconnect = (LinearLayout) findViewById(R.id.lytDisconnect);

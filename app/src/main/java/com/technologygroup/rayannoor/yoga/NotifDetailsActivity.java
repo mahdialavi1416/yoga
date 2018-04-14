@@ -2,8 +2,11 @@ package com.technologygroup.rayannoor.yoga;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class NotifDetailsActivity extends AppCompatActivity {
 
@@ -14,12 +17,15 @@ public class NotifDetailsActivity extends AppCompatActivity {
     private TextView txtNotifTitle;
     private ImageView imgNotifDetails;
     private TextView txtNotifBody;
+    private LinearLayout lytGymProfile;
+    private TextView txtDetailsReserve;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notif_details);
         initView();
+
     }
 
     private void initView() {
@@ -30,5 +36,7 @@ public class NotifDetailsActivity extends AppCompatActivity {
         txtNotifTitle = (TextView) findViewById(R.id.txtNotifTitle);
         imgNotifDetails = (ImageView) findViewById(R.id.imgNotifDetails);
         txtNotifBody = (TextView) findViewById(R.id.txtNotifBody);
+        lytGymProfile = (LinearLayout) findViewById(R.id.lytGymProfile);
+        txtDetailsReserve = (TextView) findViewById(R.id.txtDetailsReserve);
     }
 }

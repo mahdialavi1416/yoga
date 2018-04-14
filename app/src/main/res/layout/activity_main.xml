@@ -31,11 +31,11 @@
                     android:layout_height="match_parent">
 
                     <android.support.design.widget.CoordinatorLayout
-                        android:layout_width="70dp"
+                        android:layout_width="wrap_content"
                         android:id="@+id/relative_Msg"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:background="?attr/selectableItemBackground"
+                        android:background="?attr/selectableItemBackgroundBorderless"
                         android:layout_centerVertical="true">
 
                         <RelativeLayout
@@ -43,8 +43,8 @@
                             android:layout_height="match_parent">
 
                             <ImageView
-                                android:layout_width="21dp"
-                                android:layout_height="21dp"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
                                 android:src="@drawable/ic_notif" />
 
                         </RelativeLayout>
@@ -53,9 +53,11 @@
                             android:id="@+id/txt_newMessageCount"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
+                            android:background="@drawable/notif_back"
                             android:layout_gravity="center"
                             android:gravity="center"
-                            android:layout_marginLeft="25dp"
+                            android:layout_marginLeft="15dp"
+                            android:textColor="@color/white"
                             android:textSize="10sp"
                             android:visibility="invisible"/>
 
@@ -64,11 +66,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="یوگا"
+                        android:text="انجمن ورزشی یوگا"
                         android:id="@+id/txtTitle"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textStyle="bold"
-                        android:textSize="17sp"
+                        android:textSize="15sp"
                         android:layout_height="wrap_content" />
 
                     <RelativeLayout
@@ -110,9 +112,15 @@
                 android:orientation="vertical"
                 android:layout_height="match_parent">
 
+                <ImageView
+                    android:layout_width="35dp"
+                    android:src="@drawable/ic_home2"
+                    android:layout_height="35dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:text="آموزش ها"
+                    android:layout_marginTop="8dp"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
@@ -130,20 +138,27 @@
                 android:orientation="vertical"
                 android:layout_height="match_parent">
 
+                <ImageView
+                    android:layout_width="35dp"
+                    android:src="@drawable/ic_home1"
+                    android:layout_height="35dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:text="معرفی یوگا"
+                    android:layout_marginTop="8dp"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:layout_height="0dp"></LinearLayout>
+            android:layout_weight="1.5"
+            android:src="@drawable/home"
+            android:scaleType="fitXY"
+            android:layout_height="0dp"></ImageView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -159,9 +174,15 @@
                 android:orientation="vertical"
                 android:layout_height="match_parent">
 
+                <ImageView
+                    android:layout_width="35dp"
+                    android:src="@drawable/ic_home4"
+                    android:layout_height="35dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:text="لیست باشگاه ها"
+                    android:layout_marginTop="8dp"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
@@ -179,9 +200,15 @@
                 android:orientation="vertical"
                 android:layout_height="match_parent">
 
+                <ImageView
+                    android:layout_width="35dp"
+                    android:src="@drawable/ic_home3"
+                    android:layout_height="35dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:text="لیست مربیان"
+                    android:layout_marginTop="8dp"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
