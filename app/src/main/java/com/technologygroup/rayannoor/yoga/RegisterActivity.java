@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.technologygroup.rayannoor.yoga.Classes.App;
+import com.technologygroup.rayannoor.yoga.Models.UserModel;
 import com.technologygroup.rayannoor.yoga.Services.WebService;
 import com.technologygroup.rayannoor.yoga.Services.fetchDataCity;
 import com.technologygroup.rayannoor.yoga.Services.fetchDataState;
@@ -48,8 +49,6 @@ public class RegisterActivity extends AppCompatActivity {
     public static TextView textView;
     private SharedPreferences prefs;
 
-    int idUser = -1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
         txtLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this , LoginActivity.class);
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -78,11 +77,11 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!edtFName.getText().toString().equals("") || !edtLName.getText().toString().equals("") || !edtMobile.getText().toString().equals("") || !edtEmail.getText().toString().equals("") || !edtUserName.getText().toString().equals("") || !edtUserPass.getText().toString().equals("")){
+                if (!edtFName.getText().toString().equals("") || !edtLName.getText().toString().equals("") || !edtMobile.getText().toString().equals("") || !edtEmail.getText().toString().equals("") || !edtUserPass.getText().toString().equals("")) {
 
-                    if (edtMobile.getText().toString().length() == 11){
+                    if (edtMobile.getText().toString().length() == 11 && edtMobile.getText().toString().startsWith("0")) {
 
-                        if (edtEmail.getText().toString().contains(".") && edtEmail.getText().toString().contains("@")){
+                        if (edtEmail.getText().toString().contains(".") && edtEmail.getText().toString().contains("@")) {
 
                             WebServiceCallReg callReg = new WebServiceCallReg();
                             callReg.execute();
@@ -110,7 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
         edtLName = (EditText) findViewById(R.id.edtLName);
         edtMobile = (EditText) findViewById(R.id.edtMobile);
         edtEmail = (EditText) findViewById(R.id.edtEmail);
-        edtUserName = (EditText) findViewById(R.id.edtUserName);
+        //edtUserName = (EditText) findViewById(R.id.edtUserName);
         edtUserPass = (EditText) findViewById(R.id.edtUserPass);
         btnRegister = (CircularProgressButton) findViewById(R.id.btnRegister);
         txtLogin = (TextView) findViewById(R.id.txtLogin);
@@ -164,16 +163,12 @@ public class RegisterActivity extends AppCompatActivity {
 
                     prefs = getSharedPreferences("MyPrefs", 0);
                     SharedPreferences.Editor editor = prefs.edit();
-                    editor.putBoolean("isFirstRun", false);
-                    editor.putInt("idUser", idUser);
-                    // 1 means normal users
-                    editor.putInt("userType", 1);
+                    editor.putInt("stateNumber", stateNumber);
+                    editor.putInt("cityNumber", cityNumber);
                     editor.apply();
 
                     Intent i = new Intent(RegisterActivity.this, MainActivity.class);
-                    i.putExtra("stateNumber", stateNumber);
-                    i.putExtra("cityNumber", cityNumber);
-
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(i);
                     finish();
                 }
@@ -188,20 +183,28 @@ public class RegisterActivity extends AppCompatActivity {
 
         private WebService webService;
         String result;
+        UserModel userModel;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
             btnRegister.startAnimation();
             webService = new WebService();
+            userModel = new UserModel();
+
+            userModel.Name = edtFName.getText().toString();
+            userModel.lName = edtLName.getText().toString();
+            userModel.Mobile = edtMobile.getText().toString().substring(1);
+            userModel.Email = edtEmail.getText().toString();
+            userModel.Password = edtUserPass.getText().toString();
+
 
         }
 
         @Override
         protected Void doInBackground(Object... params) {
 
-            // id is for place
-            //result = webService.postRate(App.isInternetOn(), coachModel.id, idUser, "coach", (float) rate);
+            result = webService.userRegister(App.isInternetOn(), userModel);
 
             return null;
         }
@@ -214,7 +217,18 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if (Integer.parseInt(result) > 0) {
 
-                    idUser = Integer.parseInt(result);
+
+                    userModel.id = Integer.parseInt(result);
+
+                    prefs = getSharedPreferences("MyPrefs", 0);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putInt("idUser", userModel.id);
+                    editor.putInt("userType", 3);
+                    editor.putString("Name", userModel.Name);
+                    editor.putString("lName", userModel.lName);
+                    editor.putString("Mobile", userModel.Mobile);
+                    editor.putString("Email", userModel.Email);
+                    editor.apply();
 
                     // بعد از اتمام عملیات کدهای زیر اجرا شوند
                     Bitmap icon = BitmapFactory.decodeResource(getResources(),
@@ -226,15 +240,25 @@ public class RegisterActivity extends AppCompatActivity {
                     handler1.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            showStateDialog();
+                            //showStateDialog();
+                            Intent i = new Intent(RegisterActivity.this, MainActivity.class);
+                            startActivity(i);
+                            finish();
+
                         }
                     }, 1000);
 
 
+                } else if (Integer.parseInt(result) == 0 || Integer.parseInt(result) == -1 || Integer.parseInt(result) == -2) {
+                    btnRegister.revertAnimation();
+                    Toast.makeText(RegisterActivity.this, "ثبت نام نا موفق است", Toast.LENGTH_LONG).show();
+                } else if (Integer.parseInt(result) == -3) {
+                    btnRegister.revertAnimation();
+                    Toast.makeText(RegisterActivity.this, "شماره تلفن تکراری است", Toast.LENGTH_LONG).show();
                 } else {
 
                     btnRegister.revertAnimation();
-                    Toast.makeText(RegisterActivity.this, "ثبت نام نا موفق", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, "اتصال با سرور برقرار نشد", Toast.LENGTH_LONG).show();
                 }
 
             } else {

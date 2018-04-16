@@ -42,7 +42,8 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="40dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <Spinner
                 android:id="@+id/LoginSpinner"
@@ -66,7 +67,7 @@
             android:layout_width="match_parent"
             android:id="@+id/edtUserName"
             android:textCursorDrawable="@drawable/cursor_color"
-            android:hint="نام کاربری"
+            android:hint="شماره تلفن"
             android:layout_marginTop="15dp"
             android:textColorHint="@color/lightBlack"
             android:textColor="@color/lightBlack"
@@ -75,7 +76,9 @@
             android:singleLine="true"
             android:textSize="14sp"
             android:gravity="right|center_vertical"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:maxLength="11"
+            android:inputType="phone"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -90,7 +93,8 @@
             android:singleLine="true"
             android:textSize="14sp"
             android:gravity="right|center_vertical"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"/>
 
         <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
             android:id="@+id/btnLogin"

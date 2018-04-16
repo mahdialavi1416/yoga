@@ -1,5 +1,6 @@
 package com.technologygroup.rayannoor.yoga.Gyms;
 
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,14 +25,19 @@ public class GymsListActivity extends AppCompatActivity {
     private RelativeLayout btnBack;
     private ShimmerRecyclerView RecyclerGyms;
     private CoachGymsModel[] gymModel;
-    private int stateNumber = 1;
-    private int cityNumber = 1;
+    private int stateNumber;
+    private int cityNumber;
+    private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gyms_list);
         initView();
+
+        prefs = getSharedPreferences("MyPrefs", 0);
+        stateNumber = prefs.getInt("stateNumber", 1);
+        cityNumber = prefs.getInt("cityNumber", 1);
 
         fetchDataGymsList fetchDataGymsList = new fetchDataGymsList();
         fetchDataGymsList.execute();
@@ -47,9 +53,6 @@ public class GymsListActivity extends AppCompatActivity {
     private void initView() {
         btnBack = (RelativeLayout) findViewById(R.id.btnBack);
         RecyclerGyms = (ShimmerRecyclerView) findViewById(R.id.RecyclerGyms);
-
-        stateNumber = getIntent().getIntExtra("stateNumber", 1);
-        cityNumber = getIntent().getIntExtra("cityNumber", 1);
     }
 
 

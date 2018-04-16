@@ -1,6 +1,7 @@
 package com.technologygroup.rayannoor.yoga;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -45,8 +46,6 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout lytYogaIntroduce;
     private LinearLayout lytGyms;
     private LinearLayout lytCoaches;
-    private int stateNumber;
-    private int cityNumber;
     private NavigationView navigationView;
     private DrawerLayout drawer_layout;
     private ImageView drawerHeaderImage;
@@ -58,11 +57,18 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout lytAboutUs;
     private LinearLayout lytRate;
     private View headerview;
+    private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        prefs = getSharedPreferences("MyPrefs", 0);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("isFirstRun", false);
+        editor.apply();
+
         initView();
 
 
@@ -71,18 +77,10 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(this).load(R.drawable.drawer).into(drawerHeaderImage);
 
 
-        try {
-            stateNumber = getIntent().getIntExtra("stateNumber", 1);
-            cityNumber = getIntent().getIntExtra("cityNumber", 1);
-        }catch (Exception ex){ex.printStackTrace();}
-
-
         lytCoaches.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CoachListActivity.class);
-                intent.putExtra("stateNumber", stateNumber);
-                intent.putExtra("cityNumber", cityNumber);
                 startActivity(intent);
             }
         });
@@ -91,8 +89,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, GymsListActivity.class);
-                intent.putExtra("stateNumber", stateNumber);
-                intent.putExtra("cityNumber", cityNumber);
                 startActivity(intent);
             }
         });

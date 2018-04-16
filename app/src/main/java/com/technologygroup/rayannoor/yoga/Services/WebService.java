@@ -10,6 +10,7 @@ import com.technologygroup.rayannoor.yoga.Models.CoachHonorModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachResumeModel;
 import com.technologygroup.rayannoor.yoga.Models.CommentModel;
+import com.technologygroup.rayannoor.yoga.Models.UserModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -253,6 +254,64 @@ public class WebService {
         return -5;
     }
 
+
+    public UserModel userLogin(boolean isInternetAvailable, String userName, String pass) {
+
+        if (isInternetAvailable) {
+
+            String response = connectToServer(App.apiAddr + "User/Login?Mobile=" + userName + "&Password=" + pass, "GET");
+            Log.i("LOG", response + "");
+
+            if (response != null) {
+
+                UserModel model = new UserModel();
+
+                if (response.equals("-1")){
+
+                    model.id = -1;
+
+                }
+                else {
+
+
+                    try {
+
+                        JSONObject Object = new JSONObject(response);
+
+                        model.Email = Object.getString("Email");
+                        model.Name = Object.getString("Name");
+                        model.Password = Object.getString("Password");
+                        model.lName = Object.getString("lName");
+                        model.id = Object.getInt("id");
+                        model.idCity = Object.getInt("idCity");
+                        model.Type = Object.getInt("Type");
+                        model.Mobile = Object.getString("Mobile");
+
+
+                        return model;
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return null;
+
+        } else
+            return null;
+    }
+
+    public String userRegister(boolean isInternetAvailable, UserModel model) {
+
+        if (isInternetAvailable) {
+
+            String req = "{\"idCity\":-1,\"Name\":\"" + model.Name + "\",\"lName\":\"" + model.lName + "\",\"Mobile\":\"" + model.Mobile + "\",\"Email\":\""  + model.Email + "\",\"Password\":\"" + model.Password + "\",\"Type\":3,\"isVisible\":true,\"lastUpdate\":1}";
+            String response = connectToServerByJson(App.apiAddr + "User/add", "POST", req);
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
 
     public CoachModel getCoachInfo(boolean isInternetAvailable, int id) {
 

@@ -68,34 +68,35 @@
             android:layout_height="wrap_content" />
 
         <EditText
-            android:layout_width="match_parent"
             android:id="@+id/edtEmail"
-            android:textCursorDrawable="@drawable/cursor_color"
-            android:hint="ایمیل"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:textColorHint="@color/lightBlack"
-            android:textColor="@color/lightBlack"
             android:background="@drawable/edit_text_transparent"
+            android:gravity="right|center_vertical"
+            android:hint="ایمیل"
             android:padding="10dp"
             android:singleLine="true"
+            android:textColor="@color/lightBlack"
+            android:textColorHint="@color/lightBlack"
+            android:textCursorDrawable="@drawable/cursor_color"
             android:textSize="14sp"
-            android:gravity="right|center_vertical"
-            android:layout_height="wrap_content" />
+            android:inputType="textEmailAddress"/>
 
-        <EditText
-        android:layout_width="match_parent"
-        android:id="@+id/edtUserName"
-        android:textCursorDrawable="@drawable/cursor_color"
-        android:hint="نام کاربری"
-        android:layout_marginTop="10dp"
-        android:textColorHint="@color/lightBlack"
-        android:textColor="@color/lightBlack"
-        android:background="@drawable/edit_text_transparent"
-        android:padding="10dp"
-        android:singleLine="true"
-        android:textSize="14sp"
-        android:gravity="right|center_vertical"
-        android:layout_height="wrap_content" />
+        <!--<EditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:id="@+id/edtUserName"-->
+        <!--android:textCursorDrawable="@drawable/cursor_color"-->
+        <!--android:hint="نام کاربری"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:textColorHint="@color/lightBlack"-->
+        <!--android:textColor="@color/lightBlack"-->
+        <!--android:background="@drawable/edit_text_transparent"-->
+        <!--android:padding="10dp"-->
+        <!--android:singleLine="true"-->
+        <!--android:textSize="14sp"-->
+        <!--android:gravity="right|center_vertical"-->
+        <!--android:layout_height="wrap_content" />-->
 
         <EditText
             android:layout_width="match_parent"
@@ -110,7 +111,8 @@
             android:singleLine="true"
             android:textSize="14sp"
             android:gravity="right|center_vertical"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"/>
 
         <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
             android:id="@+id/btnRegister"

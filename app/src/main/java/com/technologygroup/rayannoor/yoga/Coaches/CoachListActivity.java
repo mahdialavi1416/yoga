@@ -33,14 +33,18 @@ public class CoachListActivity extends AppCompatActivity {
     private SharedPreferences prefs;
 //    private int idCoach;
     private CoachModel[] coachModel;
-    private int stateNumber = 1;
-    private int cityNumber = 1;
+    private int stateNumber;
+    private int cityNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coach_list);
         initView();
+
+        prefs = getSharedPreferences("MyPrefs", 0);
+        stateNumber = prefs.getInt("stateNumber", 1);
+        cityNumber = prefs.getInt("cityNumber", 1);
 
         fetchDataCoachesList fetchDataCoachesList = new fetchDataCoachesList();
         fetchDataCoachesList.execute();
@@ -55,9 +59,6 @@ public class CoachListActivity extends AppCompatActivity {
         txtTitle = (TextView) findViewById(R.id.txtTitle);
         btnBack = (RelativeLayout) findViewById(R.id.btnBack);
         RecyclerCoach = findViewById(R.id.RecyclerCoach);
-
-        stateNumber = getIntent().getIntExtra("stateNumber", 1);
-        cityNumber = getIntent().getIntExtra("cityNumber", 1);
     }
 
 

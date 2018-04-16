@@ -100,7 +100,17 @@ public class IntroFragment extends Fragment {
             btnGuset.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    showStateDialog();
+                    //showStateDialog();
+                    prefs = getContext().getSharedPreferences("MyPrefs", 0);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    // -1 means guest
+                    editor.putInt("idUser", -1);
+                    // 1 means normal users
+                    editor.putInt("userType", -1);
+
+                    Intent i = new Intent(getContext(), MainActivity.class);
+                    getContext().startActivity(i);
+                    getActivity().finish();
                 }
             });
         }
@@ -166,13 +176,12 @@ public class IntroFragment extends Fragment {
                     // -1 means guest
                     editor.putInt("idUser", -1);
                     // 1 means normal users
-                    editor.putInt("userType", 1);
+                    editor.putInt("userType", -1);
+                    editor.putInt("stateNumber", stateNumber);
+                    editor.putInt("cityNumber", cityNumber);
                     editor.apply();
 
                     Intent i = new Intent(getContext(), MainActivity.class);
-                    i.putExtra("stateNumber", stateNumber);
-                    i.putExtra("cityNumber", cityNumber);
-
                     getContext().startActivity(i);
                     getActivity().finish();
                 }
