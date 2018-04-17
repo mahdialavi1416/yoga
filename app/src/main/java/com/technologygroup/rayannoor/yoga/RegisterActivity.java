@@ -228,6 +228,7 @@ public class RegisterActivity extends AppCompatActivity {
                     editor.putString("lName", userModel.lName);
                     editor.putString("Mobile", userModel.Mobile);
                     editor.putString("Email", userModel.Email);
+                    editor.putString("Password", userModel.Password);
                     editor.apply();
 
                     // بعد از اتمام عملیات کدهای زیر اجرا شوند

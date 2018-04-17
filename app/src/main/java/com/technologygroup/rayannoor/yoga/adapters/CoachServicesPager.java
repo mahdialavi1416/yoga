@@ -56,6 +56,7 @@ public class CoachServicesPager extends FragmentStatePagerAdapter {
 
             case 4:
                 teachesFragment te = new teachesFragment();
+                te.setArguments(bundle);
                 return te;
 
             default:

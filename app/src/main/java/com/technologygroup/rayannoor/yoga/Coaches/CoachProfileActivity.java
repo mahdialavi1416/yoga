@@ -64,10 +64,8 @@ public class CoachProfileActivity extends AppCompatActivity {
 
         initView();
 
-        //todo: get idCoach from shared preferences
         prefs = getSharedPreferences("MyPrefs", 0);
-//        idCoach = prefs.getInt("IdCoach", -1);
-        idCoach = 1;
+        idCoach = prefs.getInt("idUser", -1);
 
         if (idCoach > 0) {
 
@@ -190,6 +188,22 @@ public class CoachProfileActivity extends AppCompatActivity {
                 }
             }
         });
+
+        lytTeachs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (coachModel.idCurrentPlan > 0) {
+                    Intent intent = new Intent(CoachProfileActivity.this, CoachServicesActivity.class);
+                    intent.putExtra("calledFromPanel", true);
+                    intent.putExtra("SelectedTabIndex", 4);
+                    intent.putExtra("idCoach", idCoach);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(CoachProfileActivity.this, "برای دسترسی به این بخش باید پروفایل خود را به طرح یک ستاره ارتقا دهید", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
     }
 
     private void initView() {
@@ -276,6 +290,10 @@ public class CoachProfileActivity extends AppCompatActivity {
                 txtLikeCount.setText(coachModel.like + "");
                 rating.setRating((float) coachModel.Rate);
 
+
+                //todo: this line is for test and must be removed then
+                coachModel.idCurrentPlan = 1;
+
                 if (coachModel.idCurrentPlan == 1){
 
                     lytEducation.setAlpha(1);
@@ -288,10 +306,9 @@ public class CoachProfileActivity extends AppCompatActivity {
                     imgLockCertificates.setVisibility(View.GONE);
                     lytComments.setAlpha(1);
                     imgLockCeomments.setVisibility(View.GONE);
-
-                } else if (coachModel.idCurrentPlan == 2){
                     lytTeachs.setAlpha(1);
                     imgLockTeachs.setVisibility(View.GONE);
+
                 }
 
             } else {

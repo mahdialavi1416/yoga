@@ -560,9 +560,7 @@ public class certificateFragment extends Fragment implements
     @Override
     public void onResume() {
         super.onResume();
-        //todo: get idCoach from shared preferences
         prefs = getContext().getSharedPreferences("MyPrefs", 0);
-//        idCoach = prefs.getInt("IdCoach", -1);
-        idCoach = 1;
+        idCoach = prefs.getInt("idUser", -1);
     }
 }

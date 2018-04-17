@@ -1,5 +1,6 @@
 package com.technologygroup.rayannoor.yoga;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -20,9 +21,14 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +37,8 @@ import com.technologygroup.rayannoor.yoga.Coaches.CoachListActivity;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachProfileActivity;
 import com.technologygroup.rayannoor.yoga.Gyms.GymDetailsActivity;
 import com.technologygroup.rayannoor.yoga.Gyms.GymsListActivity;
+import com.technologygroup.rayannoor.yoga.Services.fetchDataCity;
+import com.technologygroup.rayannoor.yoga.Services.fetchDataState;
 import com.technologygroup.rayannoor.yoga.Teaches.teachsActivity;
 import com.technologygroup.rayannoor.yoga.YogaIntroduce.YogaIntroduceActivity;
 
@@ -58,6 +66,15 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout lytRate;
     private View headerview;
     private SharedPreferences prefs;
+    public static Dialog dialog;
+
+    public static TextView textView;
+    public static TextView textView2;
+    public static Spinner StateSpinner;
+    public static Spinner CitySpinner;
+    private int stateNumber = 1;
+    private int cityNumber = 1;
+    ArrayAdapter<String> spinnerArrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +82,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         prefs = getSharedPreferences("MyPrefs", 0);
+
+        if (prefs.getBoolean("isFirstRun", true)) {
+            showStateDialog();
+        }
         SharedPreferences.Editor editor = prefs.edit();
         editor.putBoolean("isFirstRun", false);
         editor.apply();
+
 
         initView();
 
@@ -170,9 +192,71 @@ public class MainActivity extends AppCompatActivity {
         lytCoaches = (LinearLayout) findViewById(R.id.lytCoaches);
     }
 
+    private void showStateDialog() {
+        dialog = new Dialog(MainActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_state_city);
+
+        CitySpinner = (Spinner) dialog.findViewById(R.id.CitySpinner);
+        final Button btnSendStateCity = (Button) dialog.findViewById(R.id.btnSendState_city);
+        btnSendStateCity.setEnabled(false);
+        btnSendStateCity.setAlpha(0.25f);
+
+        StateSpinner = dialog.findViewById(R.id.StateSpinner);
+        fetchDataState url_read_process = new fetchDataState();
+        url_read_process.execute();//change the province to the expected value
+
+        textView = dialog.findViewById(R.id.use_province_help);
+
+
+        //Toast.makeText(dialog.getContext(), "salaam", Toast.LENGTH_LONG).show();
+
+
+        StateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//               Toast.makeText(dialog.getContext(), (position+1) + "", Toast.LENGTH_LONG).show();
+
+                stateNumber = position + 1;
+                //get the city information
+                fetchDataCity fetchDataCity = new fetchDataCity(stateNumber);
+                fetchDataCity.execute();
+                btnSendStateCity.setEnabled(true);
+                btnSendStateCity.setAlpha(1.0f);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+        btnSendStateCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (cityNumber > 0 && stateNumber > 0) {
+
+                    prefs = getSharedPreferences("MyPrefs", 0);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putInt("stateNumber", stateNumber);
+                    editor.putInt("cityNumber", cityNumber);
+                    editor.apply();
+
+                    dialog.dismiss();
+
+                }
+
+            }
+        });
+
+        dialog.show();
+    }
+
     @Override
     public void onBackPressed() {
-       if (drawer_layout.isDrawerOpen(GravityCompat.END)) {
+        if (drawer_layout.isDrawerOpen(GravityCompat.END)) {
             drawer_layout.closeDrawer(GravityCompat.END);
         } else {
             super.onBackPressed();

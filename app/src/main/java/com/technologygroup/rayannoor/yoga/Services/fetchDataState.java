@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.technologygroup.rayannoor.yoga.IntroPage.IntroFragment;
+import com.technologygroup.rayannoor.yoga.MainActivity;
 import com.technologygroup.rayannoor.yoga.R;
 
 import org.json.JSONArray;
@@ -64,18 +65,18 @@ public class fetchDataState extends AsyncTask<Void, Void, Void>{
                     provinces[i] = provinceObject.get("Name") + "";//index from 0 to 30
                 }
                 spinnerArrayAdapter = new ArrayAdapter<>
-                        (IntroFragment.dialog.getContext(), android.R.layout.preference_category,
+                        (MainActivity.dialog.getContext(), android.R.layout.preference_category,
                                 provinces); //selected item will look like a spinner set from XML
                 spinnerArrayAdapter.setDropDownViewResource(android.R.layout
                         .simple_spinner_dropdown_item);
 
-            IntroFragment.StateSpinner.setAdapter(spinnerArrayAdapter);
+            MainActivity.StateSpinner.setAdapter(spinnerArrayAdapter);
 //                done = true;
-            IntroFragment.StateSpinner = IntroFragment.dialog.findViewById(R.id.StateSpinner);
+            MainActivity.StateSpinner = MainActivity.dialog.findViewById(R.id.StateSpinner);
 
         }catch(Exception ex){ex.printStackTrace();}
-//        IntroFragment.textView2.setText(this.json_provinces);
-//        IntroFragment.provinces = "Example Data";
+//        MainActivity.textView2.setText(this.json_provinces);
+//        MainActivity.provinces = "Example Data";
 
     }
 

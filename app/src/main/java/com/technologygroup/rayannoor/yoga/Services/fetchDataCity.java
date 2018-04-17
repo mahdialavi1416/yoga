@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.technologygroup.rayannoor.yoga.IntroPage.IntroFragment;
+import com.technologygroup.rayannoor.yoga.MainActivity;
 import com.technologygroup.rayannoor.yoga.R;
 
 import org.json.JSONArray;
@@ -63,14 +64,14 @@ public class fetchDataCity extends AsyncTask<Integer, Void, String[]> {
                 cities[i] = provinceObject.get("Name") + "";//index from 0 to 30
             }
             spinnerArrayAdapter2 = new ArrayAdapter<>
-                    (IntroFragment.dialog.getContext(), android.R.layout.preference_category,
+                    (MainActivity.dialog.getContext(), android.R.layout.preference_category,
                             cities); //selected item will look like a spinner set from XML
             spinnerArrayAdapter2.setDropDownViewResource(android.R.layout
                     .simple_spinner_dropdown_item);
 
-            IntroFragment.CitySpinner.setAdapter(spinnerArrayAdapter2);
+            MainActivity.CitySpinner.setAdapter(spinnerArrayAdapter2);
 //                done = true;
-            IntroFragment.StateSpinner = IntroFragment.dialog.findViewById(R.id.CitySpinner);
+            MainActivity.StateSpinner = MainActivity.dialog.findViewById(R.id.CitySpinner);
 
         }catch(Exception ex){ex.printStackTrace();}
         super.onPostExecute(strings);

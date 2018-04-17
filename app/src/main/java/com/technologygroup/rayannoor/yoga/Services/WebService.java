@@ -10,6 +10,7 @@ import com.technologygroup.rayannoor.yoga.Models.CoachHonorModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachResumeModel;
 import com.technologygroup.rayannoor.yoga.Models.CommentModel;
+import com.technologygroup.rayannoor.yoga.Models.TeachesModel;
 import com.technologygroup.rayannoor.yoga.Models.UserModel;
 
 import org.json.JSONArray;
@@ -497,6 +498,47 @@ public class WebService {
             return null;
     }
 
+    public List<TeachesModel> getTeaches(boolean isInternetAvailable, int id, boolean isGym) {
+
+        if (isInternetAvailable) {
+
+            String response = connectToServer(App.apiAddr + "Training/select?isgym=" + isGym + "&id=" + id, "GET");
+            Log.i("LOG", response + "");
+
+            if (response != null) {
+
+                List<TeachesModel> list = new ArrayList<>();
+
+                try {
+
+                    JSONArray Arrey = new JSONArray(response);
+                    for (int i = 0; i < Arrey.length(); i++) {
+                        JSONObject Object = Arrey.getJSONObject(i);
+                        TeachesModel model = new TeachesModel();
+
+                        model.id = Object.getInt("id");
+                        model.idRow = Object.getInt("idRow");
+                        model.Date = Object.getInt("Date");
+                        model.isGym = Object.getBoolean("isGym");
+                        model.Title = Object.getString("Title");
+                        model.Body = Object.getString("Body");
+                        model.Images = Object.getString("Images");
+
+                        list.add(model);
+
+                    }
+                    return list;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+            return null;
+
+        } else
+            return null;
+    }
+
     public List<CoachGymsModel> getCoachGyms(boolean isInternetAvailable, int id) {
 
         if (isInternetAvailable) {
@@ -573,6 +615,8 @@ public class WebService {
         } else
             return null;
     }
+
+
 
 
 
