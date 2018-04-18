@@ -15,7 +15,9 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.technologygroup.rayannoor.yoga.Classes.App;
+import com.technologygroup.rayannoor.yoga.Classes.ClassDate;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachServicesActivity;
+import com.technologygroup.rayannoor.yoga.Coaches.addTeachActivity;
 import com.technologygroup.rayannoor.yoga.Gyms.GymProfileActivity;
 import com.technologygroup.rayannoor.yoga.Gyms.GymsListActivity;
 import com.technologygroup.rayannoor.yoga.Models.CoachGymsModel;
@@ -40,6 +42,7 @@ public class CoachTeachesAdapter extends RecyclerView.Adapter<CoachTeachesAdapte
     private boolean calledFromPanel = false;
     private static int idCoach;
     CoachServicesActivity activity;
+    ClassDate classDate;
 
 
     public CoachTeachesAdapter(Context context, List<TeachesModel> list, int idCoach, boolean calledFromPanel) {
@@ -49,6 +52,7 @@ public class CoachTeachesAdapter extends RecyclerView.Adapter<CoachTeachesAdapte
         this.idCoach = idCoach;
         this.calledFromPanel = calledFromPanel;
         activity = (CoachServicesActivity) context;
+        classDate = new ClassDate();
     }
 
     @Override
@@ -68,19 +72,15 @@ public class CoachTeachesAdapter extends RecyclerView.Adapter<CoachTeachesAdapte
             @Override
             public void onClick(View v) {
 
-//                if (currentObj.Img != null) {
-//                    if (!currentObj.Img.equals("") && !currentObj.Img.equals("null")) {
-//
-//                        CoachServicesActivity activity = (CoachServicesActivity) context;
-//                        Intent intent = new Intent(activity, imageActivity.class);
-//                        intent.putExtra("ImgName", currentObj.Img);
-//                        context.startActivity(intent);
-//                    } else {
-//                        Toast.makeText(context, "تصویر موجود نیست", Toast.LENGTH_SHORT).show();
-//                    }
-//                } else {
-//                    Toast.makeText(context, "تصویر موجود نیست", Toast.LENGTH_SHORT).show();
-//                }
+                CoachServicesActivity activity = (CoachServicesActivity) context;
+                Intent intent = new Intent(activity, addTeachActivity.class);
+                intent.putExtra("calledToAdd", false);
+                intent.putExtra("id", currentObj.id);
+                intent.putExtra("idRow", currentObj.idRow);
+                intent.putExtra("Title", currentObj.Title);
+                intent.putExtra("Body", currentObj.Body);
+                intent.putExtra("Images", currentObj.Images);
+                context.startActivity(intent);
 
             }
         });
@@ -97,7 +97,7 @@ public class CoachTeachesAdapter extends RecyclerView.Adapter<CoachTeachesAdapte
     }
 
 
-    class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView txtitle;
         private TextView txtDate;
@@ -125,7 +125,7 @@ public class CoachTeachesAdapter extends RecyclerView.Adapter<CoachTeachesAdapte
 
         private void setData(TeachesModel current, int position) {
 
-            if (!calledFromPanel){
+            if (!calledFromPanel) {
                 imgEdit.setVisibility(View.INVISIBLE);
                 imgDelete.setVisibility(View.INVISIBLE);
             }
@@ -135,7 +135,7 @@ public class CoachTeachesAdapter extends RecyclerView.Adapter<CoachTeachesAdapte
 //                    Glide.with(context).load(App.imgAddr + current.Img).asBitmap().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imgCertificate);
 
             txtitle.setText(current.Title);
-            txtDate.setText(current.Date);
+            txtDate.setText(classDate.changeDateToString(current.Date));
 
             this.position = position;
             this.current = current;

@@ -681,6 +681,19 @@ public class WebService {
             return null;
     }
 
+    public String AddTeaches(boolean isInternetAvailable, TeachesModel model) {
+
+        if (isInternetAvailable) {
+
+            String req = "{\"idRow\":" + model.idRow + ",\"Title\":\"" + model.Title + "\",\"Body\":\"" + model.Body + "\",\"Images\":\"" + model.Images + "\",\"Date\":" + model.Date + ",\"isVisible\":true,\"isGym\":" + model.isGym + ",\"lastUpdate\":1}";
+            String response = connectToServerByJson(App.apiAddr + "Training/add", "POST", req);
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
+
 
 
     public String editCoachEdu(boolean isInternetAvailable, CoachEduModel model) {

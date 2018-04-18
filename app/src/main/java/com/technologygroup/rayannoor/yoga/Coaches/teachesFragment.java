@@ -81,7 +81,8 @@ public class teachesFragment extends Fragment {
         floatAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity() , addTeachActivity.class);
+                Intent intent = new Intent(getActivity(), addTeachActivity.class);
+                intent.putExtra("idRow", idCoach);
                 startActivity(intent);
             }
         });
@@ -90,7 +91,7 @@ public class teachesFragment extends Fragment {
 
     }
 
-    private void setUpRecyclerView(List<TeachesModel> list){
+    private void setUpRecyclerView(List<TeachesModel> list) {
         adapter = new CoachTeachesAdapter(getActivity(), list, idCoach, calledFromPanel);
         Recycler.setAdapter(adapter);
 
@@ -162,6 +163,13 @@ public class teachesFragment extends Fragment {
         super.onResume();
         prefs = getContext().getSharedPreferences("MyPrefs", 0);
         idCoach = prefs.getInt("idUser", -1);
+        if (idCoach > 0) {
+
+            WebServiceList webServiceCoachInfo = new WebServiceList();
+            webServiceCoachInfo.execute();
+        } else {
+            Toast.makeText(getContext(), "مربی مورد نظر یافت نشد", Toast.LENGTH_LONG).show();
+        }
     }
 
 }
