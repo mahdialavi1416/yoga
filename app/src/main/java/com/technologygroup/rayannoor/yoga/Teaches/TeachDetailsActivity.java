@@ -41,7 +41,7 @@ public class TeachDetailsActivity extends AppCompatActivity {
                 intent.putExtra(Intent.EXTRA_SUBJECT, R.string.app_name);
                 intent.putExtra(Intent.EXTRA_TEXT,"#" +
                         onvan.replace(" ", "_") + "\n"+ matn.toString()
-                        + "\n http://www.example.com\n" +"#نرم_افزار");
+                        + "\nhttp://www.example.com\n" +"#نرم_افزار");
                 Intent mailer = Intent.createChooser(intent, null);
                 startActivity(mailer);
             }
