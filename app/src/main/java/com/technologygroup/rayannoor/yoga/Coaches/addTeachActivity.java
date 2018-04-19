@@ -1,6 +1,7 @@
 package com.technologygroup.rayannoor.yoga.Coaches;
 
 import android.Manifest;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -17,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -34,6 +36,9 @@ import com.technologygroup.rayannoor.yoga.R;
 import com.technologygroup.rayannoor.yoga.Services.FilePath;
 import com.technologygroup.rayannoor.yoga.Services.WebService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
 
 public class addTeachActivity extends AppCompatActivity {
@@ -41,23 +46,24 @@ public class addTeachActivity extends AppCompatActivity {
     private TextView txtTitle;
     private RelativeLayout btnBack;
     private EditText edtTitle;
-    private LinearLayout[] lytTeach = new LinearLayout[11];
-    private TextView[] txtNoImage = new TextView[11];
-    private ImageView[] imgTeach = new ImageView[11];
-    private ImageView[] imgSelectPicture = new ImageView[11];
-    private EditText[] edtBody = new EditText[11];
+    private LinearLayout[] lytTeach = new LinearLayout[10];
+    private TextView[] txtNoImage = new TextView[10];
+    private ImageView[] imgTeach = new ImageView[10];
+    private ImageView[] imgSelectPicture = new ImageView[10];
+    private EditText[] edtBody = new EditText[10];
     private TextView lytAddLesson, lytDeleteLesson;
     private RelativeLayout lytSend;
+    private TextView txtSend;
 
-    private int visibleLyts = 1;
+    private int visibleLyts = 0;
     public boolean flagPermission = false;
     private int idCoach;
     private static int PICK_FILE_REQUEST = 1;
-    private String[] selectedFilePath = new String[11];
-    private String[] selectedImgName = new String[11];
-    private String[] bodyList = new String[11];
-    private String resultAdd;
-    Dialog dialog2;
+    private List<String> selectedFilePath = new ArrayList<>();
+    private List<String> selectedImgName = new ArrayList<>();
+    private List<String> bodyList = new ArrayList<>();
+    private String resultAdd, resultEdit;
+    Dialog dialog;
     private int numberOfImages, numberOfDes, numberOfFilledLyts;
     private boolean calledToAdd;
     private int id;
@@ -69,17 +75,21 @@ public class addTeachActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_teach);
         initView();
 
-        for (int j = 1; j < 11; j++) {
-            selectedFilePath[j] = "";
-            selectedImgName[j] = "";
-            bodyList[j] = "";
-        }
+        for (int j = 0; j < 10; j++) {
 
+            selectedImgName.add(j, "");
+            selectedFilePath.add(j, "");
+            bodyList.add(j, "");
+
+        }
 
         calledToAdd = getIntent().getBooleanExtra("calledToAdd", true);
         idCoach = getIntent().getIntExtra("idRow", -1);
 
         if (!calledToAdd) {
+
+            txtSend.setText("ویرایش");
+
             id = getIntent().getIntExtra("id", -1);
             Title = getIntent().getStringExtra("Title");
             Body = getIntent().getStringExtra("Body");
@@ -87,21 +97,36 @@ public class addTeachActivity extends AppCompatActivity {
 
             edtTitle.setText(Title);
 
-            selectedImgName = Images.split("~");
-            numberOfImages = selectedImgName.length;
-            bodyList = Body.split("~");
-            numberOfDes = bodyList.length;
 
-            if (numberOfDes > numberOfImages) {
-                visibleLyts = numberOfDes;
-            } else {
+            String[] tmp = new String[10];
+            String[] tmp2 = new String[10];
 
-                visibleLyts = numberOfImages;
-            }
+            tmp = Body.split("~");
+            tmp2 = Images.split("~");
 
-            for (int j = 1; j < visibleLyts; j++) {
+            if (tmp.length > tmp2.length)
+                visibleLyts = tmp.length;
+            else
+                visibleLyts = tmp2.length;
+
+            for (int j = 0; j < visibleLyts; j++) {
 
                 lytTeach[j].setVisibility(View.VISIBLE);
+
+            }
+
+            for (int j = 0; j < tmp.length; j++){
+                bodyList.set(j, tmp[j]);
+                edtBody[j].setText(bodyList.get(j));
+            }
+            for (int j = 0; j < tmp2.length; j++){
+
+                selectedImgName.set(j, tmp2[j]);
+                if (!selectedImgName.get(j).equals("")) {
+                    Glide.with(this).load(App.imgAddr + selectedImgName.get(j)).asBitmap().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imgTeach[j]);
+                    txtNoImage[j].setVisibility(View.GONE);
+                    imgTeach[j].setVisibility(View.VISIBLE);
+                }
 
             }
 
@@ -129,7 +154,7 @@ public class addTeachActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (visibleLyts < 10) {
+                if (visibleLyts < 9) {
 
                     visibleLyts++;
                     lytTeach[visibleLyts].setVisibility(View.VISIBLE);
@@ -142,21 +167,22 @@ public class addTeachActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (visibleLyts > 1) {
+                if (visibleLyts > 0) {
 
                     lytTeach[visibleLyts].setVisibility(View.GONE);
                     imgTeach[visibleLyts].setVisibility(View.GONE);
                     txtNoImage[visibleLyts].setVisibility(View.VISIBLE);
                     edtBody[visibleLyts].setText("");
-                    selectedFilePath[visibleLyts] = "";
-                    selectedImgName[visibleLyts] = "";
+                    selectedFilePath.set(visibleLyts, "");
+                    selectedImgName.set(visibleLyts, "");
+                    bodyList.set(visibleLyts, "");
                     visibleLyts--;
                 }
 
             }
         });
 
-        for (int j = 1; j < 11; j++) {
+        for (int j = 0; j < 10; j++) {
             setOnClick(imgSelectPicture[j], j);
         }
 
@@ -164,31 +190,55 @@ public class addTeachActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                numberOfDes = 0;
-                numberOfImages = 0;
-                numberOfFilledLyts = 0;
+//                numberOfDes = 0;
+//                numberOfImages = 0;
+//                numberOfFilledLyts = 0;
+//
+//                for (int j = 1; j < visibleLyts + 1; j++) {
+//
+//                    if (!edtBody[j].getText().toString().equals("") || !selectedImgName[j].equals("")) {
+//                        numberOfFilledLyts++;
+//                    }
+//                    if (!selectedImgName[j].equals("")) {
+//                        numberOfImages++;
+//                    }
+//                }
+//
+//                if (!edtTitle.getText().toString().equals("")) {
+//
+//                    if (numberOfFilledLyts == 0) {
+//                        Toast.makeText(addTeachActivity.this, "حرکتی اضافه نشده است", Toast.LENGTH_LONG).show();
+//                    } else {
+//                        WebServiceAdd webServiceAdd = new WebServiceAdd();
+//                        webServiceAdd.execute();
+//                    }
+//                } else {
+//                    Toast.makeText(addTeachActivity.this, "عنوان وارد نشده است", Toast.LENGTH_LONG).show();
+//                }
 
-                for (int j = 1; j < visibleLyts + 1; j++) {
-
-                    if (!edtBody[j].getText().toString().equals("") || !selectedImgName[j].equals("")) {
-                        numberOfFilledLyts++;
-                    }
-                    if (!selectedImgName[j].equals("")) {
-                        numberOfImages++;
-                    }
-                }
 
                 if (!edtTitle.getText().toString().equals("")) {
 
-                    if (numberOfFilledLyts == 0) {
-                        Toast.makeText(addTeachActivity.this, "حرکتی اضافه نشده است", Toast.LENGTH_LONG).show();
+                    for (int j = 0; j < 10; j++) {
+                        bodyList.set(j, edtBody[j].getText().toString());
+                    }
+
+                    if (!calledToAdd){
+
+                        WebServiceEdit webServiceEdit = new WebServiceEdit();
+                        webServiceEdit.execute();
+
                     } else {
+
                         WebServiceAdd webServiceAdd = new WebServiceAdd();
                         webServiceAdd.execute();
+
                     }
+
                 } else {
                     Toast.makeText(addTeachActivity.this, "عنوان وارد نشده است", Toast.LENGTH_LONG).show();
                 }
+
 
             }
         });
@@ -199,59 +249,60 @@ public class addTeachActivity extends AppCompatActivity {
         txtTitle = (TextView) findViewById(R.id.txtTitle);
         btnBack = (RelativeLayout) findViewById(R.id.btnBack);
         edtTitle = (EditText) findViewById(R.id.edtTitle);
-        lytTeach[1] = (LinearLayout) findViewById(R.id.lytTeach1);
-        txtNoImage[1] = (TextView) findViewById(R.id.txtNoImage1);
-        imgTeach[1] = (ImageView) findViewById(R.id.imgTeach1);
-        imgSelectPicture[1] = (ImageView) findViewById(R.id.imgSelectPicture1);
-        edtBody[1] = (EditText) findViewById(R.id.edtBody1);
-        lytTeach[2] = (LinearLayout) findViewById(R.id.lytTeach2);
-        txtNoImage[2] = (TextView) findViewById(R.id.txtNoImage2);
-        imgTeach[2] = (ImageView) findViewById(R.id.imgTeach2);
-        imgSelectPicture[2] = (ImageView) findViewById(R.id.imgSelectPicture2);
-        edtBody[2] = (EditText) findViewById(R.id.edtBody2);
-        lytTeach[3] = (LinearLayout) findViewById(R.id.lytTeach3);
-        txtNoImage[3] = (TextView) findViewById(R.id.txtNoImage3);
-        imgTeach[3] = (ImageView) findViewById(R.id.imgTeach3);
-        imgSelectPicture[3] = (ImageView) findViewById(R.id.imgSelectPicture3);
-        edtBody[3] = (EditText) findViewById(R.id.edtBody3);
-        lytTeach[4] = (LinearLayout) findViewById(R.id.lytTeach4);
-        txtNoImage[4] = (TextView) findViewById(R.id.txtNoImage4);
-        imgTeach[4] = (ImageView) findViewById(R.id.imgTeach4);
-        imgSelectPicture[4] = (ImageView) findViewById(R.id.imgSelectPictur4);
-        edtBody[4] = (EditText) findViewById(R.id.edtBody4);
-        lytTeach[5] = (LinearLayout) findViewById(R.id.lytTeach5);
-        txtNoImage[5] = (TextView) findViewById(R.id.txtNoImage5);
-        imgTeach[5] = (ImageView) findViewById(R.id.imgTeach5);
-        imgSelectPicture[5] = (ImageView) findViewById(R.id.imgSelectPicture5);
-        edtBody[5] = (EditText) findViewById(R.id.edtBody5);
-        lytTeach[6] = (LinearLayout) findViewById(R.id.lytTeach6);
-        txtNoImage[6] = (TextView) findViewById(R.id.txtNoImage6);
-        imgTeach[6] = (ImageView) findViewById(R.id.imgTeach6);
-        imgSelectPicture[6] = (ImageView) findViewById(R.id.imgSelectPicture6);
-        edtBody[6] = (EditText) findViewById(R.id.edtBody6);
-        lytTeach[7] = (LinearLayout) findViewById(R.id.lytTeach7);
-        txtNoImage[7] = (TextView) findViewById(R.id.txtNoImage7);
-        imgTeach[7] = (ImageView) findViewById(R.id.imgTeach7);
-        imgSelectPicture[7] = (ImageView) findViewById(R.id.imgSelectPicture7);
-        edtBody[7] = (EditText) findViewById(R.id.edtBody7);
-        lytTeach[8] = (LinearLayout) findViewById(R.id.lytTeach8);
-        txtNoImage[8] = (TextView) findViewById(R.id.txtNoImage8);
-        imgTeach[8] = (ImageView) findViewById(R.id.imgTeach8);
-        imgSelectPicture[8] = (ImageView) findViewById(R.id.imgSelectPicture8);
-        edtBody[8] = (EditText) findViewById(R.id.edtBody8);
-        lytTeach[9] = (LinearLayout) findViewById(R.id.lytTeach9);
-        txtNoImage[9] = (TextView) findViewById(R.id.txtNoImage9);
-        imgTeach[9] = (ImageView) findViewById(R.id.imgTeach9);
-        imgSelectPicture[9] = (ImageView) findViewById(R.id.imgSelectPicture9);
-        edtBody[9] = (EditText) findViewById(R.id.edtBody9);
-        lytTeach[10] = (LinearLayout) findViewById(R.id.lytTeach10);
-        txtNoImage[10] = (TextView) findViewById(R.id.txtNoImage10);
-        imgTeach[10] = (ImageView) findViewById(R.id.imgTeach10);
-        imgSelectPicture[10] = (ImageView) findViewById(R.id.imgSelectPicture10);
-        edtBody[10] = (EditText) findViewById(R.id.edtBody10);
+        lytTeach[0] = (LinearLayout) findViewById(R.id.lytTeach1);
+        txtNoImage[0] = (TextView) findViewById(R.id.txtNoImage1);
+        imgTeach[0] = (ImageView) findViewById(R.id.imgTeach1);
+        imgSelectPicture[0] = (ImageView) findViewById(R.id.imgSelectPicture1);
+        edtBody[0] = (EditText) findViewById(R.id.edtBody1);
+        lytTeach[1] = (LinearLayout) findViewById(R.id.lytTeach2);
+        txtNoImage[1] = (TextView) findViewById(R.id.txtNoImage2);
+        imgTeach[1] = (ImageView) findViewById(R.id.imgTeach2);
+        imgSelectPicture[1] = (ImageView) findViewById(R.id.imgSelectPicture2);
+        edtBody[1] = (EditText) findViewById(R.id.edtBody2);
+        lytTeach[2] = (LinearLayout) findViewById(R.id.lytTeach3);
+        txtNoImage[2] = (TextView) findViewById(R.id.txtNoImage3);
+        imgTeach[2] = (ImageView) findViewById(R.id.imgTeach3);
+        imgSelectPicture[2] = (ImageView) findViewById(R.id.imgSelectPicture3);
+        edtBody[2] = (EditText) findViewById(R.id.edtBody3);
+        lytTeach[3] = (LinearLayout) findViewById(R.id.lytTeach4);
+        txtNoImage[3] = (TextView) findViewById(R.id.txtNoImage4);
+        imgTeach[3] = (ImageView) findViewById(R.id.imgTeach4);
+        imgSelectPicture[3] = (ImageView) findViewById(R.id.imgSelectPictur4);
+        edtBody[3] = (EditText) findViewById(R.id.edtBody4);
+        lytTeach[4] = (LinearLayout) findViewById(R.id.lytTeach5);
+        txtNoImage[4] = (TextView) findViewById(R.id.txtNoImage5);
+        imgTeach[4] = (ImageView) findViewById(R.id.imgTeach5);
+        imgSelectPicture[4] = (ImageView) findViewById(R.id.imgSelectPicture5);
+        edtBody[4] = (EditText) findViewById(R.id.edtBody5);
+        lytTeach[5] = (LinearLayout) findViewById(R.id.lytTeach6);
+        txtNoImage[5] = (TextView) findViewById(R.id.txtNoImage6);
+        imgTeach[5] = (ImageView) findViewById(R.id.imgTeach6);
+        imgSelectPicture[5] = (ImageView) findViewById(R.id.imgSelectPicture6);
+        edtBody[5] = (EditText) findViewById(R.id.edtBody6);
+        lytTeach[6] = (LinearLayout) findViewById(R.id.lytTeach7);
+        txtNoImage[6] = (TextView) findViewById(R.id.txtNoImage7);
+        imgTeach[6] = (ImageView) findViewById(R.id.imgTeach7);
+        imgSelectPicture[6] = (ImageView) findViewById(R.id.imgSelectPicture7);
+        edtBody[6] = (EditText) findViewById(R.id.edtBody7);
+        lytTeach[7] = (LinearLayout) findViewById(R.id.lytTeach8);
+        txtNoImage[7] = (TextView) findViewById(R.id.txtNoImage8);
+        imgTeach[7] = (ImageView) findViewById(R.id.imgTeach8);
+        imgSelectPicture[7] = (ImageView) findViewById(R.id.imgSelectPicture8);
+        edtBody[7] = (EditText) findViewById(R.id.edtBody8);
+        lytTeach[8] = (LinearLayout) findViewById(R.id.lytTeach9);
+        txtNoImage[8] = (TextView) findViewById(R.id.txtNoImage9);
+        imgTeach[8] = (ImageView) findViewById(R.id.imgTeach9);
+        imgSelectPicture[8] = (ImageView) findViewById(R.id.imgSelectPicture9);
+        edtBody[8] = (EditText) findViewById(R.id.edtBody9);
+        lytTeach[9] = (LinearLayout) findViewById(R.id.lytTeach10);
+        txtNoImage[9] = (TextView) findViewById(R.id.txtNoImage10);
+        imgTeach[9] = (ImageView) findViewById(R.id.imgTeach10);
+        imgSelectPicture[9] = (ImageView) findViewById(R.id.imgSelectPicture10);
+        edtBody[9] = (EditText) findViewById(R.id.edtBody10);
         lytAddLesson = (TextView) findViewById(R.id.lytAddLesson);
         lytDeleteLesson = (TextView) findViewById(R.id.lytDeleteLesson);
         lytSend = (RelativeLayout) findViewById(R.id.lytSend);
+        txtSend = findViewById(R.id.txtSend);
     }
 
 
@@ -312,15 +363,14 @@ public class addTeachActivity extends AppCompatActivity {
                     if (!selectedFileUri.equals("") && !selectedFileUri.equals("null"))
                         Glide.with(this).loadFromMediaStore(selectedFileUri).diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imgTeach[requestCode]);
 
-                selectedFilePath[requestCode] = FilePath.getPath(this, selectedFileUri);
+                selectedFilePath.set(requestCode, FilePath.getPath(this, selectedFileUri));
                 Log.i(TAG, "Selected File Path:" + selectedFilePath);
 
-                if (selectedFilePath[requestCode] != null && !selectedFilePath[requestCode].equals("")) {
+                if (selectedFilePath.get(requestCode) != null && !selectedFilePath.get(requestCode).equals("")) {
 
-                    String extension = selectedFilePath[requestCode].substring(selectedFilePath[requestCode].lastIndexOf(".") + 1, selectedFilePath[requestCode].length());
+                    String extension = selectedFilePath.get(requestCode).substring(selectedFilePath.get(requestCode).lastIndexOf(".") + 1, selectedFilePath.get(requestCode).length());
                     ClassDate classDate = new ClassDate();
-                    selectedImgName[requestCode] = classDate.getDateTime() + "_" + "t_" + idCoach + "." + extension;
-
+                    selectedImgName.set(requestCode, classDate.getDateTime() + "_" + "t_" + idCoach + "." + extension);
                 }
             } else {
                 Toast.makeText(this, "خطا در انتخاب فایل", Toast.LENGTH_SHORT).show();
@@ -350,12 +400,20 @@ public class addTeachActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
 
-            dialog2 = new Dialog(addTeachActivity.this);
-            dialog2.requestWindowFeature(Window.FEATURE_NO_TITLE);
-            dialog2.setContentView(R.layout.dialog_wait);
-            dialog2.setCancelable(true);
-            dialog2.setCanceledOnTouchOutside(true);
-            dialog2.show();
+            dialog = new Dialog(addTeachActivity.this);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.dialog_wait);
+            ImageView logo = dialog.findViewById(R.id.logo);
+
+            //logo 360 rotate
+            ObjectAnimator rotation = ObjectAnimator.ofFloat(logo, "rotationY", 0, 360);
+            rotation.setDuration(3000);
+            rotation.setRepeatCount(Animation.INFINITE);
+            rotation.start();
+
+            dialog.setCancelable(true);
+            dialog.setCanceledOnTouchOutside(true);
+            dialog.show();
 
 
             webService = new WebService();
@@ -370,19 +428,21 @@ public class addTeachActivity extends AppCompatActivity {
             model.Body = "";
             model.Images = "";
 
-            for (int j = 1; j < visibleLyts + 1; j++) {
+            for (int j = 0; j < 10; j++) {
 
-                model.Body += edtBody[j].getText().toString();
-                if (j != visibleLyts) {
-                    model.Body += "~";
-                }
-            }
-            for (int j = 1; j < visibleLyts + 1; j++) {
+                if (!bodyList.get(j).equals("") || !selectedImgName.get(j).equals("")) {
 
-                model.Images += selectedImgName[j];
-                if (j != visibleLyts) {
-                    model.Images += "~";
+
+                    model.Body += bodyList.get(j);
+                    if (j != 9)
+                        model.Body += "~";
+
+                    model.Images += selectedImgName.get(j);
+                    if (j != 9)
+                        model.Images += "~";
+
                 }
+
             }
 
         }
@@ -426,6 +486,102 @@ public class addTeachActivity extends AppCompatActivity {
         }
     }
 
+    private class WebServiceEdit extends AsyncTask<Object, Void, Void> {
+
+        private WebService webService;
+        TeachesModel model;
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            dialog = new Dialog(addTeachActivity.this);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.dialog_wait);
+            ImageView logo = dialog.findViewById(R.id.logo);
+
+            //logo 360 rotate
+            ObjectAnimator rotation = ObjectAnimator.ofFloat(logo, "rotationY", 0, 360);
+            rotation.setDuration(3000);
+            rotation.setRepeatCount(Animation.INFINITE);
+            rotation.start();
+
+            dialog.setCancelable(true);
+            dialog.setCanceledOnTouchOutside(true);
+            dialog.show();
+
+
+            webService = new WebService();
+            model = new TeachesModel();
+            ClassDate classDate = new ClassDate();
+
+            model.id = id;
+            model.idRow = idCoach;
+            model.Title = edtTitle.getText().toString();
+            model.Date = Integer.parseInt(classDate.getDate());
+            model.isGym = false;
+            model.Body = "";
+            model.Images = "";
+
+            for (int j = 0; j < 10; j++) {
+
+                if (!bodyList.get(j).equals("") || !selectedImgName.get(j).equals("")) {
+
+
+                    model.Body += bodyList.get(j);
+                    if (j != 9)
+                        model.Body += "~";
+
+                    model.Images += selectedImgName.get(j);
+                    if (j != 9)
+                        model.Images += "~";
+
+                }
+
+            }
+
+        }
+
+        @Override
+        protected Void doInBackground(Object... params) {
+
+            resultEdit = webService.editTeaches(App.isInternetOn(), model);
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+
+
+            if (resultEdit != null) {
+
+                if (resultEdit.equals("true")) {
+
+                    CallBackFile callBackFile = new CallBackFile();
+                    callBackFile.execute();
+
+                    //model.id = Integer.parseInt(resultAdd);
+
+                } else if (resultEdit.equals("false")) {
+
+                    Toast.makeText(addTeachActivity.this, "ویرایش آموزش ناموفق است", Toast.LENGTH_LONG).show();
+
+                } else {
+
+                    Toast.makeText(addTeachActivity.this, "خطا در برقراری ارتباط", Toast.LENGTH_LONG).show();
+
+                }
+            } else {
+
+                Toast.makeText(addTeachActivity.this, "خطا در برقراری ارتباط", Toast.LENGTH_LONG).show();
+
+            }
+        }
+    }
+
     private class CallBackFile extends AsyncTask<Object, Void, Void> {
 
         private WebService webService;
@@ -451,9 +607,10 @@ public class addTeachActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Object... params) {
 
-            for (int j = 1; j < numberOfImages + 1; j++) {
+            for (int j = 0; j < selectedImgName.size(); j++) {
 
-                fileResult = webService.uploadFile(App.isInternetOn(), selectedFilePath[j], selectedImgName[j]);
+                if (!selectedImgName.get(j).equals(""))
+                    fileResult = webService.uploadFile(App.isInternetOn(), selectedFilePath.get(j), selectedImgName.get(j));
 
             }
 
@@ -464,7 +621,7 @@ public class addTeachActivity extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-            dialog2.dismiss();
+            dialog.dismiss();
 
 
             if (resultAdd != null) {
@@ -483,7 +640,24 @@ public class addTeachActivity extends AppCompatActivity {
                     Toast.makeText(addTeachActivity.this, "خطا در برقراری ارتباط", Toast.LENGTH_LONG).show();
 
                 }
-            } else {
+            } else if (resultEdit != null){
+                if (resultEdit.equals("true")) {
+
+                    Toast.makeText(addTeachActivity.this, "آموزش با موفقیت ویرایش شد", Toast.LENGTH_LONG).show();
+                    finish();
+
+                } else if (resultEdit.equals("false")) {
+
+                    Toast.makeText(addTeachActivity.this, "ویرایش آموزش ناموفق است", Toast.LENGTH_LONG).show();
+
+                } else {
+
+                    Toast.makeText(addTeachActivity.this, "خطا در برقراری ارتباط", Toast.LENGTH_LONG).show();
+
+                }
+            }
+
+            else {
 
                 Toast.makeText(addTeachActivity.this, "خطا در برقراری ارتباط", Toast.LENGTH_LONG).show();
 

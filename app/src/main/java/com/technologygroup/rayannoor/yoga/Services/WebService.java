@@ -742,6 +742,18 @@ public class WebService {
             return null;
     }
 
+    public String editTeaches(boolean isInternetAvailable, TeachesModel model) {
+
+        if (isInternetAvailable) {
+
+            String req = " {\"id\":" + model.id + ",\"idRow\":" + model.idRow + ",\"Title\":\"" + model.Title + "\",\"Body\":\"" + model.Body + "\",\"Images\":\"" + model.Images + "\",\"Date\":" + model.Date + ",\"isVisible\":true,\"isGym\":false,\"lastUpdate\":1}";
+            String response = connectToServerByJson(App.apiAddr + "Training/update", "POST", req);
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
 
 
     public String deleteCoachEdu(boolean isInternetAvailable, int id) {
@@ -773,6 +785,18 @@ public class WebService {
         if (isInternetAvailable) {
 
             String response = connectToServerByJson(App.apiAddr + "honor/delete", "POST", id + "");
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
+
+    public String deleteTeaches(boolean isInternetAvailable, int id) {
+
+        if (isInternetAvailable) {
+
+            String response = connectToServerByJson(App.apiAddr + "Training/delete", "POST", id + "");
             Log.i("LOG", response + "");
 
             return response;
