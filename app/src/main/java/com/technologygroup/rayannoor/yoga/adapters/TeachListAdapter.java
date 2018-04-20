@@ -24,7 +24,8 @@ public class TeachListAdapter extends RecyclerView.Adapter<TeachListAdapter.myVi
     private Context context;
     private LayoutInflater mInflater;
     TextView harakat;
-    int OMUMI = 0, MAKUS = 1, KHABIDE = 2, NESHASTE = 3, ISTADE = 4;
+    ImageView imageView;
+//    int OMUMI = 0, MAKUS = 1, KHABIDE = 2, NESHASTE = 3, ISTADE = 4;
     final int harakat_number;
     String[] harakat_omumi;
     String[] harakat_makus;
@@ -86,6 +87,8 @@ public class TeachListAdapter extends RecyclerView.Adapter<TeachListAdapter.myVi
         holder.tasvir = item1.substring(startTasvir + "StartTasvir".length(), endTasvir);
 
         harakat.setText(holder.onvan);
+//        String imgResource = ("mipmap/".concat(holder.tasvir)).trim();
+//        imageView.setImageResource(context.getResources().getIdentifier(imgResource, "drawable", context.getPackageName()));
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +128,7 @@ public class TeachListAdapter extends RecyclerView.Adapter<TeachListAdapter.myVi
 
             super(itemView);
             harakat = (TextView) itemView.findViewById(R.id.harakat);
+            imageView = (ImageView) itemView.findViewById(R.id.image_nearside);
         }
     }
 }

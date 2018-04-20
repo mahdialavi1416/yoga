@@ -18,6 +18,7 @@
         <activity android:name=".Teaches.teachsActivity" />
         <activity android:name=".YogaIntroduce.YogaIntroduceActivity" />
         <activity android:name=".Gyms.GymsListActivity" />
+        <activity android:name=".YogaIntroduce.IntroduceDetailsActivity" />
         <activity android:name=".Coaches.CoachListActivity" />
         <activity
             android:name=".Coaches.CoachDetailsActivity"

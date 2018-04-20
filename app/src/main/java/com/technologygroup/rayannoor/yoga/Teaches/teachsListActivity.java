@@ -116,8 +116,4 @@ public class teachsListActivity extends AppCompatActivity {
 
     }
 
-    private void swapAdapter(int tab_number){
-        TeachListAdapter newAdapter = new TeachListAdapter(this, tab_number);
-        Recycler.swapAdapter(newAdapter, false);
-    }
 }

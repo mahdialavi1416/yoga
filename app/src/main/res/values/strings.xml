@@ -19,6 +19,7 @@
     <string name="txtLoading">
         در حال انجام عملیات...
     </string>
+    <string name="action_settings">تنظیمات</string>
 
 
     <string-array name="harakat_omumi">
@@ -1530,8 +1531,592 @@ _ استحکام و جوانی را به ستون مهره ها باز می گر
         </item>
 
     </string-array>
-    <string name="title_activity_teaches_list_tabed">TeachesListTabedActivity</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string-array name="mogaddamat">
+        <item name="1">
+            <onvan>StartOnvan
+                یوگا یعنی...
+            EndOnvan</onvan>
+            <matn>StartMatn
+                يوگا يعني رهايي از درد و رنج . \n
+يوگا انسان رابه خرد مي رساند و خرد انسان را به خداوند . \n
+يوگا نگريستن به اسرار و زيباييهاي درون است . \n
+يوگا يك نياز است يك نياز با ارزش براي مردم عصر حاضر . \n
+يوگا  تعادل جسم و روان و وحدت اين دو با هم است . \n
+يوگا يعني به آرامش رسيدن . \n
+يوگا يكي شدن تمام نيروهاي تن ، روان و روح ، با خداست . \n
+يوگا يك روش فلسفي – كاربردي در تفهيم مسائل وجودي ، مراتب ذهني ريشه هاي درد و رنج و متعادل سازي و دفع آنهاست . \n
+يوگا از بين برنده ي تمام دردهاست . \n
+يوگا پيام خرد است و بشريت وارث اين پيام. \n
+يوگا هنر زندگي كردن است . \n
+يوگا يعني رهايي از آلودگي و درد و رنج . \n
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="2">
+            <onvan>StartOnvan
+                با یوگا...
+            EndOnvan</onvan>
+            <matn>StartMatn
+                با يوگا آرامش رواني و تعادل و هماهنگي اركان تن و روان تامين مي گردد . \n
+با يوگا نشانه هاي بيماري زاي جسمي و رواني فرد و جامعه برطرف مي شود . \n
+با يوگا مقاومت فرد در مواجهه با استرس هاي زندگي بيشتر مي شود . \n
+با يوگا قدرت تمركزتان بالا مي رود. \n
+با يوگا از ناراحتي هاي ستون فقرات و ساير مفاصل رهايي مي يابيد . \n
+با يوگا خستگي و فرسودگي را به فراموشي مي سپاريد . \n
+با يوگا  توازن جسماني و تعادل رواني را در هر سن مي توانيد بدست آوريد . \n
+با يوگا  مي توانيد در ورزشهاي قهرماني موفق تر باشيد . \n
+با يوگا بيماريهاي جسماني مانند ناراحتي هاي گوارشي ، عملكرد نامنظم غدد درون ريز بدن و نارسايي هاي خوني ، مشكلات قلبي ، مشكلات ارتوپديك و بسياري از بيماريهاي رواني مانند اضطراب ، ترس ، وسواس و… بهبود مي يابد . \n
+با يوگا شما به زيباييهاي درون خود مي نگريد. \n
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="3">
+            <onvan>StartOnvan
+                انواع یوگا
+            EndOnvan</onvan>
+            <matn>StartMatn
+                یوگا به چند رشته اصلی تقسیم میشود که عبارتند از: \n
+باکتی یوگا  :رسیدن به حقیقت وصل شدن از طریق تجربه عشق و محبت به تمامی موجودات و مخلوقات عالم. \n
+کارما یوگا :رسیدن به حقیقت ووصل شدن از طریق کار وخدمت بدون چشمداشت. \n
+گیانا یوگا : رسیدن به حقیقت ووصل شدن از طریق کسب دانش و اگاهی . \n
+اشتانگا یوگا : رسیدن به حقیقت و وصل شدن از طریق به کنترل در اوردن و پرورش جسم و فکر و در نهایت متحد و هماهنگ نمودن آن دو. این رشته از یوگا خود به دو رشته تقسیم میشود :  هاتایوگا و راجا یوگا - هاتا یوگا \n
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="4">
+            <onvan>StartOnvan
+                فواید یوگا
+            EndOnvan</onvan>
+            <matn>StartMatn
+                ﯾﻮﮔﺎ ﻓﻮﺍﯾﺪ ﺑﺴﯿﺎﺭﯼ ﺩﺍﺭﺩ ﻭﻟﯽ ﺍﺯ ﻣﻬﻢﺗﺮﯾﻦ ﺁﻥﻫﺎ ﺳﻼﻣﺖ ﺟﺴﻢ، ﺭﻓﻊ ﺍﺳﺘﺮﺱ، ﻧﺸﺎﻁ ﻭ ﺷﺎﺩﺍﺑﯽ، ﻭ ﺗﻤﺮﮐﺰ ﺍﺳﺖ . \n
+ﯾﻮﮔﺎ ﺑﺎﻋﺚ ﺍﻓﺰﺍﯾﺶ ﺍﻋﺘﻤﺎﺩ ﺑﻪ ﻧﻔﺲ ﻣﯽﺷﻮﺩ، ﺳﻼﻣﺘﯽ ﺭﺍ ﺣﻔﻆ ﻣﯽﮐﻨﺪ، ﺩﺭﺩﻫﺎﯼ ﻧﺎﺷﯽ ﺍﺯ ﺍﺳﺘﺮﺱ ﻭ ﺧﺴﺘﮕﯽ ﺭﺍ ﺑﻬﺒﻮﺩ ﻣﯽﺑﺨﺸﺪ، ﻗﺪﺭﺕ ﻭ ﺗﻮﺍﻥ ﺑﺪﻧﯽ ﺭﺍ ﺍﻓﺰﺍﯾﺶ ﻣﯽﺩﻫﺪ، ﺭﻭﻧﺪ ﭘﯿﺸﺮﻓﺖ ﺑﯿﻤﺎﺭﯼ ﺭﺍ ﻣﺘﻮﻗﻒ ﻣﯽﮐﻨﺪ ﻭ ﺷﺨﺺ ﻣﯽﺗﻮﺍﻧﺪ ﺑﯿﻤﺎﺭﯼﺍﺵ ﺭﺍ ﮐﻨﺘﺮﻝ ﮐﻨﺪ.\n
+هدف یوگا کاستن از تنش های جسمی و روحی،و ارامش بخشیدن به بدن و روان است.هنگامی که بدن به تعادل برسد، وجودتان از ارامش اکنده خواهد شد.\n
+هاتا یوگا پاهای شما را قویتر میسازد،بر شادابی شما می افزاید و گردش خون،هماهنگی و تعادل شما را بهبود میبخشد.هم نوایی بدن و دم و بازدم،انسان را به مراقبه (مدیتیشن)سوق میدهد.
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="5">
+            <onvan>StartOnvan
+                مزایای یوگا
+            EndOnvan</onvan>
+            <matn>StartMatn
+                کاهش استرس \n
+افزایش آرامش \n
+کاهش درد \n
+بهبود تنفس \n
+انعطاف پذیری \n
+افزایش قدرت \n
+کنترل وزن \n
+بهبود جریان خون \n
+آرامش درون \n
+سلامت قلب و عروق \n
+آسم (بهبود کیفیت زندگی و کاهش درمان دارویی) \n
+سلامت قلب (کلسترول، فشار خون، قند…) \n
+استرس و اضطراب \n
+خواب (خواب، کیفیت و طول مدت خواب) \n
+افسردگی (بهبود خلق و خو) \n
+کیفیت زندگی افراد مبتلا به سرطان \n
+مشکلات اسکلتی عضلانی (آرتروز، سندروم کانال کارپین، کمردرد…) \n
+توانایی تفکر و حافظه (میان جوانان و افراد مسن) \n
+سندروم رودۀ تحریک پذیر (کاهش علائم) \n
+بیماری صرع (کاهش دفعات حمله ها \n
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="6">
+            <onvan>StartOnvan
+                پنج كلمه ای كه هر رهجوی یوگا (یوگی) بايد بداند
+            EndOnvan</onvan>
+            <matn>StartMatn
+                ۱. آسانا (asana) \n
+ به حرکات بدنی یوگا گفته می‌شود ومعمولاً تمام اسامی حركت های يوگا به كلمه آسانا ختم می شود. \n
+۲. ناماسته namaste) ( \n
+كه در زبان سانسكريت بسيار معروف است و قرار دادن کف دست‌ها روی هم و مقابل قفسه سینه نشان داده می‌شود. \n
+۳. ام (om) ( \n
+صدای كيهان است. با يك دم خداوند اين صدا ارتعاش پيدا كرد. \n
+۴. شانتیshanti)  ( \n
+ به معنی صلح و آرامش است. \n
+معمولاً ذکر شانتی را سه بار تكرار می كنيم تا آرامش را به سه وجه از وجودمان (بدن، كلام و روحمان) هديه كنيم. \n
+۵. يوگا (yoga)    \n
+يوگا از كلمه "یوج" به معنای پیوستن و یکی شدن می آید؛ یعنی اتحاد جسم ذهن و روح. \n
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="7">
+            <onvan>StartOnvan
+                جملات آرامشی یوگا
+            EndOnvan</onvan>
+            <matn>StartMatn
+                این جملات را نوشته و همیشه همراه داشته باشید. هر جمله ای که بیشتر بدلتان نشست روزانه بارها و بارها تکرار فرمائید. \n
+1- من در آرامش کامل به سر می برم و همواره روحیه ای شاد و لبخندی بر لب دارم. \n
+2- من سزاوار بهترین ها هستم. \n
+3- از راه شگفت خدا , پول مثل سیل بطرف من سرازیر می شود. \n
+4- من خودم را دوست دارم و به خود افتخار می کنم. \n
+5- هر چه بیشتر می بخشم بیشتر می ستانم و احساس شادمانی می کنم. \n
+6- سراسر وجودم غرق در انرژی و شادی است. \n
+7- من ایده های بزرگی در سر دارم و آنها را به واقعیت تبدیل می کنم. \n
+8- من انسانی توانا ، خلاق و دوست داشتنی هستم. \n
+9- تمام بدهی های من از راه شگفت خدا بی درنگ و بطور کامل پرداخت می شود. \n
+10- سراسر وجودم غرق در انرژی و شادی است. \n
+11- روز بروز اعتماد بنفس من بیشتر و بیشتر می شود. \n
+12- رابطه من با خانواده روز به روز بهتر و بهتر می شود. \n
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="8">
+            <onvan>StartOnvan
+                مراحل هشتگانه یوگا
+            EndOnvan</onvan>
+            <matn>StartMatn
+                ۱- یاما( پرهیزگاریها) \n
+شامل : ستم نکردن - صداقت و راستگوئی - امانت داری و دزدی نکردن - عدم وابستگی به دیگران - نداشتن حرص و طمع و کنترل انرژی جنسی
+۲- نیاما (واجبات) \n
+شامل پاکیزگی و نظافت - قناعت و خرسندی- ریاضت و تسلط بر خویشتن - تعمیق و مطالعه - عبادت پروردگار و تمرکز روی حقیقت خداوندی
+۳-آسانا (حرکات) \n
+۴ - پرانایاما (کنترل تنفس) \n
+۵- پراتی هارا(کنترل تنفس) \n
+در خود فرو رفتن و تجرد از دنیای خارج و آزاد کردن خویش از اسارت حواس
+۶ -دهارنا (تمرکز افکار) \n
+ثابت نگاه داشتن فکر بر روی یک نقطه یا یک موضوع
+۷ - دهیانا (تعمیق و تفکر) \n
+به تفکر عمیق فرو رفتن و به مشاهده و مراقبه احوال درون پرداختن
+۸ - سامادهی ( فنا ی فی الله) \n
+تمام عشق ها و دوست داشتنی ها بطرف روح عالی کشیده می شود.
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+    </string-array>
+
+    <string-array name="porsesh_pasokh">
+        <item name="1">
+            <onvan>StartOnvan
+                ﺁﯾﺎ ﺍﻓﺮﺍﺩﯼ ﮐﻪ ﻣﺤﺪﻭﺩﯾﺖ ﺣﺮﮐﺘﯽ ﯾﺎ ﺟﺮﺍﺣﯽﻫﺎﯼ ﺧﺎﺹ ﺩﺍﺷﺘﻪﺍﻧﺪ ﻣﯽﺗﻮﺍﻧﻨﺪ ﯾﻮﮔﺎ ﮐﻨﻨﺪ؟
+            EndOnvan</onvan>
+            <matn>StartMatn
+                ﺑﻠﻪ . ﺑﺎ ﺗﻮﺟﻪ ﺑﻪ ﻣﺸﺎﻭﺭﻩﺍﯼ ﮐﻪ ﺑﺎ ﻣﺘﺨﺼﺼﺎﻥ ﻫﻤﮑﺎﺭ ﻣﻌﺘﻤﺪﯾﻮﮔﺎ ﺍﻧﺠﺎﻡ ﻣﯽﺷﻮﺩ ﺍﻧﻮﺍﻉ ﺣﺮﮐﺖﻫﺎﯾﯽ ﮐﻪ ﻣﻨﺎﺳﺐ ﻭﺿﻌﯿﺖ ﻓﻌﻠﯽ ﺁﻧﺎﻥ ﺍﺳﺖ ﻃﺮﺍﺣﯽ ﻣﯽﺷﻮﺩ . \n
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="2">
+            <onvan>StartOnvan
+                ﺁﯾﺎ ﯾﻮﮔﺎ ﺑﺎ ﺍﻋﺘﻘﺎﺩﺍﺕ ﻣﺬﻫﺒﯽ ﻭ ﻓﺮﺩﯼ ﺷﺨﺺ ﺗﻌﺎﺭﺽ ﺍﯾﺠﺎﺩ ﻣﯽﮐﻨﺪ؟
+            EndOnvan</onvan>
+            <matn>StartMatn
+                ﭼﻮﻥ ﻫﺪﻑ ﻧﻬﺎﯾﯽ ﯾﻮﮔﺎ ﺭﺳﯿﺪﻥ ﺑﻪ ﻭﺣﺪﺕ ﻭ ﺧﺪﺍﻭﻧﺪ ﺍﺳﺖ ﻫﺮ ﮐﺴﯽ ﺑﺎ ﻫﺮ ﻣﺬﻫﺐ ﻭ ﺍﻋﺘﻘﺎﺩﯼ ﻣﯽﺗﻮﺍﻧﺪ ﺩﺭ ﻣﺴﯿﺮ ﺧﺪﺍﺷﻨﺎﺳﯽ ﺑﻬﺘﺮ ﺣﺮﮐﺖ ﮐﻨﺪ. ﯾﻮﮔﺎ ﺧﻮﺩﺷﻨﺎﺳﯽ ﺍﺳﺖ ﻭ ﺍﺯ ﺧﻮﺩﺷﻨﺎﺳﯽ ﺑﻪ ﺧﺪﺍﺷﻨﺎﺳﯽ ﻣﻨﺘﻬﯽ ﻣﯽﺷﻮﺩ . \n
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="3">
+            <onvan>StartOnvan
+                ﺁﯾﺎ ﯾﻮﮔﺎ ﻫﻤﺎﻥ ﻣﺪﯾﺘﯿﺸﻦ ﺍﺳﺖ؟
+            EndOnvan</onvan>
+            <matn>StartMatn
+
+                ﻣﺪﯾﺘﯿﺸﻦ ﯾﻌﻨﯽ ﺣﻀﻮﺭ ﺩﺭ ﻟﺤﻈﻪ ﻭ ﺗﻮﻗﻒ ﺍﻓﮑﺎﺭ، ﻧﺤﻮﻩﯼ ﺁﻣﻮﺯﺵ ﻣﺎ ﺑﻪ ﮔﻮﻧﻪﺍﯼ ﺍﺳﺖ ﮐﻪ ﺍﺯ ﺍﺑﺘﺪﺍ ﺗﻤﺮﯾﻨﺎﺕ ﺭﻭﯼ ﺟﺴﻢ ﻭ ﺑﺪﻥ ﻣﺘﻤﺮﮐﺰ ﺍﺳﺖ ﺍﻣﺎ ﺫﻫﻦ ﺭﺍ ﺑﻪ ﮔﻮﻧﻪﺍﯼ ﻫﺪﺍﯾﺖ ﻣﯽﮐﻨﯿﻢ ﮐﻪ ﺩﺭ ﻃﻮﻝ ﺯﻣﺎﻥ ﻭ ﺑﺎ ﺁﻣﻮﺯﺵ ﺗﻤﺮﯾﻨﺎﺕ ﺗﻨﻔﺴﯽ ﻣﯽﺗﻮﺍﻥ ﻣﺪﯾﺘﯿﺸﻦ ﺭﺍ ﻫﻢ ﺗﺠﺮﺑﻪ ﮐﺮﺩ . ﺩﺭ ﺁﺧﺮ ﯾﻮﮔﺎ ﻣﺪﯾﺘﯿﺸﻦ ﺍﺳﺖ. \n
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="4">
+            <onvan>StartOnvan
+                ﭼﻪ ﻭﺭﺯﺵﻫﺎﯾﯽ ﺑﺎ ﯾﻮﮔﺎ ﻫﻤﺎﻫﻨﮕﯽ ﺩﺍﺭﻧﺪ؟
+            EndOnvan</onvan>
+            <matn>StartMatn
+                ﻭﺭﺯﺵﻫﺎﯾﯽ ﮐﻪ ﺩﻭ ﻃﺮﻑ ﺑﺪﻥ ﺭﺍ ﯾﮑﺴﺎﻥ ﭘﺮﻭﺭﺵ ﻣﯽﺩﻫﻨﺪ، ﻣﺎﻧﻨﺪ ﭘﯿﺎﺩﻩﺭﻭﯼ ﻭ ﺷﻨﺎ ﺑﺎ ﯾﻮﮔﺎ ﻫﻤﺨﻮﺍﻧﯽ ﺩﺍﺭﻧﺪ . \n
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="5">
+            <onvan>StartOnvan
+                ﺁﯾﺎ ﺩﺭ ﻃﻮﻝ ﮔﺬﺭﺍﻧﺪﻥ ﺩﻭﺭﻩﯼ ﯾﻮﮔﺎ ﺑﺎﯾﺪ ﺭﮊﯾﻢ ﻏﺬﺍﯾﯽ ﺧﺎﺻﯽ ﺭﺍ ﺭﻋﺎﯾﺖ ﮐﺮﺩ؟
+            EndOnvan</onvan>
+            <matn>StartMatn
+                ﺑﺮﺍﯼ ﺍﻧﺠﺎﻡ ﺗﻤﺮﯾﻨﺎﺕ ﯾﻮﮔﺎ ﺑﻬﺘﺮ ﺍﺳﺖ ﺑﺪﻥ ﺳﺒﮏﺗﺮ ﻭ ﺫﻫﻦ ﻫﺸﯿﺎﺭﺗﺮ ﺑﺎﺷﺪ ﮐﻪ ﺭﮊﯾﻢ ﻏﺬﺍﯾﯽ ﻣﻨﺎﺳﺐ ﻣﯽﺗﻮﺍﻧﺪ ﺑﻪ ﺍﯾﻦ ﻫﺪﻑ ﮐﻤﮏ ﮐﻨﺪ. ﺭﮊﯾﻤﯽ ﻏﺬﺍﯾﯽ ﮐﻪ ﺩﺭ ﺁﻥ ﺍﺯ ﮔﻮﺷﺖ ﻗﺮﻣﺰ ﮐﻤﺘﺮ ﺍﺳﺘﻔﺎﺩﻩ ﺷﻮﺩ، ﭼﺮﺑﯽ، ﺷﮑﺮ ﻭ ﻧﻤﮏ ﺗﺎ ﺁﻥﺟﺎ ﮐﻪ ﻣﻤﮑﻦ ﺍﺳﺖ ﻣﺤﺪﻭﺩ ﺷﻮﺩ ﻭ ﺑﻪ ﺟﺎﯼ ﺁﻥ
+ﻏﻼﺕ، ﺣﺒﻮﺑﺎﺕ، ﺟﻮﺍﻧﻪﻫﺎ ﻭ ﺳﺒﺰﯾﺠﺎﺕ ﺑﯿﺸﺘﺮ ﺳﻔﺮﻩ ﻏﺬﺍﯾﯽ ﻣﺎ ﺭﺍ ﺗﺸﮑﯿﻞ ﺩﻫﻨﺪ ﺗﻮﺻﯿﻪ ﻣﯽﺷﻮﺩ . \n
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="6">
+            <onvan>StartOnvan
+                ﺁﯾﺎ ﯾﻮﮔﺎ ﺩﺭ ﮐﺎﻫﺶ ﻭﺯﻥ ﻣﻮﺛﺮ ﺍﺳﺖ؟
+            EndOnvan</onvan>
+            <matn>StartMatn
+
+                ﯾﻮﮔﺎ ﺑﺎ ﺗﺄﺛﯿﺮﯼ ﮐﻪ ﺭﻭﯼ ﻋﻀﻼﺕ ﻭ ﻣﺘﺎﺑﻮﻟﯿﺴﻢ ﭘﺎﯾﻪ ﻣﯽﮔﺬﺍﺭﺩ ﺑﺎﻋﺚ ﮐﺎﻫﺶ ﻭﺯﻥ ﻣﯽﺷﻮﺩ ﺍﻣﺎ ﺗﺎﺛﯿﺮ ﻋﻤﯿﻖ ﻭ ﻣﻮﺛﺮ ﺁﻥ ﺍﺛﺮﯼ ﺍﺳﺖ ﮐﻪ ﺭﻭﯼ ﺫﻫﻦ ﺩﺍﺭﺩ ﻭ ﺍﺧﺘﻼﻻﺕ ﻣﺮﺑﻮﻁ ﺑﻪ ﺧﻮﺭﺩﻥ ‏( ﺁﻧﻮﺭﮐﺴﯿﺎ، ﻭ ﺑﻮﻟﯿﻤﯿﺎ ﮐﻪ ﻫﻤﺎﻥ ﭘﺮﺧﻮﺭﯼ ﻭ ﮐﻢﺧﻮﺭﯼ ﺍﺳﺖ ‏) ﺧﻮﺩﺑﻪﺧﻮﺩ ﺑﺎ ﺫﻫﻦ ﻣﺘﻌﺎﺩﻝ ﺑﺮﻃﺮﻑ ﺧﻮﺍﻫﻨﺪ ﺷﺪ. \n
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="7">
+            <onvan>StartOnvan
+                ﭼﻪ ﻧﻮﻉ ﻭﺭﺯﺷﯽ ﻣﻨﺎﺳﺐ ﺍﺳﺖ؟
+            EndOnvan</onvan>
+            <matn>StartMatn
+                ﻭﺭﺯﺵﻫﺎﯾﯽ ﮐﻪ ﺑﺘﻮﺍﻧﻨﺪ ﺗﻤﺎﻡ ﻋﻀﻼﺕ ﺑﺪﻥ ﺭﺍ ﺑﻪﻃﻮﺭ ﯾﮑﺴﺎﻥ ﭘﺮﻭﺭﺵ ﺩﻫﻨﺪ ﻭ ﺁﺳﯿﺒﯽ ﺑﻪ ﺩﺳﺘﮕﺎﻩﻫﺎﯼ ﺑﺪﻥ ﻭﺍﺭﺩ ﻧﮑﻨﻨﺪ ﺑﻬﺘﺮﯾﻦ ﻭﺭﺯﺵ ﺑﺮﺍﯼ ﺷﻤﺎ ﻫﺴﺘﻨﺪ . ﻭﺭﺯﺵ ﺑﺎﯾﺪ ﮐﺎﻣﻼً ﺑﺎ ﻓﺮﻡ ﺍﺳﮑﻠﺖ، ﻋﻀﻼﺕ، ﻣﺤﺪﻭﺩﯾﺖﻫﺎﯼ ﻣﻔﺎﺻﻞ ﻭ ﻣﺸﮑﻼﺕ ﺑﺪﻧﯽ ﻃﺮﺍﺣﯽ ﺷﻮﺩ. ﻫﺮ ﻭﺭﺯﺷﯽ ﻭ
+ﻫﺮ ﺣﺮﮐﺘﯽ ﻣﻨﺎﺳﺐ ﻫﻤﻪ ﻧﯿﺴﺖ . \n
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="8">
+            <onvan>StartOnvan
+                ﭼﻨﺪ ﺳﺎﻋﺖ ﻭﺭﺯﺵ ﺩﺭ ﻫﻔﺘﻪ ﮐﺎﻓﯽ ﺍﺳﺖ؟
+            EndOnvan</onvan>
+            <matn>StartMatn
+                ﺑﺮﺍﯼ ﺩﺍﺷﺘﻦ ﺑﺪﻧﯽ ﺳﺎﻟﻢ ﺣﺪﺍﻗﻞ ﻫﻔﺘﻪﺍﯼ ۳ ﺳﺎﻋﺖ ﻭﺭﺯﺵ ﻻﺯﻡ ﺍﺳﺖ . ﺍﮔﺮ ﺑﺪﻥ ﺁﻣﺎﺩﻩ ﻧﺒﺎﺷﺪ ﺣﺘﻤﺎً ﺑﺎﯾﺪ ﺑﯿﻦ ﺁﻥﻫﺎ ﯾﮏ ﺭﻭﺯ ﻓﺎﺻﻠﻪ ﺩﺭ ﻧﻈﺮ ﮔﺮﻓﺘﻪ ﺷﻮﺩ . \n
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="9">
+            <onvan>StartOnvan
+                ﺁﻳﺎ ﺗﻤﺮﻳﻨﺎﺕ ﯾﻮﮔﺎ ﻣﻲﺗﻮﺍﻧﺪ ﺑﻪ ﻻﻏﺮ ﺷﺪﻥ ﻛﻤﻚ ﻛﻨﺪ؟
+            EndOnvan</onvan>
+            <matn>StartMatn
+                ﺗﻮﺩﻩﯼ ﭼﺮﺑﯽ ﺩﺭ ﺍﻃﺮﺍﻑ ﺗﺎﺭﻫﺎﯼ ﻋﻀﻠﻪ، ﻗﺪﺭﺕ ﻋﻀﻠﻪ ﺭﺍ ﺩﺭ ﺍﻧﻘﺒﺎﺽ ﻭ ﺍﻧﺒﺴﺎﻁ ﻃﯽ ﺍﻧﺠﺎﻡ ﺣﺮﮐﺎﺕ ﻣﺤﺪﻭﺩ ﻣﯽﮐﻨﺪ ﭘﺲ ﺩﺍﺷﺘﻦ ﺭﮊﯾﻢ ﻏﺬﺍﯾﯽ ﺗﺤﺖ ﻧﻈﺮ ﻣﺸﺎﻭﺭ ﺗﻐﺬﯾﻪ ﻭ ﺍﻧﺠﺎﻡ ﺣﺮﮐﺎﺕ ﺳﺒﮏ ﯾﻮﮔﺎ ﺑﻪ ﻣﺮﻭﺭ ﻭ ﺁﺭﺍﻡ ﺑﺎﻋﺚ ﮐﺎﻫﺶ ﻭﺯﻥ ﻣﯽﺷﻮﺩ. \n
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="10">
+            <onvan>StartOnvan
+                ﺑﻬﺘﺮﯾﻦ ﺯﻣﺎﻥ ﺑﺮﺍﯼ ﺍﻧﺠﺎﻡ ﯾﻮﮔﺎ ﭼﻪ ﺯﻣﺎﻧﯽ ﺍﺳﺖ؟
+            EndOnvan</onvan>
+            <matn>StartMatn
+                ﺑﻬﺘﺮ ﺍﺳﺖ ﺍﻓﺮﺍﺩ ﻣﺒﺘﺪﯼ ﺳﺎﻋﺎﺕ ﺑﻌﺪ ﺍﺯ ﻇﻬﺮ ﺭﺍ ﺍﻧﺘﺨﺎﺏ ﮐﻨﻨﺪ ﮐﻪ ﺑﺪﻥ ﻧﺮﻡﺗﺮ ﻭ ﺁﻣﺎﺩﻩﺗﺮ ﺍﺳﺖ ﻭ ﻫﺮﭼﻪ ﺑﺪﻥ ﻭ ﺫﻫﻦ ﺁﻣﺎﺩﻩﺗﺮ ﻣﯽﺷﻮﺩ ﻣﺴﻠﻤﺎً ﺍﻧﺠﺎﻡ ﯾﻮﮔﺎ ﺻﺒﺢﻫﻨﮕﺎﻡ ﺑﻬﺘﺮ ﺍﺳﺖ ﺯﯾﺮﺍ ﺫﻫﻦ ﺳﺒﮏ ﻭ ﺁﺭﺍﻡ ﺗﺮ ﺍﺳﺖ. \n
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="11">
+            <onvan>StartOnvan
+                برای انتخاب سبک یوگای مناسب، چه سوالایی باید از خودمان بپرسیم؟
+            EndOnvan</onvan>
+            <matn>StartMatn
+
+                1- آیا هدفتان از یوگا، علاوه بر کشف رابطه ذهن-بدن، کسب تناسب اندام نیز هست؟ در این صورت یکی از سبک‌های پرتحرک یوگا مثل یوگای قدرتی، آستانگا یا بیکرام را انتخاب کنید. هر سه سبک مجموعه‌ای از حرکات پرتحرک را با حرکات مربوط به تمام بدن ترکیب می‌کنند.  \n
+2- آیا آسیب‌دیدگی، بیماری یا محدودیت دیگری دارید؟ در این صورت با یک کلاس آهسته‌تر شروع کنید که بر تعادل متمرکز باشد، مثل یوگای اینگار، کریپالو، یا وینی یوگا.  \n
+3- آیا جنبه‌های روحی و مدیتیشن یوگا هدف اصلی شما است؟ در این صورت یکی از سبک‌های یوگا را انتخاب کنید که شامل مدیتیشن، آوازهای عرفانی و جنبه‌های فلسفی بیشتری باشد. برای مثال می‌توانید یوگای کاندالینی را امتحان کنید. \n
+
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="12">
+            <onvan>StartOnvan
+                چه توصیه هایی برای انجام یوگا نیازه ؟
+            EndOnvan</onvan>
+            <matn>StartMatn
+                -  یوگا را باید حداقل 3تا 5 ساعت پس از صرف غذا انجام داد.(بستگی به سبکی و سنگینی غذایی که خورده می شود.) \n
+-  شستشوی بدن قبل و بعد از انجام تمرینات باعث شادابی بدن و ذهن می شود. \n
+-  انجام یوگا باید در هوای تمیز و فضای کافی باشد. \n
+-  نور ملایم و دمای مطبوع توصیه می شود. \n
+-  زیر انداز یرای انجام یوگا، ابر فشرده نازک کافی است.   \n
+-  (اصولا"از زیر اندازی استفاده کنید که حین اجرای آساناها(حرکات)روی آن لیز نخورید.) \n
+-  لباس یوگا باید آزاد و راحت باشد که مانع حرکت راحت عضلات و مفاصل نشود.(لباس نخی و رنگ سفید توصیه می شود.) \n
+-  تنفس در هنگام یوگا باید از راه بینی انجام شود.(مگر در بعضی موارد خاص) \n
+-  حتی المقدور به دور از صدا ، همهمه و در محیطی آرام ، ساکت و دلپذیر انجام شوند. \n
+-  برای انجام آساناها (حرکات) حتما باید قبل از شروع با انواع روشهای آماده سازی (کششها ، نرمشها و شاواسانا=ریلکسیشن) بدن را گرم و آماده ساخت. \n
+-  حرکات یوگا را باید با آرامش و آگاهی کامل انجام دادو از فشار زیاد به بدن پرهیز نمود. \n
+-  ویژگیهایی که در یک هنرجو انتظار می رود عبارتند از: \n
+-  نظم ، ایمان ، استواری و پایداری در تمرینات. \n
+
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="13">
+            <onvan>StartOnvan
+                 از کلاس یوگا چگونه بهره مند شویم و چه باید کرد ؟
+            EndOnvan</onvan>
+            <matn>StartMatn
+
+                اول باید کلاسی را انتخاب کنید که مورد تائید شما باشد از سرشوق در کلاس حضور پیدا کنید. \n
+ساعت کلاس را جوری انتخاب کنید که در آن ساعت آرامش بیشتری دارید
+باید دو تا سه ساعت قبل از کلاس غذا خورده باشید یوگا با شکم خالی بهتر است.  \n
+لباس نخی و راحت بپوشید ؛ از رنگ های آرام و روشن استفاده کنید. \n
+تعداد کسانی که در کلاس هستند باید با گنجایش فضای آن متناسب باشد
+تعداد کسانی که اموزش می بینند باید به حدی باشد که استاد بر انها تسلط داشته وبتواند حرکات انهاراتصحیح کند. \n
+تنها انجام یک سری حرکات ساده ویا ورزشی در کلاس مد نظر نباید باشد بلکه هر جلسه با اموزش تنفس واموزش چاکرا ها واموزش خودسازی وطریقه ارام کردن ذهن بصورتی انجام پذیرد که تغییر رفتار وکردار در پی داشته باشد (خودسازی )
+در کلاس تنها باید شنید که گوش دادن و سکوت برای شما بهترین راه پیشرفت شماست. \n
+قبل از شروع چند دقیقه به پشت دراز بکشید وسعی به آرام کردن ذهن وجسم خود داشته باشید. \n
+
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+    </string-array>
+
+    <string-array name="tool_rooz">
+        <item name="1">
+            <onvan>StartOnvan
+            یوگا صبحگاهي
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="2">
+            <onvan>StartOnvan
+                تمرین هفته سحرخیزی
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="3">
+            <onvan>StartOnvan
+ رهایی از فشارهای روزانه
+            EndOnvan</onvan>
+            <matn>StartMatn
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="4">
+            <onvan>StartOnvan
+ تغذیه در یوگا
+            EndOnvan</onvan>
+            <matn>StartMatn
+
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+
+    </string-array>
+
+    <string-array name="senin_mokhtalef">
+        <item name="1">
+            <onvan>StartOnvan
+                یوگا کودکان
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="2">
+            <onvan>StartOnvan
+                هاتا یوگا در 365 روز
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="3">
+            <onvan>StartOnvan
+                یوگا برای دوران مختلف زندگی زنان
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="4">
+            <onvan>StartOnvan
+                یوگا برای دوران یائسگی
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="5">
+            <onvan>StartOnvan
+                خواص یوگا در میانسالی
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="6">
+            <onvan>StartOnvan
+                یوگای سالمندان راهی برای جوان ماندن
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="7">
+            <onvan>StartOnvan
+                7 دلیل برای تمرین یوگا بعد از 50 سالگی
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+    </string-array>
+
+    <string-array name="roozmarre">
+        <item name="1">
+            <onvan>StartOnvan
+                برنامه ای پیشنهادی جهت رشد معنوی  شما
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="2">
+            <onvan>StartOnvan
+                یوگا تغییرات مولکولی مفید در بدن ایجاد می‌کند
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="3">
+            <onvan>StartOnvan
+                معجزه تنفس
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="4">
+            <onvan>StartOnvan
+                نادی شودان پرانایاما ( پالایش شبکه ارتباطی ذهنی )
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="5">
+            <onvan>StartOnvan
+                رهایی از استرس و افسردگی با یوگا در 6 دقیقه
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="6">
+            <onvan>StartOnvan
+                تاثیرات یوگا بر کاهش وزن در دوران میانسالی
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="7">
+            <onvan>StartOnvan
+                تقویت حافظه به کمک یوگا
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="8">
+            <onvan>StartOnvan
+                ترک اعتیاد به کمک یوگا
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="9">
+            <onvan>StartOnvan
+                کاربرد یوگا در مدیریت بیماری MS
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="10">
+            <onvan>StartOnvan
+                کاهش وزن با یوگا (بانوان)
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="11">
+            <onvan>StartOnvan
+                رژیم غذایي در یوگا
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="12">
+            <onvan>StartOnvan
+                تاثیر یوگا بر خواب
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="13">
+            <onvan>StartOnvan
+                 تقویت انرژی
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+        <item name="14">
+            <onvan>StartOnvan
+                 یوگا برای آرامش
+            EndOnvan</onvan>
+            <matn>StartMatn
+            EndMatn</matn>
+            <tasvir>StartTasvir
+            EndTasvir</tasvir>
+        </item>
+    </string-array>
+
 
 </resources>
+
+
+
+
+
+
