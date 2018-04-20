@@ -24,14 +24,26 @@ public class TeachListAdapter extends RecyclerView.Adapter<TeachListAdapter.myVi
     private Context context;
     private LayoutInflater mInflater;
     TextView harakat;
+    int OMUMI = 0, MAKUS = 1, KHABIDE = 2, NESHASTE = 3, ISTADE = 4;
+    final int harakat_number;
     String[] harakat_omumi;
+    String[] harakat_makus;
+    String[] harakat_khabide;
+    String[] harakat_neshaste;
+    String[] harakat_istade;
 
 
 
-    public TeachListAdapter(Context context) {
+    public TeachListAdapter(Context context, int harakat_number) {
         this.context = context;
         mInflater = LayoutInflater.from(context);
         harakat_omumi = context.getResources().getStringArray(R.array.harakat_omumi);
+        harakat_makus = context.getResources().getStringArray(R.array.harakat_makus);
+        harakat_khabide = context.getResources().getStringArray(R.array.harakat_khabide);
+        harakat_neshaste = context.getResources().getStringArray(R.array.harakat_neshaste);
+        harakat_istade = context.getResources().getStringArray(R.array.harakat_istade);
+
+        this.harakat_number = harakat_number;
     }
 
     @Override
@@ -45,21 +57,33 @@ public class TeachListAdapter extends RecyclerView.Adapter<TeachListAdapter.myVi
 
     @Override
     public void onBindViewHolder(final TeachListAdapter.myViewHolder holder, int position) {
+        String item1;
+        if (harakat_number == 0){
+            item1 = harakat_omumi[position];
+        }else if(harakat_number == 1){
+            item1 = harakat_makus[position];
+        }else if (harakat_number == 2){
+            item1 = harakat_khabide[position];
+        }else if (harakat_number == 3){
+            item1 = harakat_neshaste[position];
+        }else {
+            item1 = harakat_istade[position];
+        }
 
-        String item1 = harakat_omumi[position];
-        int startIndex = item1.indexOf("StartOnvan");
-        int endIndex = item1.indexOf("EndOnvan");
-        holder.onvan = item1.substring(startIndex + "StartOnvan".length(), endIndex);
+
+        int startOnvan = item1.indexOf("StartOnvan");
+        int EndOnvan = item1.indexOf("EndOnvan");
+        holder.onvan = item1.substring(startOnvan + "StartOnvan".length(), EndOnvan);
 
 
-        startIndex = item1.indexOf("StartMatn");
-        endIndex = item1.indexOf("EndMatn");
-        holder.matn = item1.substring(startIndex + "StartMatn".length(), endIndex);
+        int startMatn = item1.indexOf("StartMatn");
+        int endMatn = item1.indexOf("EndMatn");
+        holder.matn = item1.substring(startMatn + "StartMatn".length(), endMatn);
 
 
-        startIndex = item1.indexOf("StartTasvir");
-        endIndex = item1.indexOf("EndTasvir");
-        holder.tasvir = item1.substring(startIndex + "StartTasvir".length(), endIndex);
+        int startTasvir = item1.indexOf("StartTasvir");
+        int endTasvir = item1.indexOf("EndTasvir");
+        holder.tasvir = item1.substring(startTasvir + "StartTasvir".length(), endTasvir);
 
         harakat.setText(holder.onvan);
 
@@ -79,7 +103,16 @@ public class TeachListAdapter extends RecyclerView.Adapter<TeachListAdapter.myVi
 
     @Override
     public int getItemCount() {
-        return harakat_omumi.length;
+        if (harakat_number == 0)
+            return harakat_omumi.length;
+        else if(harakat_number == 1)
+            return harakat_makus.length;
+        else if(harakat_number == 2)
+            return harakat_khabide.length;
+        else if (harakat_number == 3)
+            return harakat_neshaste.length;
+        else
+            return harakat_istade.length;
     }
 
 

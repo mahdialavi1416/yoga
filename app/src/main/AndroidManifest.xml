@@ -14,9 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" >
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".Teaches.teachsActivity" />
         <activity android:name=".YogaIntroduce.YogaIntroduceActivity" />
         <activity android:name=".Gyms.GymsListActivity" />
@@ -64,7 +62,7 @@
         <activity android:name=".NotifDetailsActivity" />
         <activity android:name=".Gyms.AddCoachActivity" />
         <activity android:name=".Coaches.addTeachActivity" />
-        <activity android:name=".Teaches.CoachTeachDetailsActivity"></activity>
+        <activity android:name=".Teaches.CoachTeachDetailsActivity" />
     </application>
 
 </manifest>

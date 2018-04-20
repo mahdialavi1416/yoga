@@ -1530,5 +1530,8 @@ _ استحکام و جوانی را به ستون مهره ها باز می گر
         </item>
 
     </string-array>
+    <string name="title_activity_teaches_list_tabed">TeachesListTabedActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 </resources>

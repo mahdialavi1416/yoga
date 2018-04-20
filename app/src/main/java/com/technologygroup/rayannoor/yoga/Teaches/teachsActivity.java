@@ -29,6 +29,7 @@ public class teachsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(teachsActivity.this, teachsListActivity.class);
+                intent.putExtra("tab_number", 0);
                 startActivity(intent);
             }
         });

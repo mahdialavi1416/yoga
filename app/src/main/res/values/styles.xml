@@ -40,7 +40,6 @@
     </style>
 
 
-
     <!-- gallery image details transparent -->
     <style name="Theme.Transparent" parent="android:Theme">
         <item name="android:windowIsTranslucent">true</item>
@@ -63,6 +62,10 @@
     <style name="blackStatusBar" parent="AppTheme">
         <item name="android:statusBarColor" tools:ignore="NewApi">@color/black</item>
     </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>
