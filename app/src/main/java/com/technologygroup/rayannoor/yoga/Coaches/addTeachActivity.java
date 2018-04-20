@@ -64,7 +64,6 @@ public class addTeachActivity extends AppCompatActivity {
     private List<String> bodyList = new ArrayList<>();
     private String resultAdd, resultEdit;
     Dialog dialog;
-    private int numberOfImages, numberOfDes, numberOfFilledLyts;
     private boolean calledToAdd;
     private int id;
     private String Title, Images, Body;

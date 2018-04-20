@@ -14,6 +14,7 @@ public class CoachModel {
     public String Img;
     public int id;
     public int idCity;
+    public int idState;
     public int idCurrentPlan;
     public int like;
     public String lastUpdate;

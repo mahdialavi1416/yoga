@@ -339,12 +339,16 @@ public class WebService {
                     model.Img = Object.getString("Img");
                     model.id = Object.getInt("id");
                     model.idCity = Object.getInt("idCity");
+                    model.idState = Object.getInt("idState");
                     model.idCurrentPlan = Object.getInt("idCurrentPlan");
                     model.like = Object.getInt("like");
                     model.lastUpdate = Object.getString("lastUpdate");
                     model.Mobile = Object.getString("Mobile");
                     model.natCode = Object.getString("natCode");
                     model.Rate = Object.getDouble("Rate");
+                    model.City = Object.getString("City");
+                    model.State = Object.getString("State");
+                    model.Gender = Object.getBoolean("Gender");
 
 
                     return model;
@@ -875,6 +879,7 @@ public class WebService {
                         model[i].id            = Object.getInt("id");
                         model[i].fName         = Object.getString("fName");
                         model[i].idCity        = Object.getInt("idCity");
+                        model[i].idState       = Object.getInt("idState");
                         model[i].idCurrentPlan = Object.getInt("idCurrentPlan");
                         model[i].Instagram     = Object.getString("Instagram");
                         model[i].lastUpdate    = Object.getString("lastUpdate");

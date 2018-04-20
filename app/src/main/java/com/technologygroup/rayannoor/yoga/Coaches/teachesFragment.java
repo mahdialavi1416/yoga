@@ -72,8 +72,8 @@ public class teachesFragment extends Fragment {
 
         if (idCoach > 0) {
 
-            WebServiceList webServiceCoachInfo = new WebServiceList();
-            webServiceCoachInfo.execute();
+            WebServiceList webService = new WebServiceList();
+            webService.execute();
         } else {
             Toast.makeText(getContext(), "مربی مورد نظر یافت نشد", Toast.LENGTH_LONG).show();
         }
