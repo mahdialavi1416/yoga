@@ -31,6 +31,8 @@ public class YogaIntroduceActivity extends AppCompatActivity {
     String tool_rooz = "یوگا در طول روز"; int tool_rooz_num = 2;
     String senin_mokhtalef = "یوگا برای سنین مختلف"; int senin_mokhtalef_num = 3;
     String roozmarre = "یوگا در زندگی روزمره"; int roozmarre_num = 4;
+    String technicha = "تکنیک ها"; int technicha_num = 5;
+    String chakra = "چاکراها"; int chakra_num = 6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class YogaIntroduceActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText(tool_rooz));
         tabLayout.addTab(tabLayout.newTab().setText(senin_mokhtalef));
         tabLayout.addTab(tabLayout.newTab().setText(roozmarre));
+        tabLayout.addTab(tabLayout.newTab().setText(technicha));
+        tabLayout.addTab(tabLayout.newTab().setText(chakra));
 
 //        boolean handler = new Handler().postDelayed(new Runnable() {
 //            @Override

@@ -48,10 +48,9 @@ public class IntroduceAdapter extends RecyclerView.Adapter<IntroduceAdapter.myVi
         tool_rooz = context.getResources().getStringArray(R.array.tool_rooz);
         senin_mokhtalef = context.getResources().getStringArray(R.array.senin_mokhtalef);
         roozmarre = context.getResources().getStringArray(R.array.roozmarre);
-
-//        technicha = context.getResources().getStringArray(R.array.technicha);
-//        chakra = context.getResources().getStringArray(R.array.chakra);
-//        meditation = context.getResources().getStringArray(R.array.meditation);
+        technicha = context.getResources().getStringArray(R.array.technicha);
+        chakra = context.getResources().getStringArray(R.array.chakra);
+        //meditation = context.getResources().getStringArray(R.array.meditation);
 
 
 
@@ -78,8 +77,12 @@ public class IntroduceAdapter extends RecyclerView.Adapter<IntroduceAdapter.myVi
             item1 = tool_rooz[position];
         else if (mored_number == 3)
             item1 = senin_mokhtalef[position];
-        else
+        else if (mored_number == 4)
             item1 = roozmarre[position];
+        else if(mored_number == 5)
+            item1 = technicha[position];
+        else
+            item1 = chakra[position];
 
 
         int startOnvan = item1.indexOf("StartOnvan");
@@ -125,8 +128,12 @@ public class IntroduceAdapter extends RecyclerView.Adapter<IntroduceAdapter.myVi
             return tool_rooz.length;
         else if (mored_number == 3)
             return senin_mokhtalef.length;
-        else
+        else if (mored_number == 4)
             return roozmarre.length;
+        else if (mored_number == 5)
+            return technicha.length;
+        else
+            return chakra.length;
         /*
         * else if(mored_number == 4)
         *   return ...*/
