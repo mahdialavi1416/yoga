@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.technologygroup.rayannoor.yoga.R;
 
@@ -25,12 +26,17 @@ public class IntroduceDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_teach_details);
         initView();
 
-        //String imgResource = ("mipmap/".concat(tasvir)).trim();
+
+        String imgResource = ("mipmap/".concat(tasvir)).trim();
 
 //        Toast.makeText(getApplicationContext(), imgResource, Toast.LENGTH_LONG).show();
         teachDetailsTitle.setText(onvan);
         teachDetailsText.setText(matn);
-        //teachDetailsImg.setImageResource(getResources().getIdentifier(imgResource, "drawable", getPackageName()));
+        try {
+            teachDetailsImg.setImageResource(getResources().getIdentifier(imgResource, "drawable", getPackageName()));
+        }catch (Exception ex){
+            Toast.makeText(IntroduceDetailsActivity.this, ex.getMessage(), Toast.LENGTH_LONG).show();
+        }
 
         teachDetailsSharing.setOnClickListener(new View.OnClickListener() {
             @Override
