@@ -10,6 +10,7 @@ import com.technologygroup.rayannoor.yoga.Models.CoachHonorModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachModel;
 import com.technologygroup.rayannoor.yoga.Models.CoachResumeModel;
 import com.technologygroup.rayannoor.yoga.Models.CommentModel;
+import com.technologygroup.rayannoor.yoga.Models.GymModel;
 import com.technologygroup.rayannoor.yoga.Models.TeachesModel;
 import com.technologygroup.rayannoor.yoga.Models.UserModel;
 
@@ -267,12 +268,11 @@ public class WebService {
 
                 UserModel model = new UserModel();
 
-                if (response.equals("-1")){
+                if (response.equals("-1")) {
 
                     model.id = -1;
 
-                }
-                else {
+                } else {
 
 
                     try {
@@ -305,7 +305,7 @@ public class WebService {
 
         if (isInternetAvailable) {
 
-            String req = "{\"idCity\":-1,\"Name\":\"" + model.Name + "\",\"lName\":\"" + model.lName + "\",\"Mobile\":\"" + model.Mobile + "\",\"Email\":\""  + model.Email + "\",\"Password\":\"" + model.Password + "\",\"Type\":3,\"isVisible\":true,\"lastUpdate\":1}";
+            String req = "{\"idCity\":-1,\"Name\":\"" + model.Name + "\",\"lName\":\"" + model.lName + "\",\"Mobile\":\"" + model.Mobile + "\",\"Email\":\"" + model.Email + "\",\"Password\":\"" + model.Password + "\",\"Type\":3,\"isVisible\":true,\"lastUpdate\":1}";
             String response = connectToServerByJson(App.apiAddr + "User/add", "POST", req);
             Log.i("LOG", response + "");
 
@@ -367,7 +367,7 @@ public class WebService {
 
         if (isInternetAvailable) {
 
-            String req = "{\"id\":" + model.id + ",\"idCity\":" + -1+ ",\"idCurrentPlan\":" + -1 + ",\"fName\":\"" + model.fName + "\",\"lName\":\"" + model.lName + "\",\"natCode\":" + model.natCode + ",\"like\":" + -1 + ",\"Rate\":" + -1 + ",\"rateCount\":" + -1 + ",\"Mobile\":" + model.Mobile + ",\"Telegram\": \"" + model.Telegram + "\",\"Email\": \"" + model.Email + "\",\"Instagram\": \"" + model.Instagram + "\",\"lastUpdate\":0,\"image\":\"" + model.Img + "\"}";
+            String req = "{\"id\":" + model.id + ",\"idCity\":" + -1 + ",\"idCurrentPlan\":" + -1 + ",\"fName\":\"" + model.fName + "\",\"lName\":\"" + model.lName + "\",\"natCode\":" + model.natCode + ",\"like\":" + -1 + ",\"Rate\":" + -1 + ",\"rateCount\":" + -1 + ",\"Mobile\":" + model.Mobile + ",\"Telegram\": \"" + model.Telegram + "\",\"Email\": \"" + model.Email + "\",\"Instagram\": \"" + model.Instagram + "\",\"lastUpdate\":0,\"image\":\"" + model.Img + "\"}";
             String response = connectToServerByJson(App.apiAddr + "coach/update", "POST", req);
             Log.i("LOG", response + "");
 
@@ -621,15 +621,11 @@ public class WebService {
     }
 
 
-
-
-
-
     public String AddCoachEdu(boolean isInternetAvailable, CoachEduModel model) {
 
         if (isInternetAvailable) {
 
-            String req = "{\"idCoach\":" + model.idCoach + ",\"Name\":\"" + model.Name + "\",\"image\":\"" + model.Img + "\",\"gettingPlace\":\"" + model.gettingPlace + "\",\"lastUpdate\":0,\"date\":" + model.Date.substring(0,4) + "}";
+            String req = "{\"idCoach\":" + model.idCoach + ",\"Name\":\"" + model.Name + "\",\"image\":\"" + model.Img + "\",\"gettingPlace\":\"" + model.gettingPlace + "\",\"lastUpdate\":0,\"date\":" + model.Date.substring(0, 4) + "}";
             String response = connectToServerByJson(App.apiAddr + "EducationalRecord/add", "POST", req);
             Log.i("LOG", response + "");
 
@@ -649,7 +645,7 @@ public class WebService {
             else
                 endDate = model.endDate.substring(0, 4);
 
-            String req = "{\"id\":-1,\"idCoach\":" + model.idCoach + ",\"Title\":\"" + model.Title + "\",\"startDate\":" + model.startDate.substring(0,4) + ",\"endDate\":" + endDate + ",\"lastUpdate\":0}";
+            String req = "{\"id\":-1,\"idCoach\":" + model.idCoach + ",\"Title\":\"" + model.Title + "\",\"startDate\":" + model.startDate.substring(0, 4) + ",\"endDate\":" + endDate + ",\"lastUpdate\":0}";
             String response = connectToServerByJson(App.apiAddr + "Resume/add", "POST", req);
             Log.i("LOG", response + "");
 
@@ -662,7 +658,7 @@ public class WebService {
 
         if (isInternetAvailable) {
 
-            String req = "{\"Date\":" + model.Date.substring(0,4) + ",\"Des\":\"" + model.Des + "\",\"id\":" + -1 + ",\"idRow\":" + model.idRow + ",\"isGym\":false,\"lastUpdate\":0,\"Title\":\"" + model.Title + "\",\"Image\":\"" + model.Img + "\",\"Name\":\"" + model.Name + "\"}";
+            String req = "{\"Date\":" + model.Date.substring(0, 4) + ",\"Des\":\"" + model.Des + "\",\"id\":" + -1 + ",\"idRow\":" + model.idRow + ",\"isGym\":false,\"lastUpdate\":0,\"Title\":\"" + model.Title + "\",\"Image\":\"" + model.Img + "\",\"Name\":\"" + model.Name + "\"}";
             String response = connectToServerByJson(App.apiAddr + "honor/add", "POST", req);
             Log.i("LOG", response + "");
 
@@ -699,12 +695,11 @@ public class WebService {
     }
 
 
-
     public String editCoachEdu(boolean isInternetAvailable, CoachEduModel model) {
 
         if (isInternetAvailable) {
 
-            String req = "{\"id\":" + model.id + ",\"idCoach\":" + model.idCoach + ",\"Name\":\"" + model.Name + "\",\"image\":\"" + model.Img + "\",\"gettingPlace\":\"" + model.gettingPlace + "\",\"lastUpdate\":0,\"date\":" + model.Date.substring(0,4) + "}";
+            String req = "{\"id\":" + model.id + ",\"idCoach\":" + model.idCoach + ",\"Name\":\"" + model.Name + "\",\"image\":\"" + model.Img + "\",\"gettingPlace\":\"" + model.gettingPlace + "\",\"lastUpdate\":0,\"date\":" + model.Date.substring(0, 4) + "}";
             String response = connectToServerByJson(App.apiAddr + "EducationalRecord/update", "POST", req);
             Log.i("LOG", response + "");
 
@@ -724,7 +719,7 @@ public class WebService {
             else
                 endDate = model.endDate.substring(0, 4);
 
-            String req = "{\"id\":" + model.id + ",\"idCoach\":" + model.idCoach + ",\"Title\":\"" + model.Title + "\",\"startDate\":" + model.startDate.substring(0,4) + ",\"endDate\":" + endDate + ",\"lastUpdate\":0}";
+            String req = "{\"id\":" + model.id + ",\"idCoach\":" + model.idCoach + ",\"Title\":\"" + model.Title + "\",\"startDate\":" + model.startDate.substring(0, 4) + ",\"endDate\":" + endDate + ",\"lastUpdate\":0}";
             String response = connectToServerByJson(App.apiAddr + "Resume/update", "POST", req);
             Log.i("LOG", response + "");
 
@@ -737,7 +732,7 @@ public class WebService {
 
         if (isInternetAvailable) {
 
-            String req = "{\"Date\":" + model.Date.substring(0,4) + ",\"Des\":\"" + model.Des + "\",\"id\":" + model.id + ",\"idRow\":" + model.idRow + ",\"isGym\":false,\"lastUpdate\":0,\"Title\":\"" + model.Title + "\",\"Image\":\"" + model.Img + "\",\"Name\":\"" + model.Name + "\"}";
+            String req = "{\"Date\":" + model.Date.substring(0, 4) + ",\"Des\":\"" + model.Des + "\",\"id\":" + model.id + ",\"idRow\":" + model.idRow + ",\"isGym\":false,\"lastUpdate\":0,\"Title\":\"" + model.Title + "\",\"Image\":\"" + model.Img + "\",\"Name\":\"" + model.Name + "\"}";
             String response = connectToServerByJson(App.apiAddr + "honor/update", "POST", req);
             Log.i("LOG", response + "");
 
@@ -875,24 +870,24 @@ public class WebService {
                         JSONObject Object = Array.getJSONObject(i);
                         //CoachModel model = new CoachModel();
                         model[i] = new CoachModel();
-                        model[i].Email         = Object.getString("Email");
-                        model[i].id            = Object.getInt("id");
-                        model[i].fName         = Object.getString("fName");
-                        model[i].idCity        = Object.getInt("idCity");
-                        model[i].idState       = Object.getInt("idState");
+                        model[i].Email = Object.getString("Email");
+                        model[i].id = Object.getInt("id");
+                        model[i].fName = Object.getString("fName");
+                        model[i].idCity = Object.getInt("idCity");
+                        model[i].idState = Object.getInt("idState");
                         model[i].idCurrentPlan = Object.getInt("idCurrentPlan");
-                        model[i].Instagram     = Object.getString("Instagram");
-                        model[i].lastUpdate    = Object.getString("lastUpdate");
-                        model[i].like          = Object.getInt("like");
-                        model[i].lName         = Object.getString("lName");
-                        model[i].Mobile        = Object.getString("Mobile");
-                        model[i].natCode       = Object.getString("natCode");
-                        model[i].Rate          = Object.getDouble("Rate");
-                        model[i].Telegram      = Object.getString("Telegram");
-                        model[i].Img           = Object.getString("Img");
-                        model[i].City           = Object.getString("City");
-                        model[i].State           = Object.getString("State");
-                        model[i].Gender        = Object.getBoolean("Gender");
+                        model[i].Instagram = Object.getString("Instagram");
+                        model[i].lastUpdate = Object.getString("lastUpdate");
+                        model[i].like = Object.getInt("like");
+                        model[i].lName = Object.getString("lName");
+                        model[i].Mobile = Object.getString("Mobile");
+                        model[i].natCode = Object.getString("natCode");
+                        model[i].Rate = Object.getDouble("Rate");
+                        model[i].Telegram = Object.getString("Telegram");
+                        model[i].Img = Object.getString("Img");
+                        model[i].City = Object.getString("City");
+                        model[i].State = Object.getString("State");
+                        model[i].Gender = Object.getBoolean("Gender");
                         //list.add(model);
 
                     }
@@ -907,7 +902,7 @@ public class WebService {
             return null;
     }
 
-    public CoachGymsModel[] getGyms(boolean isInternetAvailable) {
+    public GymModel[] getGyms(boolean isInternetAvailable) {
 
         if (isInternetAvailable) {
 
@@ -917,23 +912,43 @@ public class WebService {
             if (response != null) {
 
                 //List<CoachModel> list = new ArrayList<>();
-                CoachGymsModel model[];
+                GymModel model[];
 
                 try {
 
                     JSONArray Array = new JSONArray(response);
-                    model = new CoachGymsModel[Array.length()];
+                    model = new GymModel[Array.length()];
 
                     for (int i = 0; i < Array.length(); i++) {
 
                         JSONObject Object = Array.getJSONObject(i);
-                        model[i] = new CoachGymsModel();
+                        model[i] = new GymModel();
 
-                        model[i].id            = Object.getInt("id");
-                        model[i].like          = Object.getInt("like");
-                        model[i].Rate          = Object.getDouble("Rate");
-//                        model[i].Img           = Object.getString("Img");
+                        model[i].idCity = Object.getInt("idCity");
+                        model[i].Des = Object.getString("Des");
+                        model[i].idCurrentSMSPlan = Object.getInt("idCurrentSMSPlan");
+                        model[i].Lat = Object.getDouble("Lat");
+                        model[i].Lon = Object.getDouble("Lon");
                         model[i].Name = Object.getString("Name");
+                        model[i].notifCount = Object.getInt("notifCount");
+                        model[i].Tell = Object.getString("Tell");
+                        model[i].workTime = Object.getString("workTime");
+                        model[i].Email = Object.getString("Email");
+                        model[i].fname = Object.getString("fname");
+                        model[i].id = Object.getInt("id");
+                        model[i].idCurrentPlan = Object.getInt("idCurrentPlan");
+                        model[i].Instagram = Object.getString("Instagram");
+                        model[i].lastUpdate = Object.getString("lastUpdate");
+                        model[i].like = Object.getInt("like");
+                        model[i].lName = Object.getString("lName");
+                        model[i].Address = Object.getString("Address");
+                        model[i].Rate = Object.getInt("Rate");
+                        model[i].Telegram = Object.getString("Telegram");
+                        model[i].City = Object.getString("City");
+                        model[i].State = Object.getString("State");
+                        model[i].Img = Object.getString("Img");
+
+
                     }
                     return model;
                 } catch (JSONException e) {

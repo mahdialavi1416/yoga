@@ -15,6 +15,7 @@ import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.technologygroup.rayannoor.yoga.Classes.App;
 import com.technologygroup.rayannoor.yoga.Coaches.CoachListActivity;
 import com.technologygroup.rayannoor.yoga.Models.CoachGymsModel;
+import com.technologygroup.rayannoor.yoga.Models.GymModel;
 import com.technologygroup.rayannoor.yoga.R;
 import com.technologygroup.rayannoor.yoga.Services.WebService;
 import com.technologygroup.rayannoor.yoga.adapters.CoachListAdapter;
@@ -24,7 +25,7 @@ public class GymsListActivity extends AppCompatActivity {
 
     private RelativeLayout btnBack;
     private ShimmerRecyclerView RecyclerGyms;
-    private CoachGymsModel[] gymModel;
+    private GymModel[] gymModel;
     private int stateNumber;
     private int cityNumber;
     private SharedPreferences prefs;
