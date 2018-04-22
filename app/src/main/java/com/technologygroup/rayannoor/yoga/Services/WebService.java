@@ -847,6 +847,18 @@ public class WebService {
             return null;
     }
 
+    public String postPlanId(boolean isInternetAvailable, int idPlan, int idUser) {
+
+        if (isInternetAvailable) {
+
+            String req = "{\"idUser\":" + idUser + ",\"idPlan\":" + idPlan + "}";
+            String response = connectToServerByJson(App.apiAddr + "payment/pay", "POST", req);
+            Log.i("LOG", response + "");
+
+            return response;
+        } else
+            return null;
+    }
 
     public CoachModel[] getCoaches(boolean isInternetAvailable) {
 

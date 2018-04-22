@@ -108,6 +108,7 @@ public class CoachProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CoachProfileActivity.this, CoachPlanActivity.class);
+                intent.putExtra("idCoach", idCoach);
                 startActivity(intent);
             }
         });
