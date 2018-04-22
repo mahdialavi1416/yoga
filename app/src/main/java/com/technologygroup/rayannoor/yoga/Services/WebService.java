@@ -954,7 +954,7 @@ public class WebService {
                         model[i].like = Object.getInt("like");
                         model[i].lName = Object.getString("lName");
                         model[i].Address = Object.getString("Address");
-                        model[i].Rate = Object.getInt("Rate");
+                        model[i].Rate = Object.getDouble("Rate");
                         model[i].Telegram = Object.getString("Telegram");
                         model[i].City = Object.getString("City");
                         model[i].State = Object.getString("State");

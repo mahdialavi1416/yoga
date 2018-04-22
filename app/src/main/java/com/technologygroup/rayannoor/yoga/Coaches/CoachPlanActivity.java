@@ -138,14 +138,21 @@ public class CoachPlanActivity extends AppCompatActivity {
 
             if (result != null) {
 
-                if (Integer.parseInt(result) == -1) {
-                    Toast.makeText(CoachPlanActivity.this, "خطای پایگاه داده", Toast.LENGTH_LONG).show();
+                if (!result.startsWith("https://www.zarinpal.com/pg/")) {
 
-                } else if (Integer.parseInt(result) == -2) {
-                    Toast.makeText(CoachPlanActivity.this, "ارتباط با درگاه برقرار نشد", Toast.LENGTH_LONG).show();
-                } else if (Integer.parseInt(result) == -3) {
-                    Toast.makeText(CoachPlanActivity.this, "عدم وجود کاربر یا طرح موردنظر", Toast.LENGTH_LONG).show();
-                } else if (result.startsWith("https://www.zarinpal.com/pg/pay/")) {
+                    if (Integer.parseInt(result) == -1) {
+                        Toast.makeText(CoachPlanActivity.this, "خطای پایگاه داده", Toast.LENGTH_LONG).show();
+
+                    } else if (Integer.parseInt(result) == -2) {
+                        Toast.makeText(CoachPlanActivity.this, "ارتباط با درگاه برقرار نشد", Toast.LENGTH_LONG).show();
+                    } else if (Integer.parseInt(result) == -3) {
+                        Toast.makeText(CoachPlanActivity.this, "عدم وجود کاربر یا طرح موردنظر", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(CoachPlanActivity.this, "ناموفق", Toast.LENGTH_LONG).show();
+
+                    }
+
+                } else {
 
 //                    Toast.makeText(CoachPlanActivity.this, "موفق", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(CoachPlanActivity.this, WebActivity.class);
@@ -153,12 +160,7 @@ public class CoachPlanActivity extends AppCompatActivity {
                     startActivity(intent);
 
 
-                } else {
-                    Toast.makeText(CoachPlanActivity.this, "ناموفق", Toast.LENGTH_LONG).show();
-
                 }
-
-
             } else {
 
                 Toast.makeText(CoachPlanActivity.this, "ارتباط با سرور برقرار نشد", Toast.LENGTH_LONG).show();

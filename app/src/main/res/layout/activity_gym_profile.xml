@@ -7,6 +7,7 @@
     tools:context="com.technologygroup.rayannoor.yoga.Gyms.GymProfileActivity">
 
     <LinearLayout
+        android:id="@+id/lytParent"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent">
@@ -210,13 +211,15 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_margin="8dp"
                             android:id="@+id/txtAddress"
                             android:textSize="13sp"
+                            android:gravity="right"
                             android:textColor="@color/lightBlack"
                             android:text="تبریز - شهرک زعفرانیه - کوی شبنم - 10 متری 49 غربی - پلاک 11 - طبقه سوم"
                             android:layout_height="wrap_content" />

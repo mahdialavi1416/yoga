@@ -51,6 +51,21 @@ public class GymListAdapter extends RecyclerView.Adapter<GymListAdapter.myViewHo
         holder.Img = models[position].Img;
         holder.like = models[position].like;
         holder.Rate = models[position].Rate;
+        holder.Des = models[position].Des;
+        holder.Lat = models[position].Lat;
+        holder.Lon = models[position].Lon;
+        holder.Name = models[position].Name;
+        holder.Tell = models[position].Tell;
+        holder.workTime = models[position].workTime;
+        holder.Email = models[position].Email;
+        holder.fname = models[position].fname;
+        holder.idCurrentPlan = models[position].idCurrentPlan;
+        holder.Instagram = models[position].Instagram;
+        holder.lName = models[position].lName;
+        holder.Address = models[position].Address;
+        holder.Telegram = models[position].Telegram;
+        holder.City = models[position].City;
+        holder.State = models[position].State;
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -58,13 +73,13 @@ public class GymListAdapter extends RecyclerView.Adapter<GymListAdapter.myViewHo
             public void onClick(View view) {
                 GymsListActivity activity = (GymsListActivity) context;
                 Intent intent = new Intent(activity, GymProfileActivity.class);
-                intent.putExtra("idCity", holder.idCity);
+                //intent.putExtra("idCity", holder.idCity);
                 intent.putExtra("Des;", holder.Des);
-                intent.putExtra("idCurrentSMSPlan", holder.idCurrentSMSPlan);
+                //intent.putExtra("idCurrentSMSPlan", holder.idCurrentSMSPlan);
                 intent.putExtra("Lat", holder.Lat);
                 intent.putExtra("Lon", holder.Lon);
                 intent.putExtra("Name", holder.Name);
-                intent.putExtra("notifCount", holder.notifCount);
+                //intent.putExtra("notifCount", holder.notifCount);
                 intent.putExtra("Tell", holder.Tell);
                 intent.putExtra("workTime", holder.workTime);
                 intent.putExtra("Email", holder.Email);
@@ -72,7 +87,7 @@ public class GymListAdapter extends RecyclerView.Adapter<GymListAdapter.myViewHo
                 intent.putExtra("id", holder.id);
                 intent.putExtra("idCurrentPlan", holder.idCurrentPlan);
                 intent.putExtra("Instagram", holder.Instagram);
-                intent.putExtra("lastUpdate", holder.lastUpdate);
+                //intent.putExtra("lastUpdate", holder.lastUpdate);
                 intent.putExtra("like", holder.like);
                 intent.putExtra("lName", holder.lName);
                 intent.putExtra("Address", holder.Address);

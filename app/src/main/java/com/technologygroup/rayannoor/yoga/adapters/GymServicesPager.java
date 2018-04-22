@@ -1,5 +1,6 @@
 package com.technologygroup.rayannoor.yoga.adapters;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -16,8 +17,20 @@ import com.technologygroup.rayannoor.yoga.Gyms.notifsFragment;
 
 public class GymServicesPager extends FragmentStatePagerAdapter {
 
-    public GymServicesPager(FragmentManager fm) {
+    private boolean calledFromPanel;
+    private int idGym;
+    Bundle bundle;
+
+    public GymServicesPager(FragmentManager fm, boolean calledFromPanel, int idGym) {
         super(fm);
+
+        this.calledFromPanel = calledFromPanel;
+        this.idGym = idGym;
+
+        bundle = new Bundle();
+        bundle.putBoolean("calledFromPanel", calledFromPanel);
+        bundle.putInt("idGym", idGym);
+
     }
 
     @Override
@@ -26,26 +39,32 @@ public class GymServicesPager extends FragmentStatePagerAdapter {
         {
             case 0:
                 HonourFragment hno = new HonourFragment();
+                hno.setArguments(bundle);
                 return hno;
 
             case 1:
                 galleryFragment gal = new galleryFragment();
+                gal.setArguments(bundle);
                 return gal;
 
             case 2:
                 coachsFragment gym = new coachsFragment();
+                gym.setArguments(bundle);
                 return gym;
 
             case 3:
                 coursesFragment cer = new coursesFragment();
+                cer.setArguments(bundle);
                 return cer;
 
             case 4:
                 infoFragment info = new infoFragment();
+                info.setArguments(bundle);
                 return info;
 
             case 5:
                 notifsFragment notif = new notifsFragment();
+                notif.setArguments(bundle);
                 return notif;
 
             default:

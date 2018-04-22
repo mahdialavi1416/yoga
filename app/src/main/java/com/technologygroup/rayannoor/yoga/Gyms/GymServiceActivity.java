@@ -21,14 +21,21 @@ public class GymServiceActivity extends AppCompatActivity {
     private ViewPager GymServicesPager;
     private Typeface typeface;
 
+    private int selectedTabIndex;
+    private boolean calledFromPanel = false;
+    private int idGym;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gym_service);
         initView();
 
-
         typeface = Typeface.createFromAsset(getAssets(), "font.ttf");
+
+        calledFromPanel = getIntent().getBooleanExtra("calledFromPanel", false);
+        selectedTabIndex = getIntent().getIntExtra("SelectedTabIndex", 0);
+        idGym = getIntent().getIntExtra("idGym", -1);
 
 
         tabLayout.addTab(tabLayout.newTab().setText("افتخارات"));
@@ -39,11 +46,12 @@ public class GymServiceActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("اعلانات"));
 
 
-        GymServicesPager adapter = new GymServicesPager(getSupportFragmentManager());
+        GymServicesPager adapter = new GymServicesPager(getSupportFragmentManager(), calledFromPanel, idGym);
         GymServicesPager.setAdapter(adapter);
         GymServicesPager.setPageTransformer(false, new FadePageTransformer());
         GymServicesPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
+        GymServicesPager.setCurrentItem(selectedTabIndex);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -62,6 +70,13 @@ public class GymServiceActivity extends AppCompatActivity {
             }
         });
 
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         changeTabsFont();
     }

@@ -87,8 +87,7 @@ public class CoachServicesActivity extends AppCompatActivity {
         });
 
 
-        ImageView imgBack = findViewById(R.id.imgBack);
-        imgBack.setOnClickListener(new View.OnClickListener() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
