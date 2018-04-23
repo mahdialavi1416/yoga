@@ -60,6 +60,7 @@
         android:text="عنوان مقاله"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:lineSpacingMultiplier="1.2"
         android:textColor="@color/black"
         android:layout_height="wrap_content" />
 

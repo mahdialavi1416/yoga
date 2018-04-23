@@ -65,6 +65,7 @@
         app:tabTextAppearance="@style/MineCustomTabText"
         app:tabSelectedTextColor="@color/colorPrimaryDark"
         app:tabIndicatorColor="@color/colorPrimaryDark"
+        app:tabMode="scrollable"
         android:layout_height="wrap_content"/>
 
     <android.support.v7.widget.RecyclerView

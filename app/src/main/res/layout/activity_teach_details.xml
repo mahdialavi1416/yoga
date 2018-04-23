@@ -134,19 +134,20 @@
 -->
             <TextView
                 android:layout_width="wrap_content"
-                android:gravity="center"
+                android:gravity="right"
                 android:text="5. سرتان را بالا بیاورید و چانه خود را به پا نزدیک کنید و نفس عمیق بکشید. همراه با بازدم سر خود را پایین بیاورید.به آرامی نفس بکشید."
                 android:textColor="@color/black"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="25dp"
+                android:lineSpacingMultiplier="1.2"
                 android:layout_height="wrap_content"
                 android:id="@+id/teach_details_text"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:src="@drawable/home"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/teach_details_image"/>
 

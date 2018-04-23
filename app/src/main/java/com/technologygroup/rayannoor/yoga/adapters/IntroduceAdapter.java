@@ -6,12 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.technologygroup.rayannoor.yoga.R;
-import com.technologygroup.rayannoor.yoga.Teaches.TeachDetailsActivity;
-import com.technologygroup.rayannoor.yoga.Teaches.teachsListActivity;
 import com.technologygroup.rayannoor.yoga.YogaIntroduce.IntroduceDetailsActivity;
 import com.technologygroup.rayannoor.yoga.YogaIntroduce.YogaIntroduceActivity;
 
@@ -59,7 +56,7 @@ public class IntroduceAdapter extends RecyclerView.Adapter<IntroduceAdapter.myVi
 
     @Override
     public IntroduceAdapter.myViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.item_teach_list, parent, false);
+        View view = mInflater.inflate(R.layout.item_article_list, parent, false);
         IntroduceAdapter.myViewHolder holder = new IntroduceAdapter.myViewHolder(view);
         return holder;
     }
@@ -148,7 +145,7 @@ public class IntroduceAdapter extends RecyclerView.Adapter<IntroduceAdapter.myVi
         myViewHolder(View itemView) {
 
             super(itemView);
-            harakat = (TextView) itemView.findViewById(R.id.harakat);
+            harakat = (TextView) itemView.findViewById(R.id.txtTitle);
             //imageView = (ImageView) itemView.findViewById(R.id.img?)
         }
     }
