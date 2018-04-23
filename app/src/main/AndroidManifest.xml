@@ -64,7 +64,9 @@
         <activity android:name=".Gyms.AddCoachActivity" />
         <activity android:name=".Coaches.addTeachActivity" />
         <activity android:name=".Teaches.CoachTeachDetailsActivity" />
-        <activity android:name=".WebActivity"></activity>
+        <activity android:name=".YogaIntroduce.IntroDetailsActivity" />
+        <activity android:name=".ChartActivity" />
+        <activity android:name=".AboutUsActivity"></activity>
     </application>
 
 </manifest>

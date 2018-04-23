@@ -1,0 +1,1436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.technologygroup.rayannoor.yoga.ChartActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="چارت سازمانی"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:src="@drawable/ic_back_white"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="8dp">
+
+                </ImageView>
+
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/coach_edit_profile_back"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/lyt1"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="right|center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="رئیس کمیته"
+                        android:layout_marginRight="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:id="@+id/img1"
+                        android:src="@drawable/ic_plus"
+                        android:padding="10dp"
+                        android:layout_height="35dp" />
+
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/expanableLayout1"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    android:padding="15dp"
+                    app:el_parallax="0.5"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="احمد کسب خواه"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@mipmap/ic_man"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="8dp"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="لیسانس زبان انگلیسی"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@drawable/ic_grade"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/coach_edit_profile_back"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/lyt2"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="right|center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="نائب رئیس کمیته"
+                        android:layout_marginRight="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:id="@+id/img2"
+                        android:src="@drawable/ic_plus"
+                        android:padding="10dp"
+                        android:layout_height="35dp" />
+
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/expanableLayout2"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    android:padding="15dp"
+                    app:el_parallax="0.5"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="حسین شوقی فر"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@mipmap/ic_man"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="8dp"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="دانشجوی کارشناسی ارشد فیزیولوژی ورزشی"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@drawable/ic_grade"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/coach_edit_profile_back"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/lyt3"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="right|center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="دبیر کمیته"
+                        android:layout_marginRight="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:id="@+id/img3"
+                        android:src="@drawable/ic_plus"
+                        android:padding="10dp"
+                        android:layout_height="35dp" />
+
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/expanableLayout3"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    android:padding="15dp"
+                    app:el_parallax="0.5"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="حسین شوقی فر"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@mipmap/ic_man"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="8dp"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="دانشجوی کارشناسی ارشد فیزیولوژی ورزشی"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@drawable/ic_grade"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/coach_edit_profile_back"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/lyt4"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="right|center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="واحد پیشکسوتان"
+                        android:layout_marginRight="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:id="@+id/img4"
+                        android:src="@drawable/ic_plus"
+                        android:padding="10dp"
+                        android:layout_height="35dp" />
+
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/expanableLayout4"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    android:padding="15dp"
+                    app:el_parallax="0.5"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="نیر السادات دها"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@mipmap/ic_man"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="8dp"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="کارشناسی فلسفه"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@drawable/ic_grade"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/coach_edit_profile_back"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/lyt5"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="right|center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="واحد قهرمانی"
+                        android:layout_marginRight="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:id="@+id/img5"
+                        android:src="@drawable/ic_plus"
+                        android:padding="10dp"
+                        android:layout_height="35dp" />
+
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/expanableLayout5"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    android:padding="15dp"
+                    app:el_parallax="0.5"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="نسیم گلفروشان"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@mipmap/ic_man"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="8dp"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="کارشناسی کامپیوتر"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@drawable/ic_grade"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/coach_edit_profile_back"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/lyt6"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="right|center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="واحد پزشکی"
+                        android:layout_marginRight="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:id="@+id/img6"
+                        android:src="@drawable/ic_plus"
+                        android:padding="10dp"
+                        android:layout_height="35dp" />
+
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/expanableLayout6"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    android:padding="15dp"
+                    app:el_parallax="0.5"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="نازیلا دزنابی"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@mipmap/ic_man"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="8dp"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="دکتر جراح مغز و اعصاب"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@drawable/ic_grade"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/coach_edit_profile_back"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/lyt7"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="right|center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="واحد داوران و مسابقات"
+                        android:layout_marginRight="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:id="@+id/img7"
+                        android:src="@drawable/ic_plus"
+                        android:padding="10dp"
+                        android:layout_height="35dp" />
+
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/expanableLayout7"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    android:padding="15dp"
+                    app:el_parallax="0.5"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="خلیل تقی زاده"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@mipmap/ic_man"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="8dp"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="لیسانس"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@drawable/ic_grade"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/coach_edit_profile_back"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/lyt8"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="right|center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="واحد پژوهش و برنامه ریزی"
+                        android:layout_marginRight="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:id="@+id/img8"
+                        android:src="@drawable/ic_plus"
+                        android:padding="10dp"
+                        android:layout_height="35dp" />
+
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/expanableLayout8"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    android:padding="15dp"
+                    app:el_parallax="0.5"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="یلدا غلامی"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@mipmap/ic_man"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="8dp"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="فوق لیسانس تربیت بدنی"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@drawable/ic_grade"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/coach_edit_profile_back"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/lyt9"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="right|center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="واحد نظارت بر عملکرد مربیان و باشگاه ها"
+                        android:layout_marginRight="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:id="@+id/img9"
+                        android:src="@drawable/ic_plus"
+                        android:padding="10dp"
+                        android:layout_height="35dp" />
+
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/expanableLayout9"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    android:padding="15dp"
+                    app:el_parallax="0.5"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="تینا اکبری"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@mipmap/ic_man"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="8dp"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="کارشناسی ارشد کتابداری و اطلاع رسانی"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@drawable/ic_grade"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/coach_edit_profile_back"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/lyt10"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="right|center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="واحد آموزش"
+                        android:layout_marginRight="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:id="@+id/img10"
+                        android:src="@drawable/ic_plus"
+                        android:padding="10dp"
+                        android:layout_height="35dp" />
+
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/expanableLayout10"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    android:padding="15dp"
+                    app:el_parallax="0.5"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="ایرج بهروزفر"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@mipmap/ic_man"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="8dp"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="دیپلم"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@drawable/ic_grade"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/coach_edit_profile_back"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/lyt11"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="right|center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="واحد رفاهی و مالی"
+                        android:layout_marginRight="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:id="@+id/img11"
+                        android:src="@drawable/ic_plus"
+                        android:padding="10dp"
+                        android:layout_height="35dp" />
+
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/expanableLayout11"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    android:padding="15dp"
+                    app:el_parallax="0.5"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="مهدی حسن پور"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@mipmap/ic_man"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="8dp"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="دانشجوی کارشناسی تربیت بدنی"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@drawable/ic_grade"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/coach_edit_profile_back"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/lyt12"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="right|center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="واحد فرهنگی"
+                        android:layout_marginRight="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:id="@+id/img12"
+                        android:src="@drawable/ic_plus"
+                        android:padding="10dp"
+                        android:layout_height="35dp" />
+
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/expanableLayout12"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    android:padding="15dp"
+                    app:el_parallax="0.5"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="بهناز پوری"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@mipmap/ic_man"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="8dp"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="کارشناسی علوم اقتصاد-اقتصاد نظری"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@drawable/ic_grade"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/coach_edit_profile_back"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/lyt13"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="right|center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="واحد فناوری اطلاعات"
+                        android:layout_marginRight="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:id="@+id/img13"
+                        android:src="@drawable/ic_plus"
+                        android:padding="10dp"
+                        android:layout_height="35dp" />
+
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/expanableLayout13"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    android:padding="15dp"
+                    app:el_parallax="0.5"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="هادی قهرمانی"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@mipmap/ic_man"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="8dp"
+                            android:gravity="right|center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="کارشناسی IT
+دانشجو کارشناسی ارشد نرم افزار
+"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                style="@style/AudioFileInfoOverlayText2"
+                                android:layout_gravity="right"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:src="@drawable/ic_grade"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="17dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

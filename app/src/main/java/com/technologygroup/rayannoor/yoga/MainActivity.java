@@ -160,6 +160,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        lytChart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ChartActivity.class);
+                startActivity(intent);
+                drawer_layout.closeDrawer(GravityCompat.END);
+            }
+        });
+
+
+        lytAboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AboutUsActivity.class);
+                startActivity(intent);
+                drawer_layout.closeDrawer(GravityCompat.END);
+            }
+        });
+
         relativeMsg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
