@@ -26,7 +26,7 @@
                     android:layout_width="40dp"
                     android:padding="10dp"
                     android:id="@+id/imgEditCoachDetails"
-                    android:layout_marginTop="3dp"
+                    android:layout_margin="10dp"
                     android:src="@drawable/ic_edit"
                     android:layout_height="40dp" />
 
@@ -42,6 +42,7 @@
                     android:layout_width="45dp"
                     android:id="@+id/imgBack"
                     android:padding="10dp"
+                    android:layout_margin="10dp"
                     android:src="@drawable/ic_back"
                     android:layout_height="45dp" />
 

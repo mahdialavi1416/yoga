@@ -28,8 +28,8 @@
                     android:layout_centerInParent="true"
                     android:text="اطلاعات باشگاه"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
 
                 <RelativeLayout
                     android:id="@+id/btnBack"
@@ -42,9 +42,9 @@
                     android:padding="8dp">
 
                     <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/ic_back" />
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_back_white" />
 
                 </RelativeLayout>
 

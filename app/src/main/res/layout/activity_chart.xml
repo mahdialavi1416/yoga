@@ -69,7 +69,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/coach_edit_profile_back"
+                android:background="@drawable/notif_border"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -174,7 +174,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/coach_edit_profile_back"
+                android:background="@drawable/notif_border"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -279,7 +279,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/coach_edit_profile_back"
+                android:background="@drawable/notif_border"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -384,7 +384,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/coach_edit_profile_back"
+                android:background="@drawable/notif_border"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -489,7 +489,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/coach_edit_profile_back"
+                android:background="@drawable/notif_border"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -594,7 +594,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/coach_edit_profile_back"
+                android:background="@drawable/notif_border"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -699,7 +699,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/coach_edit_profile_back"
+                android:background="@drawable/notif_border"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -804,7 +804,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/coach_edit_profile_back"
+                android:background="@drawable/notif_border"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -909,7 +909,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/coach_edit_profile_back"
+                android:background="@drawable/notif_border"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -1014,7 +1014,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/coach_edit_profile_back"
+                android:background="@drawable/notif_border"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -1119,7 +1119,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/coach_edit_profile_back"
+                android:background="@drawable/notif_border"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -1224,7 +1224,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/coach_edit_profile_back"
+                android:background="@drawable/notif_border"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -1329,7 +1329,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/coach_edit_profile_back"
+                android:background="@drawable/notif_border"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -1380,7 +1380,7 @@
 
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:text="هادی قهرمانی"
+                                android:text="بهناز پوری"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
                                 style="@style/AudioFileInfoOverlayText2"
@@ -1405,9 +1405,7 @@
 
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:text="کارشناسی IT
-دانشجو کارشناسی ارشد نرم افزار
-"
+                                android:text="کارشناسی علوم اقتصاد-اقتصاد نظری"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
                                 style="@style/AudioFileInfoOverlayText2"
