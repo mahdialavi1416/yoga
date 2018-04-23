@@ -8,7 +8,7 @@ public class TeachesModel {
 
     public int id;
     public int idRow;
-    public int Date;
+    public String Date;
     public boolean isGym;
     public String Title;
     public String Body;

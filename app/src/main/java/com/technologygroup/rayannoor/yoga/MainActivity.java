@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private DrawerLayout drawer_layout;
     private ImageView drawerHeaderImage;
-    private TextView txtUserName;
+    private TextView txtUserName, txtLogin;
     private RoundedImageView imgUser;
     private LinearLayout lytLogin;
     private LinearLayout lytChart;
@@ -76,12 +76,17 @@ public class MainActivity extends AppCompatActivity {
     private int cityNumber = 1;
     ArrayAdapter<String> spinnerArrayAdapter;
 
+    private int userType, idUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         prefs = getSharedPreferences("MyPrefs", 0);
+
+        userType = prefs.getInt("userType", -1);
+        idUser = prefs.getInt("idUser", -1);
 
         if (prefs.getBoolean("isFirstRun", true)) {
             showStateDialog();
@@ -93,6 +98,15 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
 
+        if (userType == 1){
+            txtLogin.setText("پنل باشگاه");
+        } else if (userType == 2){
+            txtLogin.setText("پنل مربی");
+        } else if (userType == 3){
+            txtLogin.setText("حساب کاربری");
+        } else {
+            txtLogin.setText("ورود/ثبت نام");
+        }
 
         //set image darker
         drawerHeaderImage.setColorFilter(Color.rgb(150, 150, 150), PorterDuff.Mode.MULTIPLY);
@@ -154,8 +168,22 @@ public class MainActivity extends AppCompatActivity {
         lytLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CoachProfileActivity.class);
-                startActivity(intent);
+                if (userType == -1) {
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
+                if (userType == 1 && idUser > 0) {
+                    Intent intent = new Intent(MainActivity.this, GymDetailsActivity.class);
+                    startActivity(intent);
+                }
+                if (userType == 2 && idUser > 0) {
+                    Intent intent = new Intent(MainActivity.this, CoachProfileActivity.class);
+                    startActivity(intent);
+                }
+                if (userType == 3 && idUser > 0) {
+//                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+//                    startActivity(intent);
+                }
                 drawer_layout.closeDrawer(GravityCompat.END);
             }
         });
@@ -211,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
         lytYogaIntroduce = (LinearLayout) findViewById(R.id.lytYogaIntroduce);
         lytGyms = (LinearLayout) findViewById(R.id.lytGyms);
         lytCoaches = (LinearLayout) findViewById(R.id.lytCoaches);
+        txtLogin = headerview.findViewById(R.id.txtLogin);
     }
 
     private void showStateDialog() {
@@ -280,7 +309,7 @@ public class MainActivity extends AppCompatActivity {
         if (drawer_layout.isDrawerOpen(GravityCompat.END)) {
             drawer_layout.closeDrawer(GravityCompat.END);
         } else {
-            super.onBackPressed();
+            finish();
         }
     }
 

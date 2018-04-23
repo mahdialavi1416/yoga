@@ -522,7 +522,7 @@ public class WebService {
 
                         model.id = Object.getInt("id");
                         model.idRow = Object.getInt("idRow");
-                        model.Date = Object.getInt("Date");
+                        model.Date = Object.getString("Date");
                         model.isGym = Object.getBoolean("isGym");
                         model.Title = Object.getString("Title");
                         model.Body = Object.getString("Body");

@@ -143,7 +143,7 @@ public class CoachTeachesAdapter extends RecyclerView.Adapter<CoachTeachesAdapte
 //                    Glide.with(context).load(App.imgAddr + current.Img).asBitmap().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imgCertificate);
 
             txtitle.setText(current.Title);
-            txtDate.setText(classDate.changeDateToString(current.Date));
+            txtDate.setText(current.Date);
 
             this.position = position;
             this.current = current;

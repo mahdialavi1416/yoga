@@ -161,15 +161,15 @@ public class teachesFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        prefs = getContext().getSharedPreferences("MyPrefs", 0);
-        idCoach = prefs.getInt("idUser", -1);
-        if (idCoach > 0) {
-
-            WebServiceList webServiceCoachInfo = new WebServiceList();
-            webServiceCoachInfo.execute();
-        } else {
-            Toast.makeText(getContext(), "مربی مورد نظر یافت نشد", Toast.LENGTH_LONG).show();
-        }
+//        prefs = getContext().getSharedPreferences("MyPrefs", 0);
+//        idCoach = prefs.getInt("idUser", -1);
+//        if (idCoach > 0) {
+//
+//            WebServiceList webServiceCoachInfo = new WebServiceList();
+//            webServiceCoachInfo.execute();
+//        } else {
+//            Toast.makeText(getContext(), "مربی مورد نظر یافت نشد", Toast.LENGTH_LONG).show();
+//        }
     }
 
 }

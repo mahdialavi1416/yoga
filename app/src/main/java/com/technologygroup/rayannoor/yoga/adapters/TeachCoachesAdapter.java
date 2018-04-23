@@ -118,7 +118,7 @@ public class TeachCoachesAdapter extends RecyclerView.Adapter<TeachCoachesAdapte
         private void setData(TeachesModel current, int position) {
 
             txtTitle.setText(current.Title);
-            txtDate.setText(classDate.changeDateToString(current.Date));
+            txtDate.setText(current.Date);
 
             this.position = position;
             this.current = current;

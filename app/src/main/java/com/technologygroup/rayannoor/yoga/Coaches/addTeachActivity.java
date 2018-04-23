@@ -422,7 +422,7 @@ public class addTeachActivity extends AppCompatActivity {
             model.id = -1;
             model.idRow = idCoach;
             model.Title = edtTitle.getText().toString();
-            model.Date = Integer.parseInt(classDate.getDate());
+            model.Date = classDate.getDate();
             model.isGym = false;
             model.Body = "";
             model.Images = "";
@@ -518,7 +518,7 @@ public class addTeachActivity extends AppCompatActivity {
             model.id = id;
             model.idRow = idCoach;
             model.Title = edtTitle.getText().toString();
-            model.Date = Integer.parseInt(classDate.getDate());
+            model.Date = classDate.getDate();
             model.isGym = false;
             model.Body = "";
             model.Images = "";
