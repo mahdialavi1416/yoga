@@ -32,7 +32,7 @@
             android:id="@+id/txtIntro4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="عنوان4"
+            android:text="@string/intro4_1"
             android:textStyle="bold"
             style="@style/AudioFileInfoOverlayText2"
             android:textColor="@color/white"
@@ -47,7 +47,7 @@
             android:lineSpacingMultiplier="1.2"
             android:layout_marginLeft="15dp"
             android:layout_height="wrap_content"
-            android:text="توضیح4"
+            android:text="@string/intro4_2"
             style="@style/AudioFileInfoOverlayText2"
             android:textColor="@color/white"
             android:textSize="16sp"/>

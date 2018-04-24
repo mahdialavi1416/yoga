@@ -7,89 +7,53 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.technologygroup.rayannoor.yoga.Classes.App;
-import com.technologygroup.rayannoor.yoga.Classes.ClassLevels;
-import com.technologygroup.rayannoor.yoga.Models.CoachModel;
 import com.technologygroup.rayannoor.yoga.R;
 import com.technologygroup.rayannoor.yoga.Services.WebService;
 import com.technologygroup.rayannoor.yoga.WebActivity;
 
-import net.cachapa.expandablelayout.ExpandableLayout;
-
 public class CoachPlanActivity extends AppCompatActivity {
 
-    private RelativeLayout btnBack;
-    private ExpandableLayout expanableLayout1;
-    private CardView card1;
-    private TextView txtDetails;
-    private CardView card2;
-    private TextView txtDetails2;
-    private ExpandableLayout expanableLayout2;
-    TextView txtBuy;
+
     String result;
     private int idCoach;
+    private RelativeLayout btnBack;
+    private Button btnBuy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coach_plan);
+        idCoach = getIntent().getIntExtra("idCoach", idCoach);
         initView();
 
-        idCoach = getIntent().getIntExtra("idCoach", idCoach);
-
-        txtDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (expanableLayout1.isExpanded())
-                    expanableLayout1.setExpanded(false);
-                else
-                    expanableLayout1.setExpanded(true);
-            }
-        });
-
-        txtDetails2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (expanableLayout2.isExpanded())
-                    expanableLayout2.setExpanded(false);
-                else
-                    expanableLayout2.setExpanded(true);
-            }
-        });
-
-        txtBuy.setOnClickListener(new View.OnClickListener() {
+        btnBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 WebServicePlan webServicePlan = new WebServicePlan();
                 webServicePlan.execute();
-
             }
         });
 
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     private void initView() {
-
-        txtBuy = findViewById(R.id.txtBuy);
         btnBack = (RelativeLayout) findViewById(R.id.btnBack);
-        expanableLayout1 = (ExpandableLayout) findViewById(R.id.expanableLayout1);
-        card1 = (CardView) findViewById(R.id.card1);
-        txtDetails = (TextView) findViewById(R.id.txtDetails);
-        card2 = (CardView) findViewById(R.id.card2);
-        txtDetails2 = (TextView) findViewById(R.id.txtDetails2);
-        expanableLayout2 = (ExpandableLayout) findViewById(R.id.expanableLayout2);
+        btnBuy = (Button) findViewById(R.id.btnBuy);
     }
 
 

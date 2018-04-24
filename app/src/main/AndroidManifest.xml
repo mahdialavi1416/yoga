@@ -66,6 +66,7 @@
         <activity android:name=".YogaIntroduce.IntroDetailsActivity" />
         <activity android:name=".ChartActivity" />
         <activity android:name=".AboutUsActivity"></activity>
+        <activity android:name=".WebActivity"></activity>
     </application>
 
 </manifest>

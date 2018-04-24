@@ -60,7 +60,7 @@
 
       <ImageView
           android:layout_width="wrap_content"
-          android:src="@drawable/ic_empty"
+          android:src="@drawable/ic_not_found"
           android:layout_height="wrap_content" />
 
       <TextView
@@ -69,7 +69,7 @@
           android:textSize="18sp"
           android:gravity="center"
           android:textColor="@color/colorPrimaryDark"
-          android:text="هیچ نظری ثبت نشده ! \n اولین نظر رو ثبت کن"
+          android:text="هیج موردی یافت نشد !"
           android:layout_height="wrap_content" />
 
    </LinearLayout>

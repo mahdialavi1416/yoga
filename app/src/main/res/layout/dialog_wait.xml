@@ -9,7 +9,7 @@
 
     <ImageView
         android:layout_width="50dp"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/logo"
         android:id="@+id/logo"
         android:layout_height="50dp" />
 

@@ -7,11 +7,20 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imgIntro6"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
+        android:layout_width="200dp"
+        android:src="@drawable/ic_logo_white"
+        android:layout_height="200dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/img" />
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="8dp"
+        style="@style/AudioFileInfoOverlayText2"
+        android:text="انجمن ورزشی یوگا" />
 
 
     <Button
@@ -20,7 +29,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/profile_border"
         android:paddingLeft="25dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:paddingRight="25dp"
         android:text="ورود به عنوان میهمان"
         android:textStyle="bold"

@@ -36,7 +36,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:text="یوگی"
+                android:text="انجمن ورزشی یوگا"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/white"
                 android:textSize="36sp"
@@ -51,7 +51,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:text="اپلیکیشن جامع یوگای کشور"
+                android:text="اپلیکیشن رسمی یوگای کشور"
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 android:layout_height="wrap_content" />
@@ -95,8 +95,8 @@
                android:layout_width="wrap_content"
                android:layout_weight="1"
                android:text="ثبت نام"
-               android:paddingTop="10dp"
-               android:paddingBottom="10dp"
+               android:paddingTop="15dp"
+               android:paddingBottom="15dp"
                android:id="@+id/txtRegister"
                android:background="?attr/selectableItemBackground"
                android:textSize="16sp"
@@ -113,8 +113,8 @@
            <TextView
                android:layout_width="wrap_content"
                android:layout_weight="1"
-               android:paddingTop="10dp"
-               android:paddingBottom="10dp"
+               android:paddingTop="15dp"
+               android:paddingBottom="15dp"
                android:text="ورود"
                android:id="@+id/txtLogin"
                android:background="?attr/selectableItemBackground"

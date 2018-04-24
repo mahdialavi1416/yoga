@@ -101,7 +101,7 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:text="زمان تحویل : "
+                    android:text="تاریخ اخذ : "
                     android:textColor="@color/lightBlack"
                     android:layout_height="wrap_content" />
 

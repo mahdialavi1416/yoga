@@ -22,9 +22,9 @@
         android:layout_height="match_parent">
         
         <ImageView
-            android:layout_width="60dp"
+            android:layout_width="70dp"
             android:src="@drawable/ic_logo_white"
-            android:layout_height="60dp" />
+            android:layout_height="70dp" />
         
         <TextView
             android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
             android:textStyle="bold"
             style="@style/AudioFileInfoOverlayText2"
             android:textSize="17sp"
-            android:text="یوگاپ، اپلیکیشن جامع یوگای ایران"
+            android:text="انجمن ورزشی یوگا"
             android:layout_height="wrap_content" />
 
         <LinearLayout

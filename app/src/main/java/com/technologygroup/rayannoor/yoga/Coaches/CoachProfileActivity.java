@@ -61,6 +61,7 @@ public class CoachProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coach_edit_profile);
+        setContentView(R.layout.activity_coach_edit_profile);
 
         initView();
 

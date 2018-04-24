@@ -1380,7 +1380,7 @@
 
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:text="بهناز پوری"
+                                android:text="هادی قهرمانی"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
                                 style="@style/AudioFileInfoOverlayText2"
@@ -1405,7 +1405,9 @@
 
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:text="کارشناسی علوم اقتصاد-اقتصاد نظری"
+                                android:text="کارشناسی IT
+دانشجو کارشناسی ارشد نرم افزار
+"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
                                 style="@style/AudioFileInfoOverlayText2"
@@ -1414,7 +1416,6 @@
 
                             <ImageView
                                 android:layout_width="17dp"
-                                android:src="@drawable/ic_grade"
                                 android:layout_marginLeft="10dp"
                                 android:layout_height="17dp" />
 
