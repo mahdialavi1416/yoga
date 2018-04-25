@@ -47,6 +47,18 @@ public class GymListAdapter extends RecyclerView.Adapter<GymListAdapter.myViewHo
     public void onBindViewHolder(final myViewHolder holder, int position) {
 
         holder.txtGymName.setText(models[position].Name + "");
+        holder.txtGymAddress.setText(models[position].Address);
+        if (models[position].idCurrentPlan == 1){
+            holder.imgStar1.setVisibility(View.VISIBLE);
+        } else if (models[position].idCurrentPlan == 2){
+            holder.imgStar1.setVisibility(View.VISIBLE);
+            holder.imgStar2.setVisibility(View.VISIBLE);
+        } else if (models[position].idCurrentPlan == 3){
+            holder.imgStar1.setVisibility(View.VISIBLE);
+            holder.imgStar2.setVisibility(View.VISIBLE);
+            holder.imgStar3.setVisibility(View.VISIBLE);
+        }
+
         holder.id = models[position].id;
         holder.Img = models[position].Img;
         holder.like = models[position].like;

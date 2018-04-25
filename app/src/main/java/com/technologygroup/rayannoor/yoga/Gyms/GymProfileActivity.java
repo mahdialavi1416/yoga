@@ -471,6 +471,7 @@ public class GymProfileActivity extends AppCompatActivity {
 
     private void setViews() {
 
+        if (gymModel.idCurrentPlan > 0)
         if (gymModel.Img != null)
             if (!gymModel.Img.equals("") && !gymModel.Img.equals("null"))
                 Glide.with(GymProfileActivity.this).load(App.imgAddr + gymModel.Img).asBitmap().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(gymImage);

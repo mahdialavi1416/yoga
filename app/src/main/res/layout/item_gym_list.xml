@@ -66,15 +66,16 @@
             <ImageView
                 android:layout_width="15dp"
                 android:id="@+id/imgStar1"
-                android:visibility="visible"
+                android:visibility="invisible"
                 android:layout_marginLeft="10dp"
                 android:src="@drawable/ic_star"
-                android:layout_height="15dp" />
+                android:layout_height="15dp"
+                />
 
             <ImageView
                 android:layout_width="15dp"
                 android:id="@+id/imgStar2"
-                android:visibility="visible"
+                android:visibility="invisible"
                 android:layout_marginLeft="5dp"
                 android:src="@drawable/ic_star"
                 android:layout_height="15dp" />
@@ -82,7 +83,7 @@
             <ImageView
                 android:layout_width="15dp"
                 android:id="@+id/imgStar3"
-                android:visibility="visible"
+                android:visibility="invisible"
                 android:layout_marginLeft="5dp"
                 android:src="@drawable/ic_star"
                 android:layout_height="15dp" />
